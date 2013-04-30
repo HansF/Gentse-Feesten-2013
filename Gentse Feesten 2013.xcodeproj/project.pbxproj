@@ -16,6 +16,18 @@
 		22AD52FD1730324400EC5009 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AD52FC1730324400EC5009 /* Default.png */; };
 		22AD52FF1730324400EC5009 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AD52FE1730324400EC5009 /* Default@2x.png */; };
 		22AD53011730324400EC5009 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AD53001730324400EC5009 /* Default-568h@2x.png */; };
+		22AD530F1730345400EC5009 /* GFCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD530E1730345400EC5009 /* GFCustomViewController.m */; };
+		22AD53121730347700EC5009 /* GFMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD53111730347700EC5009 /* GFMenuViewController.m */; };
+		22AD53161730349800EC5009 /* GFNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD53151730349800EC5009 /* GFNavigationViewController.m */; };
+		22AD531C1730378900EC5009 /* GFCustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD53191730378900EC5009 /* GFCustomNavBar.m */; };
+		22AD531D1730378900EC5009 /* GFCustomToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD531B1730378900EC5009 /* GFCustomToolBar.m */; };
+		22AD53221730403900EC5009 /* fav.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AD531E1730403900EC5009 /* fav.png */; };
+		22AD53231730403900EC5009 /* fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AD531F1730403900EC5009 /* fav@2x.png */; };
+		22AD53241730403900EC5009 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AD53201730403900EC5009 /* list.png */; };
+		22AD53251730403900EC5009 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AD53211730403900EC5009 /* list@2x.png */; };
+		22AD53281730406F00EC5009 /* GFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD53271730406F00EC5009 /* GFHomeViewController.m */; };
+		22AD532B1730463900EC5009 /* GFFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD532A1730463900EC5009 /* GFFavoritesViewController.m */; };
+		47F4B48CE43B4A1C971368DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD991ADD3EF40AD8F394E1A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +44,27 @@
 		22AD52FC1730324400EC5009 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		22AD52FE1730324400EC5009 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		22AD53001730324400EC5009 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		22AD530D1730345400EC5009 /* GFCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomViewController.h; sourceTree = "<group>"; };
+		22AD530E1730345400EC5009 /* GFCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomViewController.m; sourceTree = "<group>"; };
+		22AD53101730347700EC5009 /* GFMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFMenuViewController.h; sourceTree = "<group>"; };
+		22AD53111730347700EC5009 /* GFMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFMenuViewController.m; sourceTree = "<group>"; };
+		22AD53141730349800EC5009 /* GFNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFNavigationViewController.h; sourceTree = "<group>"; };
+		22AD53151730349800EC5009 /* GFNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFNavigationViewController.m; sourceTree = "<group>"; };
+		22AD5317173036F900EC5009 /* GFGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFGlobal.h; sourceTree = "<group>"; };
+		22AD53181730378900EC5009 /* GFCustomNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomNavBar.h; sourceTree = "<group>"; };
+		22AD53191730378900EC5009 /* GFCustomNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomNavBar.m; sourceTree = "<group>"; };
+		22AD531A1730378900EC5009 /* GFCustomToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomToolBar.h; sourceTree = "<group>"; };
+		22AD531B1730378900EC5009 /* GFCustomToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomToolBar.m; sourceTree = "<group>"; };
+		22AD531E1730403900EC5009 /* fav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fav.png; sourceTree = "<group>"; };
+		22AD531F1730403900EC5009 /* fav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav@2x.png"; sourceTree = "<group>"; };
+		22AD53201730403900EC5009 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		22AD53211730403900EC5009 /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
+		22AD53261730406F00EC5009 /* GFHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFHomeViewController.h; sourceTree = "<group>"; };
+		22AD53271730406F00EC5009 /* GFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFHomeViewController.m; sourceTree = "<group>"; };
+		22AD53291730463900EC5009 /* GFFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFavoritesViewController.h; sourceTree = "<group>"; };
+		22AD532A1730463900EC5009 /* GFFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFavoritesViewController.m; sourceTree = "<group>"; };
+		59D57EEDD53C439285FA0C8D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		FCD991ADD3EF40AD8F394E1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +75,7 @@
 				22AD52EB1730324400EC5009 /* UIKit.framework in Frameworks */,
 				22AD52ED1730324400EC5009 /* Foundation.framework in Frameworks */,
 				22AD52EF1730324400EC5009 /* CoreGraphics.framework in Frameworks */,
+				47F4B48CE43B4A1C971368DB /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				22AD52F01730324400EC5009 /* Gentse Feesten 2013 */,
+				22AD530B1730336D00EC5009 /* Resources */,
 				22AD52E91730324400EC5009 /* Frameworks */,
 				22AD52E81730324400EC5009 /* Products */,
+				59D57EEDD53C439285FA0C8D /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +107,7 @@
 				22AD52EA1730324400EC5009 /* UIKit.framework */,
 				22AD52EC1730324400EC5009 /* Foundation.framework */,
 				22AD52EE1730324400EC5009 /* CoreGraphics.framework */,
+				FCD991ADD3EF40AD8F394E1A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,8 +115,10 @@
 		22AD52F01730324400EC5009 /* Gentse Feesten 2013 */ = {
 			isa = PBXGroup;
 			children = (
-				22AD52F91730324400EC5009 /* GFAppDelegate.h */,
-				22AD52FA1730324400EC5009 /* GFAppDelegate.m */,
+				22AD53081730331800EC5009 /* Models */,
+				22AD53091730332800EC5009 /* Views */,
+				22AD530A1730334100EC5009 /* Controllers */,
+				22AD5307173032FB00EC5009 /* AppDelegate */,
 				22AD52F11730324400EC5009 /* Supporting Files */,
 			);
 			path = "Gentse Feesten 2013";
@@ -95,8 +134,72 @@
 				22AD52FC1730324400EC5009 /* Default.png */,
 				22AD52FE1730324400EC5009 /* Default@2x.png */,
 				22AD53001730324400EC5009 /* Default-568h@2x.png */,
+				22AD5317173036F900EC5009 /* GFGlobal.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22AD5307173032FB00EC5009 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				22AD52F91730324400EC5009 /* GFAppDelegate.h */,
+				22AD52FA1730324400EC5009 /* GFAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		22AD53081730331800EC5009 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22AD53091730332800EC5009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22AD53181730378900EC5009 /* GFCustomNavBar.h */,
+				22AD53191730378900EC5009 /* GFCustomNavBar.m */,
+				22AD531A1730378900EC5009 /* GFCustomToolBar.h */,
+				22AD531B1730378900EC5009 /* GFCustomToolBar.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		22AD530A1730334100EC5009 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22AD530D1730345400EC5009 /* GFCustomViewController.h */,
+				22AD530E1730345400EC5009 /* GFCustomViewController.m */,
+				22AD53101730347700EC5009 /* GFMenuViewController.h */,
+				22AD53111730347700EC5009 /* GFMenuViewController.m */,
+				22AD53141730349800EC5009 /* GFNavigationViewController.h */,
+				22AD53151730349800EC5009 /* GFNavigationViewController.m */,
+				22AD53261730406F00EC5009 /* GFHomeViewController.h */,
+				22AD53271730406F00EC5009 /* GFHomeViewController.m */,
+				22AD53291730463900EC5009 /* GFFavoritesViewController.h */,
+				22AD532A1730463900EC5009 /* GFFavoritesViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		22AD530B1730336D00EC5009 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				22AD530C1730339400EC5009 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		22AD530C1730339400EC5009 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				22AD531E1730403900EC5009 /* fav.png */,
+				22AD531F1730403900EC5009 /* fav@2x.png */,
+				22AD53201730403900EC5009 /* list.png */,
+				22AD53211730403900EC5009 /* list@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +212,7 @@
 				22AD52E31730324400EC5009 /* Sources */,
 				22AD52E41730324400EC5009 /* Frameworks */,
 				22AD52E51730324400EC5009 /* Resources */,
+				38702EFF584244A48B5D8DED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,10 +259,31 @@
 				22AD52FD1730324400EC5009 /* Default.png in Resources */,
 				22AD52FF1730324400EC5009 /* Default@2x.png in Resources */,
 				22AD53011730324400EC5009 /* Default-568h@2x.png in Resources */,
+				22AD53221730403900EC5009 /* fav.png in Resources */,
+				22AD53231730403900EC5009 /* fav@2x.png in Resources */,
+				22AD53241730403900EC5009 /* list.png in Resources */,
+				22AD53251730403900EC5009 /* list@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38702EFF584244A48B5D8DED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22AD52E31730324400EC5009 /* Sources */ = {
@@ -167,6 +292,13 @@
 			files = (
 				22AD52F71730324400EC5009 /* main.m in Sources */,
 				22AD52FB1730324400EC5009 /* GFAppDelegate.m in Sources */,
+				22AD530F1730345400EC5009 /* GFCustomViewController.m in Sources */,
+				22AD53121730347700EC5009 /* GFMenuViewController.m in Sources */,
+				22AD53161730349800EC5009 /* GFNavigationViewController.m in Sources */,
+				22AD531C1730378900EC5009 /* GFCustomNavBar.m in Sources */,
+				22AD531D1730378900EC5009 /* GFCustomToolBar.m in Sources */,
+				22AD53281730406F00EC5009 /* GFHomeViewController.m in Sources */,
+				22AD532B1730463900EC5009 /* GFFavoritesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,10 +374,12 @@
 		};
 		22AD53051730324400EC5009 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59D57EEDD53C439285FA0C8D /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gentse Feesten 2013/Gentse Feesten 2013-Prefix.pch";
 				INFOPLIST_FILE = "Gentse Feesten 2013/Gentse Feesten 2013-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -253,14 +387,55 @@
 		};
 		22AD53061730324400EC5009 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59D57EEDD53C439285FA0C8D /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gentse Feesten 2013/Gentse Feesten 2013-Prefix.pch";
 				INFOPLIST_FILE = "Gentse Feesten 2013/Gentse Feesten 2013-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
+		};
+		22AD532C17304B9100EC5009 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tim Leytens";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B6F58A18-2DDD-4EBC-B428-9D5B8E1EF784";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Adhoc;
+		};
+		22AD532D17304B9100EC5009 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59D57EEDD53C439285FA0C8D /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gentse Feesten 2013/Gentse Feesten 2013-Prefix.pch";
+				INFOPLIST_FILE = "Gentse Feesten 2013/Gentse Feesten 2013-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Adhoc;
 		};
 /* End XCBuildConfiguration section */
 
@@ -270,6 +445,7 @@
 			buildConfigurations = (
 				22AD53021730324400EC5009 /* Debug */,
 				22AD53031730324400EC5009 /* Release */,
+				22AD532C17304B9100EC5009 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -279,8 +455,10 @@
 			buildConfigurations = (
 				22AD53051730324400EC5009 /* Debug */,
 				22AD53061730324400EC5009 /* Release */,
+				22AD532D17304B9100EC5009 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,17 @@
+
+PODS: 
+- AFNetworking (1.2.1)
+- NVSlideMenuController (1.4.3)
+- SDURLCache (1.2)
+
+COCOAPODS: 0.16.4
+
+SPEC CHECKSUMS: 
+  NVSlideMenuController: 79712443b169cc5717b824e64e6c29da862abcbf
+  AFNetworking: 616da0028916ce296f5c3cef74e5552eb4e10e13
+  SDURLCache: cf4dcdd0d01473c334e9338e82a8733de156ef15
+
+DEPENDENCIES: 
+- AFNetworking (~> 1.2.0)
+- NVSlideMenuController (~> 1.4.3)
+- SDURLCache (~> 1.2)

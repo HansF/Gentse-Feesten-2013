@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GFMenuViewController.h"
+#import "GFNavigationViewController.h"
+
 @interface GFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (nonatomic, strong) GFMenuViewController *menuViewController;
+
+@property (nonatomic, strong) GFNavigationViewController *navigationViewController;
 
 @end
