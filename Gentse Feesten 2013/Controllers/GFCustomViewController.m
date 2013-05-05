@@ -10,7 +10,7 @@
 
 #import "NVSlideMenuController.h"
 
-#import "GFFavoritesViewController.h"
+#import "GFFavoritesModalViewController.h"
 
 
 @interface GFCustomViewController ()
@@ -60,7 +60,7 @@
 
 
 - (void)openFavoritesView:(id)sender {
-    GFFavoritesViewController *favoritesViewController = [[GFFavoritesViewController alloc] init];
+    GFFavoritesModalViewController *favoritesViewController = [[GFFavoritesModalViewController alloc] init];
     [self presentModalViewController:favoritesViewController animated:YES];
 }
 

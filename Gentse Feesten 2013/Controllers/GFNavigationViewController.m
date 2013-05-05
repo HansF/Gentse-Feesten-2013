@@ -10,8 +10,6 @@
 
 #import "GFCustomNavBar.h"
 
-#import "NVSlideMenuController.h"
-
 @interface GFNavigationViewController ()
 
 

@@ -28,6 +28,12 @@
 		22AD53251730403900EC5009 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AD53211730403900EC5009 /* list@2x.png */; };
 		22AD53281730406F00EC5009 /* GFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD53271730406F00EC5009 /* GFHomeViewController.m */; };
 		22AD532B1730463900EC5009 /* GFFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD532A1730463900EC5009 /* GFFavoritesViewController.m */; };
+		22B07F1317364F47009FF4AB /* GFFavoritesModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B07F1217364F47009FF4AB /* GFFavoritesModalViewController.m */; };
+		22B07F1617365139009FF4AB /* GFProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B07F1517365139009FF4AB /* GFProgramViewController.m */; };
+		22B07F1817365DBC009FF4AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B07F1717365DBC009FF4AB /* QuartzCore.framework */; };
+		22B07F1B17365F41009FF4AB /* GFCalendarCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B07F1A17365F41009FF4AB /* GFCalendarCategoryViewController.m */; };
+		22B07F1E17365F5E009FF4AB /* GFCalendarFreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B07F1D17365F5E009FF4AB /* GFCalendarFreeViewController.m */; };
+		22B07F2117365F74009FF4AB /* GFCalendarFestivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B07F2017365F74009FF4AB /* GFCalendarFestivalViewController.m */; };
 		22C055091730F4E900A469CD /* GFCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C055081730F4E900A469CD /* GFCustomLabel.m */; };
 		22C0550C1730F60700A469CD /* GFCustomYellowLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0550B1730F60700A469CD /* GFCustomYellowLabel.m */; };
 		22C0550F1730FCFB00A469CD /* cellbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C0550D1730FCFB00A469CD /* cellbackground.png */; };
@@ -77,6 +83,17 @@
 		22AD53271730406F00EC5009 /* GFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFHomeViewController.m; sourceTree = "<group>"; };
 		22AD53291730463900EC5009 /* GFFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFavoritesViewController.h; sourceTree = "<group>"; };
 		22AD532A1730463900EC5009 /* GFFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFavoritesViewController.m; sourceTree = "<group>"; };
+		22B07F1117364F47009FF4AB /* GFFavoritesModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFavoritesModalViewController.h; sourceTree = "<group>"; };
+		22B07F1217364F47009FF4AB /* GFFavoritesModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFavoritesModalViewController.m; sourceTree = "<group>"; };
+		22B07F1417365139009FF4AB /* GFProgramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFProgramViewController.h; sourceTree = "<group>"; };
+		22B07F1517365139009FF4AB /* GFProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFProgramViewController.m; sourceTree = "<group>"; };
+		22B07F1717365DBC009FF4AB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		22B07F1917365F41009FF4AB /* GFCalendarCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendarCategoryViewController.h; sourceTree = "<group>"; };
+		22B07F1A17365F41009FF4AB /* GFCalendarCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCalendarCategoryViewController.m; sourceTree = "<group>"; };
+		22B07F1C17365F5E009FF4AB /* GFCalendarFreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendarFreeViewController.h; sourceTree = "<group>"; };
+		22B07F1D17365F5E009FF4AB /* GFCalendarFreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCalendarFreeViewController.m; sourceTree = "<group>"; };
+		22B07F1F17365F74009FF4AB /* GFCalendarFestivalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCalendarFestivalViewController.h; sourceTree = "<group>"; };
+		22B07F2017365F74009FF4AB /* GFCalendarFestivalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCalendarFestivalViewController.m; sourceTree = "<group>"; };
 		22C055071730F4E900A469CD /* GFCustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomLabel.h; sourceTree = "<group>"; };
 		22C055081730F4E900A469CD /* GFCustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomLabel.m; sourceTree = "<group>"; };
 		22C0550A1730F60700A469CD /* GFCustomYellowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomYellowLabel.h; sourceTree = "<group>"; };
@@ -103,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B07F1817365DBC009FF4AB /* QuartzCore.framework in Frameworks */,
 				22C924E017353D0A00C4BF81 /* MapKit.framework in Frameworks */,
 				22AD52EB1730324400EC5009 /* UIKit.framework in Frameworks */,
 				22AD52ED1730324400EC5009 /* Foundation.framework in Frameworks */,
@@ -117,6 +135,7 @@
 		22AD52DE1730324300EC5009 = {
 			isa = PBXGroup;
 			children = (
+				22B07F1717365DBC009FF4AB /* QuartzCore.framework */,
 				22C924DF17353D0A00C4BF81 /* MapKit.framework */,
 				22AD52F01730324400EC5009 /* Gentse Feesten 2013 */,
 				22AD530B1730336D00EC5009 /* Resources */,
@@ -218,14 +237,24 @@
 				22AD53151730349800EC5009 /* GFNavigationViewController.m */,
 				22AD53261730406F00EC5009 /* GFHomeViewController.h */,
 				22AD53271730406F00EC5009 /* GFHomeViewController.m */,
-				22AD53291730463900EC5009 /* GFFavoritesViewController.h */,
-				22AD532A1730463900EC5009 /* GFFavoritesViewController.m */,
 				22C924DC1735392C00C4BF81 /* GFPoiMapViewController.h */,
 				22C924DD1735392C00C4BF81 /* GFPoiMapViewController.m */,
 				22C924E117363C8B00C4BF81 /* GFAboutViewController.h */,
 				22C924E217363C8B00C4BF81 /* GFAboutViewController.m */,
 				22C924E41736403500C4BF81 /* GFSettingsViewController.h */,
 				22C924E51736403500C4BF81 /* GFSettingsViewController.m */,
+				22AD53291730463900EC5009 /* GFFavoritesViewController.h */,
+				22AD532A1730463900EC5009 /* GFFavoritesViewController.m */,
+				22B07F1117364F47009FF4AB /* GFFavoritesModalViewController.h */,
+				22B07F1217364F47009FF4AB /* GFFavoritesModalViewController.m */,
+				22B07F1417365139009FF4AB /* GFProgramViewController.h */,
+				22B07F1517365139009FF4AB /* GFProgramViewController.m */,
+				22B07F1917365F41009FF4AB /* GFCalendarCategoryViewController.h */,
+				22B07F1A17365F41009FF4AB /* GFCalendarCategoryViewController.m */,
+				22B07F1C17365F5E009FF4AB /* GFCalendarFreeViewController.h */,
+				22B07F1D17365F5E009FF4AB /* GFCalendarFreeViewController.m */,
+				22B07F1F17365F74009FF4AB /* GFCalendarFestivalViewController.h */,
+				22B07F2017365F74009FF4AB /* GFCalendarFestivalViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -361,6 +390,11 @@
 				22C924DE1735392C00C4BF81 /* GFPoiMapViewController.m in Sources */,
 				22C924E317363C8B00C4BF81 /* GFAboutViewController.m in Sources */,
 				22C924E61736403600C4BF81 /* GFSettingsViewController.m in Sources */,
+				22B07F1317364F47009FF4AB /* GFFavoritesModalViewController.m in Sources */,
+				22B07F1617365139009FF4AB /* GFProgramViewController.m in Sources */,
+				22B07F1B17365F41009FF4AB /* GFCalendarCategoryViewController.m in Sources */,
+				22B07F1E17365F5E009FF4AB /* GFCalendarFreeViewController.m in Sources */,
+				22B07F2117365F74009FF4AB /* GFCalendarFestivalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

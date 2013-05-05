@@ -13,16 +13,16 @@
 #import "GFCustomToolBar.h"
 
 #import "GFCustomViewController.h"
-
 #import "GFPoiMapViewController.h"
-
 #import "GFHomeViewController.h"
-
 #import "GFNavigationViewController.h"
-
 #import "GFAboutViewController.h"
-
 #import "GFSettingsViewController.h"
+#import "GFFavoritesViewController.h"
+#import "GFProgramViewController.h"
+#import "GFCalendarCategoryViewController.h"
+#import "GFCalendarFreeViewController.h"
+#import "GFCalendarFestivalViewController.h"
 
 @interface GFMenuViewController() <UISearchDisplayDelegate>
 
@@ -70,26 +70,31 @@
               @"Mijn favorieten", @"title",
               [NSNumber numberWithBool:YES], @"bold",
               @"home.png", @"icon",
+              @"favorites", @"view",
               nil],
              [[NSMutableDictionary alloc] initWithObjectsAndKeys:
               @"Programma", @"title",
               [NSNumber numberWithBool:YES], @"bold",
               @"home.png", @"icon",
+              @"program", @"view",
               nil],
              [[NSMutableDictionary alloc] initWithObjectsAndKeys:
               @"Themakalender", @"title",
               [NSNumber numberWithBool:NO], @"bold",
               @"", @"icon",
+              @"thema", @"view",
               nil],
              [[NSMutableDictionary alloc] initWithObjectsAndKeys:
               @"Gratis", @"title",
               [NSNumber numberWithBool:NO], @"bold",
               @"", @"icon",
+              @"free", @"view",
               nil],
              [[NSMutableDictionary alloc] initWithObjectsAndKeys:
               @"Festivals", @"title",
               [NSNumber numberWithBool:NO], @"bold",
               @"", @"icon",
+              @"festival", @"view",
               nil],
              [[NSMutableDictionary alloc] initWithObjectsAndKeys:
               @"Praktisch", @"title",
@@ -262,28 +267,54 @@
         [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                       detailViewController,
                                                       nil]];
-
     }
     else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"about"]) {
         GFAboutViewController *detailViewController = [[GFAboutViewController alloc] initWithNibName:nil bundle:nil];
         [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                       detailViewController,
                                                       nil]];
-
     }
     else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"settings"]) {
         GFSettingsViewController *detailViewController = [[GFSettingsViewController alloc] initWithNibName:nil bundle:nil];
         [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                       detailViewController,
                                                       nil]];
-
+    }
+    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"favorites"]) {
+        GFFavoritesViewController *detailViewController = [[GFFavoritesViewController alloc] initWithNibName:nil bundle:nil];
+        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                      detailViewController,
+                                                      nil]];
+    }
+    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"program"]) {
+        GFProgramViewController *detailViewController = [[GFProgramViewController alloc] initWithNibName:nil bundle:nil];
+        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                      detailViewController,
+                                                      nil]];
+    }
+    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"free"]) {
+        GFCalendarFreeViewController *detailViewController = [[GFCalendarFreeViewController alloc] initWithNibName:nil bundle:nil];
+        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                      detailViewController,
+                                                      nil]];
+    }
+    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"thema"]) {
+        GFCalendarCategoryViewController *detailViewController = [[GFCalendarCategoryViewController alloc] initWithNibName:nil bundle:nil];
+        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                      detailViewController,
+                                                      nil]];
+    }
+    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"festival"]) {
+        GFCalendarFestivalViewController *detailViewController = [[GFCalendarFestivalViewController alloc] initWithNibName:nil bundle:nil];
+        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                      detailViewController,
+                                                      nil]];
     }
     else {
         GFPoiMapViewController *detailViewController = [[GFPoiMapViewController alloc] initWithNibName:nil bundle:nil];
         [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                       detailViewController,
                                                       nil]];
-
     }
     
     [self.slideMenuController closeMenuBehindContentViewController:navigationViewController animated:YES completion:nil];

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GFFavoritesViewController : UIViewController
+#import "GFCustomViewController.h"
+
+@interface GFFavoritesViewController : GFCustomViewController
 
 @end
