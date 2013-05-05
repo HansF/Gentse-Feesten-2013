@@ -17,6 +17,4 @@
 
 @property (nonatomic, strong) GFMenuViewController *menuViewController;
 
-@property (nonatomic, strong) GFNavigationViewController *navigationViewController;
-
 @end

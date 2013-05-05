@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221E5BA41730D778000B9A9C /* PTN57F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 221E5BA31730D778000B9A9C /* PTN57F.ttf */; };
 		22AD52EB1730324400EC5009 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD52EA1730324400EC5009 /* UIKit.framework */; };
 		22AD52ED1730324400EC5009 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD52EC1730324400EC5009 /* Foundation.framework */; };
 		22AD52EF1730324400EC5009 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD52EE1730324400EC5009 /* CoreGraphics.framework */; };
@@ -27,10 +28,23 @@
 		22AD53251730403900EC5009 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AD53211730403900EC5009 /* list@2x.png */; };
 		22AD53281730406F00EC5009 /* GFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD53271730406F00EC5009 /* GFHomeViewController.m */; };
 		22AD532B1730463900EC5009 /* GFFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AD532A1730463900EC5009 /* GFFavoritesViewController.m */; };
+		22C055091730F4E900A469CD /* GFCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C055081730F4E900A469CD /* GFCustomLabel.m */; };
+		22C0550C1730F60700A469CD /* GFCustomYellowLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0550B1730F60700A469CD /* GFCustomYellowLabel.m */; };
+		22C0550F1730FCFB00A469CD /* cellbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C0550D1730FCFB00A469CD /* cellbackground.png */; };
+		22C055101730FCFB00A469CD /* cellbackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C0550E1730FCFB00A469CD /* cellbackground@2x.png */; };
+		22C924D117350F6B00C4BF81 /* PTN77F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C924D017350F6B00C4BF81 /* PTN77F.ttf */; };
+		22C924D3173517A400C4BF81 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C924D2173517A400C4BF81 /* home.png */; };
+		22C924D8173535D900C4BF81 /* tableBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C924D4173535D800C4BF81 /* tableBottom.png */; };
+		22C924DA173535D900C4BF81 /* tableTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C924D6173535D800C4BF81 /* tableTop.png */; };
+		22C924DE1735392C00C4BF81 /* GFPoiMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924DD1735392C00C4BF81 /* GFPoiMapViewController.m */; };
+		22C924E017353D0A00C4BF81 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C924DF17353D0A00C4BF81 /* MapKit.framework */; };
+		22C924E317363C8B00C4BF81 /* GFAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924E217363C8B00C4BF81 /* GFAboutViewController.m */; };
+		22C924E61736403600C4BF81 /* GFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924E51736403500C4BF81 /* GFSettingsViewController.m */; };
 		47F4B48CE43B4A1C971368DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD991ADD3EF40AD8F394E1A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221E5BA31730D778000B9A9C /* PTN57F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN57F.ttf; sourceTree = "<group>"; };
 		22AD52E71730324400EC5009 /* Gentse Feesten 2013.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gentse Feesten 2013.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AD52EA1730324400EC5009 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22AD52EC1730324400EC5009 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +77,23 @@
 		22AD53271730406F00EC5009 /* GFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFHomeViewController.m; sourceTree = "<group>"; };
 		22AD53291730463900EC5009 /* GFFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFavoritesViewController.h; sourceTree = "<group>"; };
 		22AD532A1730463900EC5009 /* GFFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFavoritesViewController.m; sourceTree = "<group>"; };
+		22C055071730F4E900A469CD /* GFCustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomLabel.h; sourceTree = "<group>"; };
+		22C055081730F4E900A469CD /* GFCustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomLabel.m; sourceTree = "<group>"; };
+		22C0550A1730F60700A469CD /* GFCustomYellowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomYellowLabel.h; sourceTree = "<group>"; };
+		22C0550B1730F60700A469CD /* GFCustomYellowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomYellowLabel.m; sourceTree = "<group>"; };
+		22C0550D1730FCFB00A469CD /* cellbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellbackground.png; sourceTree = "<group>"; };
+		22C0550E1730FCFB00A469CD /* cellbackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellbackground@2x.png"; sourceTree = "<group>"; };
+		22C924D017350F6B00C4BF81 /* PTN77F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN77F.ttf; sourceTree = "<group>"; };
+		22C924D2173517A400C4BF81 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		22C924D4173535D800C4BF81 /* tableBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableBottom.png; sourceTree = "<group>"; };
+		22C924D6173535D800C4BF81 /* tableTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableTop.png; sourceTree = "<group>"; };
+		22C924DC1735392C00C4BF81 /* GFPoiMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFPoiMapViewController.h; sourceTree = "<group>"; };
+		22C924DD1735392C00C4BF81 /* GFPoiMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFPoiMapViewController.m; sourceTree = "<group>"; };
+		22C924DF17353D0A00C4BF81 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		22C924E117363C8B00C4BF81 /* GFAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFAboutViewController.h; sourceTree = "<group>"; };
+		22C924E217363C8B00C4BF81 /* GFAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFAboutViewController.m; sourceTree = "<group>"; };
+		22C924E41736403500C4BF81 /* GFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSettingsViewController.h; sourceTree = "<group>"; };
+		22C924E51736403500C4BF81 /* GFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSettingsViewController.m; sourceTree = "<group>"; };
 		59D57EEDD53C439285FA0C8D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		FCD991ADD3EF40AD8F394E1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C924E017353D0A00C4BF81 /* MapKit.framework in Frameworks */,
 				22AD52EB1730324400EC5009 /* UIKit.framework in Frameworks */,
 				22AD52ED1730324400EC5009 /* Foundation.framework in Frameworks */,
 				22AD52EF1730324400EC5009 /* CoreGraphics.framework in Frameworks */,
@@ -85,6 +117,7 @@
 		22AD52DE1730324300EC5009 = {
 			isa = PBXGroup;
 			children = (
+				22C924DF17353D0A00C4BF81 /* MapKit.framework */,
 				22AD52F01730324400EC5009 /* Gentse Feesten 2013 */,
 				22AD530B1730336D00EC5009 /* Resources */,
 				22AD52E91730324400EC5009 /* Frameworks */,
@@ -127,6 +160,10 @@
 		22AD52F11730324400EC5009 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22C924D4173535D800C4BF81 /* tableBottom.png */,
+				22C924D6173535D800C4BF81 /* tableTop.png */,
+				22C924D017350F6B00C4BF81 /* PTN77F.ttf */,
+				221E5BA31730D778000B9A9C /* PTN57F.ttf */,
 				22AD52F21730324400EC5009 /* Gentse Feesten 2013-Info.plist */,
 				22AD52F31730324400EC5009 /* InfoPlist.strings */,
 				22AD52F61730324400EC5009 /* main.m */,
@@ -162,6 +199,10 @@
 				22AD53191730378900EC5009 /* GFCustomNavBar.m */,
 				22AD531A1730378900EC5009 /* GFCustomToolBar.h */,
 				22AD531B1730378900EC5009 /* GFCustomToolBar.m */,
+				22C055071730F4E900A469CD /* GFCustomLabel.h */,
+				22C055081730F4E900A469CD /* GFCustomLabel.m */,
+				22C0550A1730F60700A469CD /* GFCustomYellowLabel.h */,
+				22C0550B1730F60700A469CD /* GFCustomYellowLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +220,12 @@
 				22AD53271730406F00EC5009 /* GFHomeViewController.m */,
 				22AD53291730463900EC5009 /* GFFavoritesViewController.h */,
 				22AD532A1730463900EC5009 /* GFFavoritesViewController.m */,
+				22C924DC1735392C00C4BF81 /* GFPoiMapViewController.h */,
+				22C924DD1735392C00C4BF81 /* GFPoiMapViewController.m */,
+				22C924E117363C8B00C4BF81 /* GFAboutViewController.h */,
+				22C924E217363C8B00C4BF81 /* GFAboutViewController.m */,
+				22C924E41736403500C4BF81 /* GFSettingsViewController.h */,
+				22C924E51736403500C4BF81 /* GFSettingsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,6 +241,9 @@
 		22AD530C1730339400EC5009 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22C924D2173517A400C4BF81 /* home.png */,
+				22C0550D1730FCFB00A469CD /* cellbackground.png */,
+				22C0550E1730FCFB00A469CD /* cellbackground@2x.png */,
 				22AD531E1730403900EC5009 /* fav.png */,
 				22AD531F1730403900EC5009 /* fav@2x.png */,
 				22AD53201730403900EC5009 /* list.png */,
@@ -263,6 +313,13 @@
 				22AD53231730403900EC5009 /* fav@2x.png in Resources */,
 				22AD53241730403900EC5009 /* list.png in Resources */,
 				22AD53251730403900EC5009 /* list@2x.png in Resources */,
+				221E5BA41730D778000B9A9C /* PTN57F.ttf in Resources */,
+				22C0550F1730FCFB00A469CD /* cellbackground.png in Resources */,
+				22C055101730FCFB00A469CD /* cellbackground@2x.png in Resources */,
+				22C924D117350F6B00C4BF81 /* PTN77F.ttf in Resources */,
+				22C924D3173517A400C4BF81 /* home.png in Resources */,
+				22C924D8173535D900C4BF81 /* tableBottom.png in Resources */,
+				22C924DA173535D900C4BF81 /* tableTop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +356,11 @@
 				22AD531D1730378900EC5009 /* GFCustomToolBar.m in Sources */,
 				22AD53281730406F00EC5009 /* GFHomeViewController.m in Sources */,
 				22AD532B1730463900EC5009 /* GFFavoritesViewController.m in Sources */,
+				22C055091730F4E900A469CD /* GFCustomLabel.m in Sources */,
+				22C0550C1730F60700A469CD /* GFCustomYellowLabel.m in Sources */,
+				22C924DE1735392C00C4BF81 /* GFPoiMapViewController.m in Sources */,
+				22C924E317363C8B00C4BF81 /* GFAboutViewController.m in Sources */,
+				22C924E61736403600C4BF81 /* GFSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

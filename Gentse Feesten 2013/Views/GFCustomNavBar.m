@@ -14,6 +14,17 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake((320 - 80) / 2, 10, 80, 30)];
+        title.text = @"#GF13";
+        title.textColor = [UIColor whiteColor];
+        title.shadowColor = [UIColor blackColor];
+        title.shadowOffset = CGSizeMake(0, 1);
+        title.font = [UIFont fontWithName:@"PT Sans Narrow" size:28.0];
+        title.backgroundColor = [UIColor clearColor];
+        title.textAlignment = UITextAlignmentCenter;
+        title.backgroundColor = UIColorFromRGB(0x007390);
+        
+        [self addSubview:title];
     }
     return self;
 }

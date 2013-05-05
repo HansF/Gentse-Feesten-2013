@@ -8,11 +8,12 @@
 
 #import "GFCustomViewController.h"
 
+#import "NVSlideMenuController.h"
+
 #import "GFFavoritesViewController.h"
 
-@interface GFCustomViewController ()
 
-@property (nonatomic, strong) GFFavoritesViewController *favoritesViewController;
+@interface GFCustomViewController ()
 
 @end
 
@@ -43,7 +44,7 @@
     [favButton setBackgroundImage:favButtonImage forState:UIControlStateNormal];
     [favButton setBackgroundImage:favButtonImageActive forState:UIControlStateHighlighted];
 
-    [favButton setFrame:CGRectMake(0, 0, favButtonImage.size.width, favButtonImage.size.height)];
+    [favButton setFrame:CGRectMake(0, 1, favButtonImage.size.width, favButtonImage.size.height)];
 
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, favButtonImage.size.width, favButtonImage.size.height)];
 
@@ -59,8 +60,43 @@
 
 
 - (void)openFavoritesView:(id)sender {
-    _favoritesViewController = [[GFFavoritesViewController alloc] init];
-    [self presentModalViewController:_favoritesViewController animated:YES];
+    GFFavoritesViewController *favoritesViewController = [[GFFavoritesViewController alloc] init];
+    [self presentModalViewController:favoritesViewController animated:YES];
 }
+
+
+- (UIBarButtonItem *)showMenuButton {
+
+    UIImage *menuButtonImage = [UIImage imageNamed:@"list.png"];
+    UIImage *menuButtonImageActive = [UIImage imageNamed:@"list.png"];
+    UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
+
+    [menuButton setBackgroundImage:menuButtonImage forState:UIControlStateNormal];
+    [menuButton setBackgroundImage:menuButtonImageActive forState:UIControlStateHighlighted];
+
+    [menuButton setFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
+
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
+
+    [menuButton addTarget:self
+                   action:@selector(openMenuView:)
+         forControlEvents:UIControlEventTouchDown];
+
+    [containerView addSubview:menuButton];
+
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:containerView];
+    return item;
+}
+
+
+- (void)openMenuView:(id)sender {
+    if (self.slideMenuController.isMenuOpen) {
+        [self.slideMenuController closeMenuAnimated:YES completion:nil];
+    }
+    else {
+        [self.slideMenuController openMenuAnimated:YES completion:nil];
+    }
+}
+
 
 @end

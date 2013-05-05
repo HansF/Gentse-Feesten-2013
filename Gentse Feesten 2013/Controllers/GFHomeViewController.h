@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Tim Leytens. All rights reserved.
 //
 
-#import "GFCustomViewController.h"
-
 #import <UIKit/UIKit.h>
 
-@interface GFHomeViewController : GFCustomViewController
+#import "GFCustomViewController.h"
+
+@interface GFHomeViewController : GFCustomViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

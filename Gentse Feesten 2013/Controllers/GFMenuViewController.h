@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GFMenuViewController : UIViewController
+@interface GFMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

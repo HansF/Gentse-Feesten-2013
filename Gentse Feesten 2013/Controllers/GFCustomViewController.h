@@ -10,4 +10,6 @@
 
 @interface GFCustomViewController : UIViewController
 
+- (UIBarButtonItem *)showMenuButton;
+
 @end

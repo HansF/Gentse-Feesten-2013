@@ -10,13 +10,10 @@
 
 #import "GFCustomNavBar.h"
 
-#import "GFHomeViewController.h"
-
 #import "NVSlideMenuController.h"
 
 @interface GFNavigationViewController ()
 
-@property (nonatomic, strong) GFHomeViewController *homeViewController;
 
 @end
 
@@ -27,13 +24,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.view.backgroundColor = UIColorFromRGB(0x005470);
+        
         [self setValue:[[GFCustomNavBar alloc]init] forKeyPath:@"navigationBar"];
-
-        _homeViewController = [[GFHomeViewController alloc] initWithNibName:nil bundle:NULL];
-
-        [self setViewControllers:[[NSArray alloc] initWithObjects:
-                                  _homeViewController,
-                                  nil]];
 
     }
     return self;

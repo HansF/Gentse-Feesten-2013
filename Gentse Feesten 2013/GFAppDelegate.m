@@ -9,7 +9,14 @@
 #import "GFAppDelegate.h"
 
 #import "SDURLCache.h"
+
 #import "NVSlideMenuController.h"
+
+#import "GFHomeViewController.h"
+
+@interface GFAppDelegate()
+
+@end
 
 @implementation GFAppDelegate
 
@@ -20,12 +27,18 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
-    _navigationViewController = [[GFNavigationViewController alloc] initWithNibName:nil bundle:NULL];
+    GFNavigationViewController *navigationViewController = [[GFNavigationViewController alloc] initWithNibName:nil bundle:NULL];
+
+    GFHomeViewController *homeViewController = [[GFHomeViewController alloc] initWithNibName:nil bundle:NULL];
+
+    [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                              homeViewController,
+                              nil]];
 
     _menuViewController = [[GFMenuViewController alloc] initWithNibName:nil bundle:NULL];
 
     NVSlideMenuController *slideMenuVC = [[NVSlideMenuController alloc] initWithMenuViewController:_menuViewController
-                                                                          andContentViewController:_navigationViewController];
+                                                                          andContentViewController:navigationViewController];
 
 	self.window.rootViewController = slideMenuVC;
     
