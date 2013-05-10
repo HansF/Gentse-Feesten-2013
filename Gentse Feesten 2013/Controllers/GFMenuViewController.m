@@ -197,60 +197,64 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 38;
+    return 39;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+    UILabel *title;
+
     static NSString *cellIdentifer = @"cell";
 
     UITableViewCell *cell = [_menuTableView dequeueReusableCellWithIdentifier:cellIdentifer];
 
-    if (cell == nil) {
+    if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
-    }
 
-    if (tableView == _menuTableView) {
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, self.view.frame.size.width - 50, 38)];
+        if (tableView == _menuTableView) {
+            title = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, self.view.frame.size.width - 50, 38)];
 
-        title.textColor = UIColorFromRGB(0x7eb5c2);
-        title.shadowColor = [UIColor blackColor];
-        title.shadowOffset = CGSizeMake(0, 1);
-        if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"bold"] integerValue] == 1) {
-            title.font = [UIFont fontWithName:@"PTSans-NarrowBold" size:20.0];
+            title.textColor = UIColorFromRGB(0x7eb5c2);
+            title.shadowColor = [UIColor blackColor];
+            title.shadowOffset = CGSizeMake(0, 1);
+            title.tag = 1;
+            if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"bold"] integerValue] == 1) {
+                title.font = [UIFont fontWithName:@"PTSans-NarrowBold" size:20.0];
+            }
+            else {
+                title.font = [UIFont fontWithName:@"PTSans-Narrow" size:20.0];
+                UIView *myBackView = [[UIView alloc] initWithFrame:cell.frame];
+                myBackView.backgroundColor = UIColorFromRGB(0x0e3845);
+                cell.backgroundView = myBackView;
+            }
+            title.backgroundColor = [UIColor clearColor];
+            title.highlightedTextColor = [UIColor whiteColor];
+            [title setText:[[_menu objectAtIndex:indexPath.row] objectForKey:@"title"]];
+            [cell.contentView addSubview:title];
+
+            cell.accessoryType = UITableViewCellAccessoryNone;
+
+            UIView *mySelectedBackView = [[UIView alloc] initWithFrame:cell.frame];
+            mySelectedBackView.backgroundColor = UIColorFromRGB(0xe64a45);
+            cell.selectedBackgroundView = mySelectedBackView;
+
+            if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"] length] != 0) {
+                UIImage *image = [UIImage imageNamed:[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"]];
+                UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (38 - image.size.height) / 2 , image.size.width, image.size.height)];
+                [imgView setImage:image];
+                
+                imgView.tag = 2;
+                [cell.contentView addSubview:imgView];
+            }
         }
-        else {
-            title.font = [UIFont fontWithName:@"PTSans-Narrow" size:20.0];
-            UIView *myBackView = [[UIView alloc] initWithFrame:cell.frame];
-            myBackView.backgroundColor = UIColorFromRGB(0x0e3845);
-            cell.backgroundView = myBackView;
-        }
-        title.backgroundColor = [UIColor clearColor];
-        title.highlightedTextColor = [UIColor whiteColor];
-        [title setText:[[_menu objectAtIndex:indexPath.row] objectForKey:@"title"]];
-        [cell.contentView addSubview:title];
 
-        cell.accessoryType = UITableViewCellAccessoryNone;
-
-        UIView *mySelectedBackView = [[UIView alloc] initWithFrame:cell.frame];
-        mySelectedBackView.backgroundColor = UIColorFromRGB(0xe64a45);
-        cell.selectedBackgroundView = mySelectedBackView;
-
-        if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"] length] != 0) {
-            UIImage *image = [UIImage imageNamed:[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"]];
-            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (38 - image.size.height) / 2 , image.size.width, image.size.height)];
-            [imgView setImage:image];
-            
-            imgView.tag = 1;
-            [cell.contentView addSubview:imgView];
-        }
     }
     else {
-
+        title = (UILabel *) [cell.contentView viewWithTag:1];
+        title.text = [[_menu objectAtIndex:indexPath.row] objectForKey:@"title"];
     }
-
 
     return cell;
 }

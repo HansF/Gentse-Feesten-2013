@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Tim Leytens. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "GFHomeViewController.h"
 
 #import "GFCustomLabel.h"
@@ -76,6 +78,11 @@
     return 5;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 55;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
@@ -87,20 +94,41 @@
 
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
 
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 260, 44)];
-        title.font = [UIFont boldSystemFontOfSize:18];
+        UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(padding, 0, self.view.frame.size.width - 2 - (padding * 4), 55)];
+        containerView.backgroundColor = indexPath.row % 2 == 0 ? [UIColor whiteColor] : UIColorFromRGB(0xf5f5f5);
+
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(padding, 0, self.view.frame.size.width - 2 - (padding * 6), 55)];
+        title.font = [UIFont fontWithName:@"PTSans-Narrow" size:20.0];
         title.textColor = [UIColor darkGrayColor];
         title.highlightedTextColor = [UIColor whiteColor];
-        title.backgroundColor = [UIColor whiteColor];
-        [title setText:@"String"];
-        [cell.contentView addSubview:title];
+        [title setText:@"Titel 1"];
+        title.backgroundColor = indexPath.row % 2 == 0 ? [UIColor whiteColor] : UIColorFromRGB(0xf5f5f5);
+
+        [containerView addSubview:title];
+
+        CALayer *bottomBorder = [CALayer layer];
+
+        bottomBorder.frame = CGRectMake(0, 55, containerView.frame.size.width, 1);
+
+        bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+                                                         alpha:1.0f].CGColor;
+
+        [containerView.layer addSublayer:bottomBorder];
+
+        [cell.contentView addSubview:containerView];
 
         cell.accessoryType = UITableViewCellAccessoryNone;
 
-        UIView *myBackView = [[UIView alloc] initWithFrame:cell.frame];
         UIImage *backgroundImage = [UIImage imageNamed:@"cellbackground.png"];
+
+        UIView *myBackView = [[UIView alloc] initWithFrame:cell.frame];
         myBackView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
         cell.backgroundView = myBackView;
+
+        UIView *mySelectedBackView = [[UIView alloc] initWithFrame:CGRectMake(padding * 2, 0, cell.frame.size.width - (padding * 2), cell.frame.size.height)];
+        mySelectedBackView.backgroundColor = UIColorFromRGB(0xe64a45);
+        cell.selectedBackgroundView = mySelectedBackView;
+
     }
 
     return cell;
@@ -129,8 +157,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    
+    [_tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 

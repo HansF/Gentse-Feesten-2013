@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		221E5BA41730D778000B9A9C /* PTN57F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 221E5BA31730D778000B9A9C /* PTN57F.ttf */; };
+		224E9CAE173CC61200F53410 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CAD173CC61200F53410 /* icon.png */; };
+		224E9CB0173CC61700F53410 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CAF173CC61700F53410 /* icon@2x.png */; };
+		224E9CB6173CC6E500F53410 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CB5173CC6E500F53410 /* Default-568h@2x.png */; };
+		224E9CB8173CC6EB00F53410 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CB7173CC6EB00F53410 /* Default@2x.png */; };
+		224E9CBA173CC6F000F53410 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CB9173CC6F000F53410 /* Default.png */; };
 		22AD52EB1730324400EC5009 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD52EA1730324400EC5009 /* UIKit.framework */; };
 		22AD52ED1730324400EC5009 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD52EC1730324400EC5009 /* Foundation.framework */; };
 		22AD52EF1730324400EC5009 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD52EE1730324400EC5009 /* CoreGraphics.framework */; };
@@ -46,11 +51,18 @@
 		22C924E017353D0A00C4BF81 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C924DF17353D0A00C4BF81 /* MapKit.framework */; };
 		22C924E317363C8B00C4BF81 /* GFAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924E217363C8B00C4BF81 /* GFAboutViewController.m */; };
 		22C924E61736403600C4BF81 /* GFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924E51736403500C4BF81 /* GFSettingsViewController.m */; };
+		22CFEC50173B936400C48AAE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CFEC4F173B936400C48AAE /* CoreData.framework */; };
+		22CFEC54173B940D00C48AAE /* Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22CFEC52173B940D00C48AAE /* Events.xcdatamodeld */; };
 		47F4B48CE43B4A1C971368DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD991ADD3EF40AD8F394E1A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		221E5BA31730D778000B9A9C /* PTN57F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN57F.ttf; sourceTree = "<group>"; };
+		224E9CAD173CC61200F53410 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../icon.png; sourceTree = "<group>"; };
+		224E9CAF173CC61700F53410 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../../icon@2x.png"; sourceTree = "<group>"; };
+		224E9CB5173CC6E500F53410 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
+		224E9CB7173CC6EB00F53410 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
+		224E9CB9173CC6F000F53410 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
 		22AD52E71730324400EC5009 /* Gentse Feesten 2013.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gentse Feesten 2013.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AD52EA1730324400EC5009 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22AD52EC1730324400EC5009 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,6 +123,8 @@
 		22C924E217363C8B00C4BF81 /* GFAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFAboutViewController.m; sourceTree = "<group>"; };
 		22C924E41736403500C4BF81 /* GFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSettingsViewController.h; sourceTree = "<group>"; };
 		22C924E51736403500C4BF81 /* GFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSettingsViewController.m; sourceTree = "<group>"; };
+		22CFEC4F173B936400C48AAE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		22CFEC53173B940D00C48AAE /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
 		59D57EEDD53C439285FA0C8D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		FCD991ADD3EF40AD8F394E1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22CFEC50173B936400C48AAE /* CoreData.framework in Frameworks */,
 				22B07F1817365DBC009FF4AB /* QuartzCore.framework in Frameworks */,
 				22C924E017353D0A00C4BF81 /* MapKit.framework in Frameworks */,
 				22AD52EB1730324400EC5009 /* UIKit.framework in Frameworks */,
@@ -135,8 +150,6 @@
 		22AD52DE1730324300EC5009 = {
 			isa = PBXGroup;
 			children = (
-				22B07F1717365DBC009FF4AB /* QuartzCore.framework */,
-				22C924DF17353D0A00C4BF81 /* MapKit.framework */,
 				22AD52F01730324400EC5009 /* Gentse Feesten 2013 */,
 				22AD530B1730336D00EC5009 /* Resources */,
 				22AD52E91730324400EC5009 /* Frameworks */,
@@ -156,6 +169,9 @@
 		22AD52E91730324400EC5009 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22C924DF17353D0A00C4BF81 /* MapKit.framework */,
+				22B07F1717365DBC009FF4AB /* QuartzCore.framework */,
+				22CFEC4F173B936400C48AAE /* CoreData.framework */,
 				22AD52EA1730324400EC5009 /* UIKit.framework */,
 				22AD52EC1730324400EC5009 /* Foundation.framework */,
 				22AD52EE1730324400EC5009 /* CoreGraphics.framework */,
@@ -167,6 +183,7 @@
 		22AD52F01730324400EC5009 /* Gentse Feesten 2013 */ = {
 			isa = PBXGroup;
 			children = (
+				22CFEC51173B93CD00C48AAE /* DataModel */,
 				22AD53081730331800EC5009 /* Models */,
 				22AD53091730332800EC5009 /* Views */,
 				22AD530A1730334100EC5009 /* Controllers */,
@@ -270,6 +287,11 @@
 		22AD530C1730339400EC5009 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				224E9CB9173CC6F000F53410 /* Default.png */,
+				224E9CB7173CC6EB00F53410 /* Default@2x.png */,
+				224E9CB5173CC6E500F53410 /* Default-568h@2x.png */,
+				224E9CAF173CC61700F53410 /* icon@2x.png */,
+				224E9CAD173CC61200F53410 /* icon.png */,
 				22C924D2173517A400C4BF81 /* home.png */,
 				22C0550D1730FCFB00A469CD /* cellbackground.png */,
 				22C0550E1730FCFB00A469CD /* cellbackground@2x.png */,
@@ -279,6 +301,14 @@
 				22AD53211730403900EC5009 /* list@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		22CFEC51173B93CD00C48AAE /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				22CFEC52173B940D00C48AAE /* Events.xcdatamodeld */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +379,11 @@
 				22C924D3173517A400C4BF81 /* home.png in Resources */,
 				22C924D8173535D900C4BF81 /* tableBottom.png in Resources */,
 				22C924DA173535D900C4BF81 /* tableTop.png in Resources */,
+				224E9CAE173CC61200F53410 /* icon.png in Resources */,
+				224E9CB0173CC61700F53410 /* icon@2x.png in Resources */,
+				224E9CB6173CC6E500F53410 /* Default-568h@2x.png in Resources */,
+				224E9CB8173CC6EB00F53410 /* Default@2x.png in Resources */,
+				224E9CBA173CC6F000F53410 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +430,7 @@
 				22B07F1B17365F41009FF4AB /* GFCalendarCategoryViewController.m in Sources */,
 				22B07F1E17365F5E009FF4AB /* GFCalendarFreeViewController.m in Sources */,
 				22B07F2117365F74009FF4AB /* GFCalendarFestivalViewController.m in Sources */,
+				22CFEC54173B940D00C48AAE /* Events.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,11 +560,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 59D57EEDD53C439285FA0C8D /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tim Leytens";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tim Leytens";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gentse Feesten 2013/Gentse Feesten 2013-Prefix.pch";
 				INFOPLIST_FILE = "Gentse Feesten 2013/Gentse Feesten 2013-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2FDC08DD-F675-439A-971A-5A98B51DBA0B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2FDC08DD-F675-439A-971A-5A98B51DBA0B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Adhoc;
@@ -557,6 +597,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		22CFEC52173B940D00C48AAE /* Events.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22CFEC53173B940D00C48AAE /* Events.xcdatamodel */,
+			);
+			currentVersion = 22CFEC53173B940D00C48AAE /* Events.xcdatamodel */;
+			path = Events.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 22AD52DF1730324300EC5009 /* Project object */;
 }
