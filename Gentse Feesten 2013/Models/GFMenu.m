@@ -56,6 +56,7 @@
                              @"Praktisch", @"title",
                              [NSNumber numberWithBool:YES], @"bold",
                              @"home.png", @"icon",
+                             @"practical", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                              @"Publiek sanitair", @"title",

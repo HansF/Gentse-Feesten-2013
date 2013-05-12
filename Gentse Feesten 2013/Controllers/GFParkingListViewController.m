@@ -39,7 +39,7 @@
     _tableView = [super addTableView];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:@"HOME"];
+    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:@"PARKINGS"];
     [_tableView registerClass:[GFParkingsCustomCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];
 

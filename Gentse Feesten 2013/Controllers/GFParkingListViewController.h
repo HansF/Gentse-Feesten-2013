@@ -12,4 +12,6 @@
 
 @interface GFParkingListViewController  : GFCustomViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic) BOOL calledFromNavigationController;
+
 @end

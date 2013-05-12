@@ -24,6 +24,7 @@
 #import "GFCalendarFreeViewController.h"
 #import "GFCalendarFestivalViewController.h"
 #import "GFParkingListViewController.h"
+#import "GFPracticalViewController.h"
 
 @interface GFMenuViewController() <UISearchDisplayDelegate>
 
@@ -248,6 +249,12 @@
     }
     else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"parkings"]) {
         GFParkingListViewController *detailViewController = [[GFParkingListViewController alloc] initWithNibName:nil bundle:nil];
+        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                      detailViewController,
+                                                      nil]];
+    }
+    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"practical"]) {
+        GFPracticalViewController *detailViewController = [[GFPracticalViewController alloc] initWithNibName:nil bundle:nil];
         [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                       detailViewController,
                                                       nil]];

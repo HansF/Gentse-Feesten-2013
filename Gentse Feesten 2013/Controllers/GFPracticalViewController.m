@@ -12,6 +12,10 @@
 
 @interface GFPracticalViewController ()
 
+@property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) NSArray *menu;
+
 @end
 
 @implementation GFPracticalViewController
@@ -27,13 +31,62 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    _menu = [[NSArray alloc] initWithObjects:@"Publiek sanitair", @"Politie", @"EHBO", @"Parkings", nil];
+
+    _tableView = [super addTableView];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:@"PRAKTISCH"];
+    [_tableView registerClass:[GFCustomCell class] forCellReuseIdentifier:@"customCell"];
+    [self.view addSubview:_tableView];
+
+    self.trackedViewName = @"Practical";
+
 }
 
-- (void)didReceiveMemoryWarning
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 55;
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _menu.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"customCell";
+    GFCustomCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    cell.label.text = [_menu objectAtIndex:indexPath.row];
+    cell.containerView.backgroundColor = indexPath.row % 2 == 0 ? [UIColor whiteColor] : UIColorFromRGB(0xf5f5f5);
+    return cell;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [super addTableViewFooter];
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+    if (indexPath.row == 3) {
+        GFParkingListViewController *detail = [[GFParkingListViewController alloc] initWithNibName:nil bundle:nil];
+        detail.calledFromNavigationController = YES;
+        [self.navigationController pushViewController:detail animated:YES];
+    }
 }
 
 @end
