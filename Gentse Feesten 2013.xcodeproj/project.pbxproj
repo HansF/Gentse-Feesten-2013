@@ -67,6 +67,7 @@
 		22FA40C9173F7C46009B3B01 /* GFMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40C8173F7C46009B3B01 /* GFMenu.m */; };
 		22FA40CC173F8C46009B3B01 /* GFCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40CB173F8C46009B3B01 /* GFCustomCell.m */; };
 		22FA40CF173FA475009B3B01 /* GFParkingsCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40CE173FA475009B3B01 /* GFParkingsCustomCell.m */; };
+		22FA40D5173FAAD5009B3B01 /* GFPracticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40D4173FAAD5009B3B01 /* GFPracticalViewController.m */; };
 		47F4B48CE43B4A1C971368DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD991ADD3EF40AD8F394E1A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,8 @@
 		22FA40CB173F8C46009B3B01 /* GFCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomCell.m; sourceTree = "<group>"; };
 		22FA40CD173FA475009B3B01 /* GFParkingsCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFParkingsCustomCell.h; sourceTree = "<group>"; };
 		22FA40CE173FA475009B3B01 /* GFParkingsCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFParkingsCustomCell.m; sourceTree = "<group>"; };
+		22FA40D3173FAAD5009B3B01 /* GFPracticalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFPracticalViewController.h; sourceTree = "<group>"; };
+		22FA40D4173FAAD5009B3B01 /* GFPracticalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFPracticalViewController.m; sourceTree = "<group>"; };
 		59D57EEDD53C439285FA0C8D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		FCD991ADD3EF40AD8F394E1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -322,6 +325,8 @@
 				22213F0E173E201A00672634 /* GFParkingListViewController.m */,
 				22213F1D173E5B8600672634 /* GFParkingDetailViewController.h */,
 				22213F1E173E5B8600672634 /* GFParkingDetailViewController.m */,
+				22FA40D3173FAAD5009B3B01 /* GFPracticalViewController.h */,
+				22FA40D4173FAAD5009B3B01 /* GFPracticalViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				22FA40C9173F7C46009B3B01 /* GFMenu.m in Sources */,
 				22FA40CC173F8C46009B3B01 /* GFCustomCell.m in Sources */,
 				22FA40CF173FA475009B3B01 /* GFParkingsCustomCell.m in Sources */,
+				22FA40D5173FAAD5009B3B01 /* GFPracticalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

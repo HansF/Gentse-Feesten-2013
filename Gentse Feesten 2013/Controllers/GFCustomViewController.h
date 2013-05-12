@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "GAITrackedViewController.h"
+#import "GFCustomYellowLabel.h"
 
 @interface GFCustomViewController : GAITrackedViewController
 
@@ -23,5 +24,9 @@
 -(UIView *)addTableViewHeaderWithTitle:(NSString *)title;
 
 -(UIView *)addTableViewFooter;
+
+-(void)calledFromNavigationController;
+
+-(GFCustomYellowLabel *)headerLabel:(NSString *)title;
 
 @end

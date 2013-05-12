@@ -9,7 +9,6 @@
 #import "GFCustomViewController.h"
 #import "NVSlideMenuController.h"
 #import "GFFavoritesModalViewController.h"
-#import "GFCustomYellowLabel.h"
 
 @interface GFCustomViewController ()
 
@@ -31,6 +30,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [self showFavoritesButton];
+    self.navigationItem.leftBarButtonItem = [self showMenuButton];
 }
 
 
@@ -140,6 +140,26 @@
 
 -(void)back {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+-(void)calledFromNavigationController {
+    UIImage *buttonImage = [UIImage imageNamed:@"back.png"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:buttonImage forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = customBarItem;
+}
+
+
+-(GFCustomYellowLabel *)headerLabel:(NSString *)title {
+    GFCustomYellowLabel *headerLabel = [[GFCustomYellowLabel alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width - padding * 2, 28)];
+    headerLabel.text = title;
+    headerLabel.textAlignment = NSTextAlignmentCenter;
+    headerLabel.backgroundColor = UIColorFromRGB(0x005470);
+    return headerLabel;
 }
 
 

@@ -8,8 +8,6 @@
 
 #import "GFSettingsViewController.h"
 
-#import "GFCustomYellowLabel.h"
-
 @interface GFSettingsViewController ()
 
 @end
@@ -20,13 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        GFCustomYellowLabel *headerLabel = [[GFCustomYellowLabel alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width - padding * 2, 28)];
-        headerLabel.text = @"INSTELLINGEN";
-        headerLabel.textAlignment = NSTextAlignmentCenter;
-        headerLabel.backgroundColor = UIColorFromRGB(0x005470);
-        [self.view addSubview:headerLabel];
-
-        self.navigationItem.leftBarButtonItem = [super showMenuButton];
+        [self.view addSubview:[super headerLabel:@"INSTELLINGEN"]];
     }
     return self;
 }

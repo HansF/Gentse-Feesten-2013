@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Tim Leytens. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
-
 #import "GFProgramViewController.h"
 #import "GFCalendarCategoryViewController.h"
 #import "GFCalendarFestivalViewController.h"
@@ -28,7 +26,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.leftBarButtonItem = [super showMenuButton];
     }
     return self;
 }

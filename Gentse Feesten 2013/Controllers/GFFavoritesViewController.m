@@ -25,8 +25,6 @@
         headerLabel.textAlignment = NSTextAlignmentCenter;
         headerLabel.backgroundColor = UIColorFromRGB(0x005470);
         [self.view addSubview:headerLabel];
-
-        self.navigationItem.leftBarButtonItem = [super showMenuButton];
     }
     return self;
 }

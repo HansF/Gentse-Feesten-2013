@@ -28,7 +28,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.leftBarButtonItem = [super showMenuButton];
     }
     return self;
 }

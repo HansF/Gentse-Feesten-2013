@@ -7,6 +7,8 @@
 //
 
 #import "GFPracticalViewController.h"
+#import "GFParkingListViewController.h"
+#import "GFCustomCell.h"
 
 @interface GFPracticalViewController ()
 
@@ -18,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }

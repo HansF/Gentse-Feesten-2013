@@ -12,6 +12,4 @@
 
 @interface GFProgramViewController : GFCustomViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, assign) BOOL calledFromNavigationController;
-
 @end

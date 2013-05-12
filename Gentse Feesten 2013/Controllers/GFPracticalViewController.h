@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GFPracticalViewController : UIViewController
+#import "GFCustomViewController.h"
+
+@interface GFPracticalViewController : GFCustomViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
