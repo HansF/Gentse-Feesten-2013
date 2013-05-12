@@ -31,9 +31,12 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+-(void)viewDidLoad {
+
     [super viewDidLoad];
+
+    self.trackedViewName = @"Favorites";
+    
 }
 
 @end

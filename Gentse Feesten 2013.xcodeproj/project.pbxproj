@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		221E5BA41730D778000B9A9C /* PTN57F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 221E5BA31730D778000B9A9C /* PTN57F.ttf */; };
+		22213F02173D415600672634 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22213F01173D415600672634 /* SystemConfiguration.framework */; };
+		22213F08173D509100672634 /* menu_favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F05173D509100672634 /* menu_favorites.png */; };
+		22213F09173D509100672634 /* menu_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F06173D509100672634 /* menu_home.png */; };
+		22213F0A173D509100672634 /* menu_program.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F07173D509100672634 /* menu_program.png */; };
+		22213F0C173D514700672634 /* menu_about.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F0B173D514700672634 /* menu_about.png */; };
+		22213F0F173E201A00672634 /* GFParkingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22213F0E173E201A00672634 /* GFParkingListViewController.m */; };
+		22213F12173E255D00672634 /* GFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22213F11173E255D00672634 /* GFAPIClient.m */; };
+		22213F14173E4F2600672634 /* selectedBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F13173E4F2600672634 /* selectedBack.png */; };
+		22213F17173E511C00672634 /* tableBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F15173E511C00672634 /* tableBottom.png */; };
+		22213F18173E511C00672634 /* tableTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F16173E511C00672634 /* tableTop.png */; };
+		22213F1B173E559C00672634 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F19173E559B00672634 /* back.png */; };
+		22213F1C173E559C00672634 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F1A173E559B00672634 /* back@2x.png */; };
+		22213F1F173E5B8700672634 /* GFParkingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22213F1E173E5B8600672634 /* GFParkingDetailViewController.m */; };
 		224E9CAE173CC61200F53410 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CAD173CC61200F53410 /* icon.png */; };
 		224E9CB0173CC61700F53410 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CAF173CC61700F53410 /* icon@2x.png */; };
 		224E9CB6173CC6E500F53410 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CB5173CC6E500F53410 /* Default-568h@2x.png */; };
@@ -45,19 +58,36 @@
 		22C055101730FCFB00A469CD /* cellbackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C0550E1730FCFB00A469CD /* cellbackground@2x.png */; };
 		22C924D117350F6B00C4BF81 /* PTN77F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C924D017350F6B00C4BF81 /* PTN77F.ttf */; };
 		22C924D3173517A400C4BF81 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C924D2173517A400C4BF81 /* home.png */; };
-		22C924D8173535D900C4BF81 /* tableBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C924D4173535D800C4BF81 /* tableBottom.png */; };
-		22C924DA173535D900C4BF81 /* tableTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 22C924D6173535D800C4BF81 /* tableTop.png */; };
 		22C924DE1735392C00C4BF81 /* GFPoiMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924DD1735392C00C4BF81 /* GFPoiMapViewController.m */; };
 		22C924E017353D0A00C4BF81 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C924DF17353D0A00C4BF81 /* MapKit.framework */; };
 		22C924E317363C8B00C4BF81 /* GFAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924E217363C8B00C4BF81 /* GFAboutViewController.m */; };
 		22C924E61736403600C4BF81 /* GFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924E51736403500C4BF81 /* GFSettingsViewController.m */; };
 		22CFEC50173B936400C48AAE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CFEC4F173B936400C48AAE /* CoreData.framework */; };
 		22CFEC54173B940D00C48AAE /* Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22CFEC52173B940D00C48AAE /* Events.xcdatamodeld */; };
+		22FA40C9173F7C46009B3B01 /* GFMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40C8173F7C46009B3B01 /* GFMenu.m */; };
+		22FA40CC173F8C46009B3B01 /* GFCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40CB173F8C46009B3B01 /* GFCustomCell.m */; };
+		22FA40CF173FA475009B3B01 /* GFParkingsCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40CE173FA475009B3B01 /* GFParkingsCustomCell.m */; };
 		47F4B48CE43B4A1C971368DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD991ADD3EF40AD8F394E1A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		221E5BA31730D778000B9A9C /* PTN57F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN57F.ttf; sourceTree = "<group>"; };
+		22213F01173D415600672634 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		22213F05173D509100672634 /* menu_favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_favorites.png; sourceTree = "<group>"; };
+		22213F06173D509100672634 /* menu_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_home.png; sourceTree = "<group>"; };
+		22213F07173D509100672634 /* menu_program.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_program.png; sourceTree = "<group>"; };
+		22213F0B173D514700672634 /* menu_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_about.png; sourceTree = "<group>"; };
+		22213F0D173E201A00672634 /* GFParkingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFParkingListViewController.h; sourceTree = "<group>"; };
+		22213F0E173E201A00672634 /* GFParkingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFParkingListViewController.m; sourceTree = "<group>"; };
+		22213F10173E255D00672634 /* GFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFAPIClient.h; sourceTree = "<group>"; };
+		22213F11173E255D00672634 /* GFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFAPIClient.m; sourceTree = "<group>"; };
+		22213F13173E4F2600672634 /* selectedBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedBack.png; sourceTree = "<group>"; };
+		22213F15173E511C00672634 /* tableBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableBottom.png; sourceTree = "<group>"; };
+		22213F16173E511C00672634 /* tableTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableTop.png; sourceTree = "<group>"; };
+		22213F19173E559B00672634 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		22213F1A173E559B00672634 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		22213F1D173E5B8600672634 /* GFParkingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFParkingDetailViewController.h; sourceTree = "<group>"; };
+		22213F1E173E5B8600672634 /* GFParkingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFParkingDetailViewController.m; sourceTree = "<group>"; };
 		224E9CAD173CC61200F53410 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../icon.png; sourceTree = "<group>"; };
 		224E9CAF173CC61700F53410 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../../icon@2x.png"; sourceTree = "<group>"; };
 		224E9CB5173CC6E500F53410 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -114,8 +144,6 @@
 		22C0550E1730FCFB00A469CD /* cellbackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellbackground@2x.png"; sourceTree = "<group>"; };
 		22C924D017350F6B00C4BF81 /* PTN77F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN77F.ttf; sourceTree = "<group>"; };
 		22C924D2173517A400C4BF81 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		22C924D4173535D800C4BF81 /* tableBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableBottom.png; sourceTree = "<group>"; };
-		22C924D6173535D800C4BF81 /* tableTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableTop.png; sourceTree = "<group>"; };
 		22C924DC1735392C00C4BF81 /* GFPoiMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFPoiMapViewController.h; sourceTree = "<group>"; };
 		22C924DD1735392C00C4BF81 /* GFPoiMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFPoiMapViewController.m; sourceTree = "<group>"; };
 		22C924DF17353D0A00C4BF81 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -125,6 +153,12 @@
 		22C924E51736403500C4BF81 /* GFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSettingsViewController.m; sourceTree = "<group>"; };
 		22CFEC4F173B936400C48AAE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		22CFEC53173B940D00C48AAE /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
+		22FA40C7173F7C46009B3B01 /* GFMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFMenu.h; sourceTree = "<group>"; };
+		22FA40C8173F7C46009B3B01 /* GFMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFMenu.m; sourceTree = "<group>"; };
+		22FA40CA173F8C46009B3B01 /* GFCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomCell.h; sourceTree = "<group>"; };
+		22FA40CB173F8C46009B3B01 /* GFCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomCell.m; sourceTree = "<group>"; };
+		22FA40CD173FA475009B3B01 /* GFParkingsCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFParkingsCustomCell.h; sourceTree = "<group>"; };
+		22FA40CE173FA475009B3B01 /* GFParkingsCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFParkingsCustomCell.m; sourceTree = "<group>"; };
 		59D57EEDD53C439285FA0C8D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		FCD991ADD3EF40AD8F394E1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22213F02173D415600672634 /* SystemConfiguration.framework in Frameworks */,
 				22CFEC50173B936400C48AAE /* CoreData.framework in Frameworks */,
 				22B07F1817365DBC009FF4AB /* QuartzCore.framework in Frameworks */,
 				22C924E017353D0A00C4BF81 /* MapKit.framework in Frameworks */,
@@ -169,6 +204,7 @@
 		22AD52E91730324400EC5009 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22213F01173D415600672634 /* SystemConfiguration.framework */,
 				22C924DF17353D0A00C4BF81 /* MapKit.framework */,
 				22B07F1717365DBC009FF4AB /* QuartzCore.framework */,
 				22CFEC4F173B936400C48AAE /* CoreData.framework */,
@@ -196,8 +232,10 @@
 		22AD52F11730324400EC5009 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				22C924D4173535D800C4BF81 /* tableBottom.png */,
-				22C924D6173535D800C4BF81 /* tableTop.png */,
+				22213F19173E559B00672634 /* back.png */,
+				22213F1A173E559B00672634 /* back@2x.png */,
+				22213F15173E511C00672634 /* tableBottom.png */,
+				22213F16173E511C00672634 /* tableTop.png */,
 				22C924D017350F6B00C4BF81 /* PTN77F.ttf */,
 				221E5BA31730D778000B9A9C /* PTN57F.ttf */,
 				22AD52F21730324400EC5009 /* Gentse Feesten 2013-Info.plist */,
@@ -224,6 +262,10 @@
 		22AD53081730331800EC5009 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				22213F10173E255D00672634 /* GFAPIClient.h */,
+				22213F11173E255D00672634 /* GFAPIClient.m */,
+				22FA40C7173F7C46009B3B01 /* GFMenu.h */,
+				22FA40C8173F7C46009B3B01 /* GFMenu.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,6 +281,10 @@
 				22C055081730F4E900A469CD /* GFCustomLabel.m */,
 				22C0550A1730F60700A469CD /* GFCustomYellowLabel.h */,
 				22C0550B1730F60700A469CD /* GFCustomYellowLabel.m */,
+				22FA40CA173F8C46009B3B01 /* GFCustomCell.h */,
+				22FA40CB173F8C46009B3B01 /* GFCustomCell.m */,
+				22FA40CD173FA475009B3B01 /* GFParkingsCustomCell.h */,
+				22FA40CE173FA475009B3B01 /* GFParkingsCustomCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +318,10 @@
 				22B07F1D17365F5E009FF4AB /* GFCalendarFreeViewController.m */,
 				22B07F1F17365F74009FF4AB /* GFCalendarFestivalViewController.h */,
 				22B07F2017365F74009FF4AB /* GFCalendarFestivalViewController.m */,
+				22213F0D173E201A00672634 /* GFParkingListViewController.h */,
+				22213F0E173E201A00672634 /* GFParkingListViewController.m */,
+				22213F1D173E5B8600672634 /* GFParkingDetailViewController.h */,
+				22213F1E173E5B8600672634 /* GFParkingDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -287,6 +337,11 @@
 		22AD530C1730339400EC5009 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22213F13173E4F2600672634 /* selectedBack.png */,
+				22213F0B173D514700672634 /* menu_about.png */,
+				22213F05173D509100672634 /* menu_favorites.png */,
+				22213F06173D509100672634 /* menu_home.png */,
+				22213F07173D509100672634 /* menu_program.png */,
 				224E9CB9173CC6F000F53410 /* Default.png */,
 				224E9CB7173CC6EB00F53410 /* Default@2x.png */,
 				224E9CB5173CC6E500F53410 /* Default-568h@2x.png */,
@@ -377,13 +432,20 @@
 				22C055101730FCFB00A469CD /* cellbackground@2x.png in Resources */,
 				22C924D117350F6B00C4BF81 /* PTN77F.ttf in Resources */,
 				22C924D3173517A400C4BF81 /* home.png in Resources */,
-				22C924D8173535D900C4BF81 /* tableBottom.png in Resources */,
-				22C924DA173535D900C4BF81 /* tableTop.png in Resources */,
 				224E9CAE173CC61200F53410 /* icon.png in Resources */,
 				224E9CB0173CC61700F53410 /* icon@2x.png in Resources */,
 				224E9CB6173CC6E500F53410 /* Default-568h@2x.png in Resources */,
 				224E9CB8173CC6EB00F53410 /* Default@2x.png in Resources */,
 				224E9CBA173CC6F000F53410 /* Default.png in Resources */,
+				22213F08173D509100672634 /* menu_favorites.png in Resources */,
+				22213F09173D509100672634 /* menu_home.png in Resources */,
+				22213F0A173D509100672634 /* menu_program.png in Resources */,
+				22213F0C173D514700672634 /* menu_about.png in Resources */,
+				22213F14173E4F2600672634 /* selectedBack.png in Resources */,
+				22213F17173E511C00672634 /* tableBottom.png in Resources */,
+				22213F18173E511C00672634 /* tableTop.png in Resources */,
+				22213F1B173E559C00672634 /* back.png in Resources */,
+				22213F1C173E559C00672634 /* back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +493,12 @@
 				22B07F1E17365F5E009FF4AB /* GFCalendarFreeViewController.m in Sources */,
 				22B07F2117365F74009FF4AB /* GFCalendarFestivalViewController.m in Sources */,
 				22CFEC54173B940D00C48AAE /* Events.xcdatamodeld in Sources */,
+				22213F0F173E201A00672634 /* GFParkingListViewController.m in Sources */,
+				22213F12173E255D00672634 /* GFAPIClient.m in Sources */,
+				22213F1F173E5B8700672634 /* GFParkingDetailViewController.m in Sources */,
+				22FA40C9173F7C46009B3B01 /* GFMenu.m in Sources */,
+				22FA40CC173F8C46009B3B01 /* GFCustomCell.m in Sources */,
+				22FA40CF173FA475009B3B01 /* GFParkingsCustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

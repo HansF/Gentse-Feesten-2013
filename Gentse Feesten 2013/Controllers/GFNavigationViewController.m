@@ -24,7 +24,7 @@
         self.view.backgroundColor = UIColorFromRGB(0x005470);
         
         [self setValue:[[GFCustomNavBar alloc]init] forKeyPath:@"navigationBar"];
-
+        
     }
     return self;
 }

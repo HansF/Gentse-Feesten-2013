@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GAI.h"
+
 #import "GFMenuViewController.h"
 #import "GFNavigationViewController.h"
 

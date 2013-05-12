@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GFCustomViewController : UIViewController
+#import "GAITrackedViewController.h"
 
-- (UIBarButtonItem *)showMenuButton;
+@interface GFCustomViewController : GAITrackedViewController
+
+-(UIBarButtonItem *)showMenuButton;
+
+-(void)showAlertNoInternetConnection;
+
+-(void)back;
+
+-(UITableView *)addTableView;
+
+-(UIView *)addTableViewHeaderWithTitle:(NSString *)title;
+
+-(UIView *)addTableViewFooter;
 
 @end

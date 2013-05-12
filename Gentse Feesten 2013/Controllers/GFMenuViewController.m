@@ -11,7 +11,7 @@
 #import "NVSlideMenuController.h"
 
 #import "GFCustomToolBar.h"
-
+#import "GFMenu.h"
 #import "GFCustomViewController.h"
 #import "GFPoiMapViewController.h"
 #import "GFHomeViewController.h"
@@ -23,6 +23,7 @@
 #import "GFCalendarCategoryViewController.h"
 #import "GFCalendarFreeViewController.h"
 #import "GFCalendarFestivalViewController.h"
+#import "GFParkingListViewController.h"
 
 @interface GFMenuViewController() <UISearchDisplayDelegate>
 
@@ -59,81 +60,7 @@
 
 - (void)setupMenu {
 
-    _menu = [[NSArray alloc] initWithObjects:
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Home", @"title",
-              [NSNumber numberWithBool:YES], @"bold",
-              @"home.png", @"icon",
-              @"home", @"view",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Mijn favorieten", @"title",
-              [NSNumber numberWithBool:YES], @"bold",
-              @"home.png", @"icon",
-              @"favorites", @"view",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Programma", @"title",
-              [NSNumber numberWithBool:YES], @"bold",
-              @"home.png", @"icon",
-              @"program", @"view",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Themakalender", @"title",
-              [NSNumber numberWithBool:NO], @"bold",
-              @"", @"icon",
-              @"thema", @"view",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Gratis", @"title",
-              [NSNumber numberWithBool:NO], @"bold",
-              @"", @"icon",
-              @"free", @"view",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Festivals", @"title",
-              [NSNumber numberWithBool:NO], @"bold",
-              @"", @"icon",
-              @"festival", @"view",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Praktisch", @"title",
-              [NSNumber numberWithBool:YES], @"bold",
-              @"home.png", @"icon",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Publiek sanitair", @"title",
-              [NSNumber numberWithBool:NO], @"bold",
-              @"", @"icon",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Politie", @"title",
-              [NSNumber numberWithBool:NO], @"bold",
-              @"", @"icon",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"EHBO", @"title",
-              [NSNumber numberWithBool:NO], @"bold",
-              @"", @"icon",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Parkings", @"title",
-              [NSNumber numberWithBool:NO], @"bold",
-              @"", @"icon",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Instellingen", @"title",
-              [NSNumber numberWithBool:YES], @"bold",
-              @"home.png", @"icon",
-              @"settings", @"view",
-              nil],
-             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-              @"Over deze app", @"title",
-              [NSNumber numberWithBool:YES], @"bold",
-              @"home.png", @"icon",
-              @"about", @"view",
-              nil],
-             nil];
+    _menu = [GFMenu sharedInstance];
 
     [_menuTableView reloadData];
 }
@@ -205,6 +132,7 @@
 {
 
     UILabel *title;
+    UIImageView *imgView;
 
     static NSString *cellIdentifer = @"cell";
 
@@ -242,7 +170,7 @@
 
             if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"] length] != 0) {
                 UIImage *image = [UIImage imageNamed:[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"]];
-                UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (38 - image.size.height) / 2 , image.size.width, image.size.height)];
+                UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(12, (38 - image.size.height) / 2 , image.size.width, image.size.height)];
                 [imgView setImage:image];
                 
                 imgView.tag = 2;
@@ -254,6 +182,10 @@
     else {
         title = (UILabel *) [cell.contentView viewWithTag:1];
         title.text = [[_menu objectAtIndex:indexPath.row] objectForKey:@"title"];
+
+        imgView = (UIImageView *)[cell.contentView viewWithTag:2];
+        UIImage *image = [UIImage imageNamed:[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"]];
+        [imgView setImage:image];
     }
 
     return cell;
@@ -310,6 +242,12 @@
     }
     else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"festival"]) {
         GFCalendarFestivalViewController *detailViewController = [[GFCalendarFestivalViewController alloc] initWithNibName:nil bundle:nil];
+        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                      detailViewController,
+                                                      nil]];
+    }
+    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"parkings"]) {
+        GFParkingListViewController *detailViewController = [[GFParkingListViewController alloc] initWithNibName:nil bundle:nil];
         [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                       detailViewController,
                                                       nil]];

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GFFavoritesModalViewController : UIViewController
+#import "GAITrackedViewController.h"
+
+@interface GFFavoritesModalViewController : GAITrackedViewController
 
 @end

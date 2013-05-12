@@ -7,11 +7,9 @@
 //
 
 #import "GFCustomViewController.h"
-
 #import "NVSlideMenuController.h"
-
 #import "GFFavoritesModalViewController.h"
-
+#import "GFCustomYellowLabel.h"
 
 @interface GFCustomViewController ()
 
@@ -33,6 +31,42 @@
 {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [self showFavoritesButton];
+}
+
+
+-(UITableView *)addTableView {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:
+                  CGRectMake(padding, 0, self.view.frame.size.width - padding * 2, self.view.frame.size.height - navBarHeight)];
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    return tableView;
+}
+
+
+-(UIView *)addTableViewHeaderWithTitle:(NSString *)title {
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - padding * 2, 60)];
+    GFCustomYellowLabel *headerLabel = [[GFCustomYellowLabel alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width - padding * 2, 28)];
+    headerLabel.text = title;
+    headerLabel.textAlignment = NSTextAlignmentCenter;
+    headerLabel.backgroundColor = UIColorFromRGB(0x005470);
+    [containerView addSubview:headerLabel];
+
+    UIImage *tableTop = [UIImage imageNamed:@"tableTop.png"];
+    UIImageView *tableTopView = [[UIImageView alloc] initWithImage:tableTop];
+    tableTopView.frame = CGRectMake(0, headerLabel.frame.size.height + headerLabel.frame.origin.y + padding, tableTop.size.width, tableTop.size.height);
+    [containerView addSubview:tableTopView];
+
+    return containerView;
+}
+
+
+-(UIView *)addTableViewFooter {
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - padding * 2, 50)];
+    UIImage *tableBottom = [UIImage imageNamed:@"tableBottom.png"];
+    UIImageView *tableBottomView = [[UIImageView alloc] initWithImage:tableBottom];
+    tableBottomView.frame = CGRectMake(0, 0, tableBottom.size.width, tableBottom.size.height);
+    [containerView addSubview:tableBottomView];
+    return containerView;
 }
 
 
@@ -96,6 +130,16 @@
     else {
         [self.slideMenuController openMenuAnimated:YES completion:nil];
     }
+}
+
+-(void)showAlertNoInternetConnection {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Kan geen verbinding maken met het internet." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+
+
+-(void)back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

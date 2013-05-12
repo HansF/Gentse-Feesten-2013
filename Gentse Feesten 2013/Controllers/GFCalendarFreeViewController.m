@@ -20,11 +20,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        GFCustomYellowLabel *headerLabel = [[GFCustomYellowLabel alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width - padding * 2, 28)];
-        headerLabel.text = @"GRATIS";
-        headerLabel.textAlignment = NSTextAlignmentCenter;
-        headerLabel.backgroundColor = UIColorFromRGB(0x005470);
-        [self.view addSubview:headerLabel];
+
     }
     return self;
 }
@@ -32,11 +28,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-	if (_calledFromNavigationController == YES) {
+
+    GFCustomYellowLabel *headerLabel = [[GFCustomYellowLabel alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width - padding * 2, 28)];
+    headerLabel.text = @"GRATIS";
+    headerLabel.textAlignment = NSTextAlignmentCenter;
+    headerLabel.backgroundColor = UIColorFromRGB(0x005470);
+    [self.view addSubview:headerLabel];
+
+    if (_calledFromNavigationController == NO) {
         self.navigationItem.leftBarButtonItem = [super showMenuButton];
     }
+    else {
+        UIImage *buttonImage = [UIImage imageNamed:@"back.png"];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setImage:buttonImage forState:UIControlStateNormal];
+        button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
+        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+        self.navigationItem.leftBarButtonItem = customBarItem;
+    }
+
+    self.trackedViewName = @"Program free";
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {

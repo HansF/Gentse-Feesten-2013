@@ -38,7 +38,20 @@
     if (_calledFromNavigationController == NO) {
         self.navigationItem.leftBarButtonItem = [super showMenuButton];
     }
+    else {
+        UIImage *buttonImage = [UIImage imageNamed:@"back.png"];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setImage:buttonImage forState:UIControlStateNormal];
+        button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
+        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+        self.navigationItem.leftBarButtonItem = customBarItem;
+    }
+
+    self.trackedViewName = @"Program by category";
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {

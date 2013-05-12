@@ -38,7 +38,10 @@
     [toolbar setItems:items animated:NO];
     [self.view addSubview:toolbar];
 
+    self.trackedViewName = @"Favorites";
+
 }
+
 
 - (void)dismissModal:(id)button
 {

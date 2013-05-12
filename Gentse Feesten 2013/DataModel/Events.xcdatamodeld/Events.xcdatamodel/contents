@@ -12,6 +12,6 @@
         <attribute name="titel" attributeType="String" indexed="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GFEvent" positionX="-63" positionY="90" width="128" height="178"/>
+        <element name="GFEvent" positionX="-38" positionY="92" width="515" height="178"/>
     </elements>
 </model>
