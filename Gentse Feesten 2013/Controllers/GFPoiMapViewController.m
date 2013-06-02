@@ -9,6 +9,7 @@
 #import "GFPoiMapViewController.h"
 
 #import "GFCustomToolBar.h"
+#import "GFAnnotation.h"
 
 @implementation GFPoiMapViewController
 

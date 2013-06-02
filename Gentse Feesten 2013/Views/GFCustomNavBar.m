@@ -7,6 +7,7 @@
 //
 
 #import "GFCustomNavBar.h"
+#import "GFFont.h"
 
 @implementation GFCustomNavBar
 
@@ -19,7 +20,7 @@
         title.textColor = [UIColor whiteColor];
         title.shadowColor = [UIColor blackColor];
         title.shadowOffset = CGSizeMake(0, 1);
-        title.font = [UIFont fontWithName:@"PT Sans Narrow" size:28.0];
+        title.font = [GFFont sharedInstance];
         title.backgroundColor = [UIColor clearColor];
         title.textAlignment = UITextAlignmentCenter;
         title.backgroundColor = UIColorFromRGB(0x007390);

@@ -14,6 +14,8 @@
 
 #import "GFHomeViewController.h"
 
+#import "GFEventsDataModel.h"
+
 @interface GFAppDelegate()
 
 @end
@@ -42,13 +44,19 @@
 
 	self.window.rootViewController = slideMenuVC;
 
-    // Optional: automatically send uncaught exceptions to Google Analytics.
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
-    // Optional: set debug to YES for extra debugging information.
-    [GAI sharedInstance].debug = YES;
-    // Create tracker instance.
+    NSManagedObjectContext *context = [[GFEventsDataModel sharedDataModel] mainContext];
+    if (context) {
+        NSLog(@"Context is ready!");
+
+
+//        [context save:nil];
+    } else {
+        NSLog(@"Context was nil :(");
+    }
+
+    [GAI sharedInstance].trackUncaughtExceptions = NO;
+    [GAI sharedInstance].dispatchInterval = 10;
+    [GAI sharedInstance].debug = NO;
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-40824609-1"];
     
     return YES;

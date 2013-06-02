@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+
 @end
 
 @implementation GFHomeViewController
@@ -40,6 +41,7 @@
     [self.view addSubview:_tableView];
 
     self.trackedViewName = @"Home";
+
 }
 
 
@@ -65,7 +67,7 @@
 {
     static NSString *CellIdentifier = @"customCell";
     GFCustomCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    cell.label.text = @"ahah";
+    cell.label.text = @"Event";
     cell.containerView.backgroundColor = indexPath.row % 2 == 0 ? [UIColor whiteColor] : UIColorFromRGB(0xf5f5f5);
     return cell;
 }

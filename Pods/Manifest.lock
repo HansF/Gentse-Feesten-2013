@@ -1,6 +1,7 @@
 PODS:
   - AFNetworking (1.2.1)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
+  - MBProgressHUD (0.6)
   - MDCParallaxView (0.1.4)
   - NVSlideMenuController (1.4.3)
   - SDURLCache (1.2)
@@ -8,13 +9,15 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 1.2.0)
   - GoogleAnalytics-iOS-SDK (~> 2.0beta4)
+  - MBProgressHUD (~> 0.6)
   - MDCParallaxView (~> 0.1.2)
   - NVSlideMenuController (~> 1.4.3)
   - SDURLCache (~> 1.2)
 
 SPEC CHECKSUMS:
-  AFNetworking: 616da0028916ce296f5c3cef74e5552eb4e10e13
+  AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
   GoogleAnalytics-iOS-SDK: ae8e58e771b6dec84c0047154cc0e550a15e6f54
+  MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
   MDCParallaxView: a1aea11598439a6c20864e7bec23aa595464475b
   NVSlideMenuController: 79712443b169cc5717b824e64e6c29da862abcbf
   SDURLCache: cf4dcdd0d01473c334e9338e82a8733de156ef15

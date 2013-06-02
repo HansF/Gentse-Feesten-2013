@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GFMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+#import <CoreData/CoreData.h>
+
+@interface GFMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

@@ -19,6 +19,12 @@
 // Please contact the author.
 // Version: 2.0beta4.
 
+// MBProgressHUD
+#define COCOAPODS_POD_AVAILABLE_MBProgressHUD
+#define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_MBProgressHUD 6
+#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
+
 // MDCParallaxView
 #define COCOAPODS_POD_AVAILABLE_MDCParallaxView
 #define COCOAPODS_VERSION_MAJOR_MDCParallaxView 0

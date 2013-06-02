@@ -7,7 +7,7 @@
 //
 
 #import "GFProgramViewController.h"
-#import "GFCalendarCategoryViewController.h"
+#import "GFDateViewController.h"
 #import "GFCalendarFestivalViewController.h"
 #import "GFCalendarFreeViewController.h"
 #import "GFCustomCell.h"
@@ -84,7 +84,7 @@
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     if (indexPath.row == 0) {
-        GFCalendarCategoryViewController *detail = [[GFCalendarCategoryViewController alloc] initWithNibName:nil bundle:nil];
+        GFDateViewController *detail = [[GFDateViewController alloc] initWithNibName:nil bundle:nil];
         detail.calledFromNavigationController = YES;
         [self.navigationController pushViewController:detail animated:YES];
     }

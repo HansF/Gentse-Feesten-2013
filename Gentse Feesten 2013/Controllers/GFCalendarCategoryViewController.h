@@ -10,7 +10,7 @@
 
 #import "GFCustomViewController.h"
 
-@interface GFCalendarCategoryViewController : GFCustomViewController
+@interface GFCalendarCategoryViewController : GFCustomViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) BOOL calledFromNavigationController;
 

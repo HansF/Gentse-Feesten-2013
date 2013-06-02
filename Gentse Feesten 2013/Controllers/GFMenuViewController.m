@@ -20,11 +20,15 @@
 #import "GFSettingsViewController.h"
 #import "GFFavoritesViewController.h"
 #import "GFProgramViewController.h"
-#import "GFCalendarCategoryViewController.h"
 #import "GFCalendarFreeViewController.h"
 #import "GFCalendarFestivalViewController.h"
 #import "GFParkingListViewController.h"
 #import "GFPracticalViewController.h"
+#import "GFFontSmall.h"
+#import "GFEvent.h"
+#import "GFEventsDataModel.h"
+
+#import "GFDateViewController.h"
 
 @interface GFMenuViewController() <UISearchDisplayDelegate>
 
@@ -35,6 +39,8 @@
 @property (nonatomic, strong) UITableView *menuTableView;
 
 @property (nonatomic, strong) NSArray *menu;
+
+@property (nonatomic, strong) NSMutableArray *searchResults;
 
 @end
 
@@ -118,19 +124,63 @@
         return _menu.count;
     }
     else {
-        return 0;
+        return self.searchResults.count;
     }
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 39;
+    if (tableView == _menuTableView) {
+        return 39;
+    }
+    else {
+        return 50;
+    }
+}
+
+
+- (void)filterProductsForTerm:(NSString *)term {
+    [_searchResults removeAllObjects];
+
+    NSManagedObjectContext *context = [[GFEventsDataModel sharedDataModel] mainContext];
+
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+
+    fetchRequest.entity = [GFEvent entityInManagedObjectContext:context];
+
+    NSSortDescriptor *sortNameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *sortDateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"datum" ascending:YES];
+    NSSortDescriptor *sortSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sort" ascending:YES];
+
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortNameDescriptor, sortDateDescriptor, sortSortDescriptor, nil];
+
+    [fetchRequest setSortDescriptors:sortDescriptors];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@", term];
+    fetchRequest.predicate = predicate;
+    
+    NSError *error = nil;
+    NSArray *results = [context executeFetchRequest:fetchRequest error:&error];
+    if (results == nil) {
+        [NSException raise:NSGenericException format:@"Error filtering for term: %@ -- %@", term, error];
+    }
+
+    _searchResults = [[NSMutableArray alloc] initWithArray:results];
+        
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    [self filterProductsForTerm:searchString];
+    return YES;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
+    if (tableView == _menuTableView) {
 
     UILabel *title;
     UIImageView *imgView;
@@ -140,45 +190,45 @@
     UITableViewCell *cell = [_menuTableView dequeueReusableCellWithIdentifier:cellIdentifer];
 
     if (!cell) {
+        
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
 
-        if (tableView == _menuTableView) {
-            title = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, self.view.frame.size.width - 50, 38)];
+        
+        title = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, self.view.frame.size.width - 50, 38)];
 
-            title.textColor = UIColorFromRGB(0x7eb5c2);
-            title.shadowColor = [UIColor blackColor];
-            title.shadowOffset = CGSizeMake(0, 1);
-            title.tag = 1;
-            if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"bold"] integerValue] == 1) {
-                title.font = [UIFont fontWithName:@"PTSans-NarrowBold" size:20.0];
-            }
-            else {
-                title.font = [UIFont fontWithName:@"PTSans-Narrow" size:20.0];
-                UIView *myBackView = [[UIView alloc] initWithFrame:cell.frame];
-                myBackView.backgroundColor = UIColorFromRGB(0x0e3845);
-                cell.backgroundView = myBackView;
-            }
-            title.backgroundColor = [UIColor clearColor];
-            title.highlightedTextColor = [UIColor whiteColor];
-            [title setText:[[_menu objectAtIndex:indexPath.row] objectForKey:@"title"]];
-            [cell.contentView addSubview:title];
-
-            cell.accessoryType = UITableViewCellAccessoryNone;
-
-            UIView *mySelectedBackView = [[UIView alloc] initWithFrame:cell.frame];
-            mySelectedBackView.backgroundColor = UIColorFromRGB(0xe64a45);
-            cell.selectedBackgroundView = mySelectedBackView;
-
-            if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"] length] != 0) {
-                UIImage *image = [UIImage imageNamed:[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"]];
-                UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(12, (38 - image.size.height) / 2 , image.size.width, image.size.height)];
-                [imgView setImage:image];
-                
-                imgView.tag = 2;
-                [cell.contentView addSubview:imgView];
-            }
+        title.textColor = UIColorFromRGB(0x7eb5c2);
+        title.shadowColor = [UIColor blackColor];
+        title.shadowOffset = CGSizeMake(0, 1);
+        title.tag = 1;
+        if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"bold"] integerValue] == 1) {
+            title.font = [GFFontSmall sharedInstance];
         }
+        else {
+            title.font = [GFFontSmall sharedInstance];
+            UIView *myBackView = [[UIView alloc] initWithFrame:cell.frame];
+            myBackView.backgroundColor = UIColorFromRGB(0x0e3845);
+            cell.backgroundView = myBackView;
+        }
+        title.backgroundColor = [UIColor clearColor];
+        title.highlightedTextColor = [UIColor whiteColor];
+        [title setText:[[_menu objectAtIndex:indexPath.row] objectForKey:@"title"]];
+        [cell.contentView addSubview:title];
 
+        cell.accessoryType = UITableViewCellAccessoryNone;
+
+        UIView *mySelectedBackView = [[UIView alloc] initWithFrame:cell.frame];
+        mySelectedBackView.backgroundColor = UIColorFromRGB(0xe64a45);
+        cell.selectedBackgroundView = mySelectedBackView;
+
+        if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"] length] != 0) {
+            UIImage *image = [UIImage imageNamed:[[_menu objectAtIndex:indexPath.row] objectForKey:@"icon"]];
+            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(12, (38 - image.size.height) / 2 , image.size.width, image.size.height)];
+            [imgView setImage:image];
+                
+            imgView.tag = 2;
+            [cell.contentView addSubview:imgView];
+        }
+        
     }
     else {
         title = (UILabel *) [cell.contentView viewWithTag:1];
@@ -189,84 +239,127 @@
         [imgView setImage:image];
     }
 
-    return cell;
+        return cell;
+    }
+    else {
+        static NSString *searchCellIdentifer = @"searchCell";
+
+        UITableViewCell *searchCell = [tableView dequeueReusableCellWithIdentifier:searchCellIdentifer];
+
+        if (!searchCell) {
+            searchCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:searchCellIdentifer];
+
+            UIView *myBackView = [[UIView alloc] initWithFrame:searchCell.frame];
+            myBackView.backgroundColor = UIColorFromRGB(0xe64a45);
+            searchCell.selectedBackgroundView = myBackView;
+        }
+
+        GFEvent *event = [self.searchResults objectAtIndex:indexPath.row];
+        searchCell.textLabel.text = event.name;
+
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[event.datum intValue]];
+
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd/MM"];
+
+        NSString *formattedDateString = [dateFormatter stringFromDate:date];
+
+        NSString *tijdstip = [event.sort intValue] == 0 ? @"Hele dag" : event.startuur;
+
+        searchCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@  |  %@", formattedDateString, tijdstip, event.loc];
+
+        return searchCell;
+    }    
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_menuTableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    GFNavigationViewController *navigationViewController = [[GFNavigationViewController alloc] initWithNibName:nil bundle:NULL];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"home"]) {
-        GFHomeViewController *detailViewController = [[GFHomeViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
+    if (tableView == _menuTableView) {
+        GFNavigationViewController *navigationViewController = [[GFNavigationViewController alloc] initWithNibName:nil bundle:NULL];
+
+        if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"home"]) {
+            GFHomeViewController *detailViewController = [[GFHomeViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"about"]) {
+            GFAboutViewController *detailViewController = [[GFAboutViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"settings"]) {
+            GFSettingsViewController *detailViewController = [[GFSettingsViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"favorites"]) {
+            GFFavoritesViewController *detailViewController = [[GFFavoritesViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"program"]) {
+            GFProgramViewController *detailViewController = [[GFProgramViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"free"]) {
+            GFCalendarFreeViewController *detailViewController = [[GFCalendarFreeViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"thema"]) {
+            GFDateViewController *detailViewController = [[GFDateViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"festival"]) {
+            GFCalendarFestivalViewController *detailViewController = [[GFCalendarFestivalViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"parkings"]) {
+            GFParkingListViewController *detailViewController = [[GFParkingListViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"practical"]) {
+            GFPracticalViewController *detailViewController = [[GFPracticalViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+        else {
+            GFPoiMapViewController *detailViewController = [[GFPoiMapViewController alloc] initWithNibName:nil bundle:nil];
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
+
+        [self.slideMenuController closeMenuBehindContentViewController:navigationViewController animated:YES completion:nil];
+
     }
-    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"about"]) {
-        GFAboutViewController *detailViewController = [[GFAboutViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
-    }
-    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"settings"]) {
-        GFSettingsViewController *detailViewController = [[GFSettingsViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
-    }
-    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"favorites"]) {
-        GFFavoritesViewController *detailViewController = [[GFFavoritesViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
-    }
-    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"program"]) {
-        GFProgramViewController *detailViewController = [[GFProgramViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
-    }
-    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"free"]) {
-        GFCalendarFreeViewController *detailViewController = [[GFCalendarFreeViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
-    }
-    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"thema"]) {
-        GFCalendarCategoryViewController *detailViewController = [[GFCalendarCategoryViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
-    }
-    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"festival"]) {
-        GFCalendarFestivalViewController *detailViewController = [[GFCalendarFestivalViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
-    }
-    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"parkings"]) {
-        GFParkingListViewController *detailViewController = [[GFParkingListViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
-    }
-    else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"practical"]) {
-        GFPracticalViewController *detailViewController = [[GFPracticalViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
-    }
+
     else {
-        GFPoiMapViewController *detailViewController = [[GFPoiMapViewController alloc] initWithNibName:nil bundle:nil];
-        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
-                                                      detailViewController,
-                                                      nil]];
+        [self.searchBar resignFirstResponder];
+        [self.searchDisplayController setActive:NO];
+        GFNavigationViewController *navigationViewController = [[GFNavigationViewController alloc] initWithNibName:nil bundle:NULL];
+        [self.slideMenuController closeMenuBehindContentViewController:navigationViewController animated:YES completion:nil];
+        
     }
     
-    [self.slideMenuController closeMenuBehindContentViewController:navigationViewController animated:YES completion:nil];
 }
 
 @end

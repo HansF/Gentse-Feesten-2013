@@ -7,6 +7,7 @@
 //
 
 #import "GFParkingsCustomCell.h"
+#import "GFFontSmall.h"
 
 @implementation GFParkingsCustomCell
 
@@ -28,7 +29,7 @@
 
 - (void)setCountView {
     _count = [[UILabel alloc] initWithFrame:CGRectMake(200, 0, 70, 55)];
-    _count.font = [UIFont fontWithName:@"PTSans-Narrow" size:20.0];
+    _count.font = [GFFontSmall sharedInstance];
     _count.backgroundColor = [UIColor clearColor];
     _count.highlightedTextColor = [UIColor whiteColor];
     _count.textAlignment = UITextAlignmentRight;

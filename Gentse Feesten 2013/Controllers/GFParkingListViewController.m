@@ -105,8 +105,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
     GFParkingDetailViewController *detail = [[GFParkingDetailViewController alloc] initWithNibName:nil bundle:nil];
+    detail.latitude = [[[_responseData objectAtIndex:indexPath.row] objectForKey:@"latitude"] floatValue];
+    detail.longitude = [[[_responseData objectAtIndex:indexPath.row] objectForKey:@"longitude"] floatValue];
+    detail.label = [[_responseData objectAtIndex:indexPath.row] objectForKey:@"description"];
     [self.navigationController pushViewController:detail animated:YES];
 }
 

@@ -28,6 +28,7 @@
     self = [super initWithBaseURL:url];
     if (self) {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        [self setDefaultHeader:@"Accept" value:@"application/json"];
     }
 
     return self;

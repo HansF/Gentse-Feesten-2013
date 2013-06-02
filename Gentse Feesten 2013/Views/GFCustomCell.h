@@ -13,4 +13,6 @@
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UIView *containerView;
 
+-(void)setupBottomBorder;
+
 @end

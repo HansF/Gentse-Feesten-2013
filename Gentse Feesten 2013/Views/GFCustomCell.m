@@ -8,6 +8,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "GFCustomCell.h"
+#import "GFFontSmall.h"
 
 
 @implementation GFCustomCell
@@ -46,7 +47,7 @@
 
 - (void)setupLabel {
     _label = [[UILabel alloc] initWithFrame:CGRectMake(padding, 0, _containerView.frame.size.width - (padding * 2), 55)];
-    _label.font = [UIFont fontWithName:@"PTSans-Narrow" size:20.0];
+    _label.font = [GFFontSmall sharedInstance];
     _label.textColor = [UIColor darkGrayColor];
     _label.highlightedTextColor = [UIColor whiteColor];
     _label.backgroundColor = [UIColor clearColor];

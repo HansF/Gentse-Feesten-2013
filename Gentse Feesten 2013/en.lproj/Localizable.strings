@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  Gentse Feesten 2013
+
+  Created by Tim Leytens on 29/05/13.
+  Copyright (c) 2013 Tim Leytens. All rights reserved.
+*/
+
+"BALS_DANS" = "Balls / Dances";
+"CIRCUS" = "Circus";
+"COMEDY" = "Comedy";
+"CONCERTEN_DIVERS" = "Concerten > divers";
+"CONCERTEN_JAZZ" = "Concerten > jazz";
+"CONCERTEN_KLASSIEK" = "Concerten > klassiek";
+"CONCERTEN_ROCK" = "Concerten > rock-pop-techno-blues-folk-world music";
+"KINDERPROGRAMMAS" = "Kinder- en jeugdprogramma's";
+"MARKTEN" = "Markten";
+"SPEL" = "Spel, sport en recreatie";
+"TENTOONSTELLINGEN" = "Tentoonstellingen en geleide bezoeken";
+"THEATER" = "Theater";
+"VARIA" = "Varia";
+"VERTELLINGEN" = "Vertellingen/lezingen/poëzie";
+"VUURWERK" = "Vuurwerk";
+"WANDELINGEN" = "Wandelingen";

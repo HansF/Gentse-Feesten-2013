@@ -7,6 +7,7 @@
 //
 
 #import "GFCustomLabel.h"
+#import "GFFont.h"
 
 @implementation GFCustomLabel
 
@@ -17,7 +18,7 @@
         self.textColor = [UIColor whiteColor];
         self.shadowColor = [UIColor blackColor];
         self.shadowOffset = CGSizeMake(0, 1);
-        self.font = [UIFont fontWithName:@"PT Sans Narrow" size:28.0];
+        self.font = [GFFont sharedInstance];
         self.backgroundColor = [UIColor clearColor];
     }
     return self;

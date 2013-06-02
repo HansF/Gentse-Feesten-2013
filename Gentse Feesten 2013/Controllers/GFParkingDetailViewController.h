@@ -12,4 +12,8 @@
 
 @interface GFParkingDetailViewController : GFCustomViewController
 
+@property (nonatomic, strong) NSString *label;
+@property (nonatomic) float latitude;
+@property (nonatomic) float longitude;
+
 @end
