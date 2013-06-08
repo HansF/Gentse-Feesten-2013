@@ -9,7 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "GFParkingListViewController.h"
-#import "GFAPIClient.h"
+#import "GFDatatankAPIClient.h"
 #import "AFNetworking.h"
 #import "GFParkingDetailViewController.h"
 #import "GFParkingsCustomCell.h"
@@ -39,11 +39,11 @@
     _tableView = [super addTableView];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:@"PARKINGS"];
+    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:[NSLocalizedString(@"PARKINGS", nil) uppercaseString]];
     [_tableView registerClass:[GFParkingsCustomCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];
 
-    [[GFAPIClient sharedInstance] getPath:@"Mobiliteitsbedrijf/Parkings11.json" parameters:nil
+    [[GFDatatankAPIClient sharedInstance] getPath:@"Mobiliteitsbedrijf/Parkings11.json" parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id response) {
 
                                       _responseData = [NSMutableArray array];
@@ -110,7 +110,7 @@
     GFParkingDetailViewController *detail = [[GFParkingDetailViewController alloc] initWithNibName:nil bundle:nil];
     detail.latitude = [[[_responseData objectAtIndex:indexPath.row] objectForKey:@"latitude"] floatValue];
     detail.longitude = [[[_responseData objectAtIndex:indexPath.row] objectForKey:@"longitude"] floatValue];
-    detail.label = [[_responseData objectAtIndex:indexPath.row] objectForKey:@"description"];
+    detail.label = [[[_responseData objectAtIndex:indexPath.row] objectForKey:@"description"] uppercaseString];
     [self.navigationController pushViewController:detail animated:YES];
 }
 

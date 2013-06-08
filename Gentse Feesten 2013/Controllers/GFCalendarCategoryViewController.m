@@ -9,6 +9,7 @@
 #import "GFCalendarCategoryViewController.h"
 #import "GFCategories.h"
 #import "GFCustomCell.h"
+#import "GFEventsViewController.h"
 
 @interface GFCalendarCategoryViewController ()
 
@@ -40,7 +41,7 @@
     _tableView = [super addTableView];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:@"THEMAKALENDER"];
+    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:[NSLocalizedString(@"CATEGORIES", nil) uppercaseString]];
     [_tableView registerClass:[GFCustomCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];
 
@@ -54,7 +55,7 @@
         return 56;
     }
     else {
-        return 10;
+        return 25;
     }
 }
 
@@ -102,6 +103,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+
+    GFEventsViewController *detail = [[GFEventsViewController alloc] initWithNibName:nil bundle:nil];
+    detail.timestamp = _timestamp;
+    detail.programType = @"thema";
+    detail.categoryID = [[[_categories objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
+    detail.screenTitle = [[_categories objectAtIndex:indexPath.row] objectForKey:@"name"];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 

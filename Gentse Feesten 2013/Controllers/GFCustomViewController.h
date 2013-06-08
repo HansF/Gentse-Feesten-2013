@@ -29,4 +29,6 @@
 
 -(GFCustomYellowLabel *)headerLabel:(NSString *)title;
 
+-(CGFloat)getHeightForString:(NSString *)string;
+
 @end

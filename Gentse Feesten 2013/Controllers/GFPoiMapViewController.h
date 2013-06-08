@@ -12,6 +12,6 @@
 
 #import "GFCustomViewController.h"
 
-@interface GFPoiMapViewController : GFCustomViewController <MKMapViewDelegate, MKAnnotation>
+@interface GFPoiMapViewController : GFCustomViewController <MKMapViewDelegate, MKAnnotation, CLLocationManagerDelegate>
 
 @end

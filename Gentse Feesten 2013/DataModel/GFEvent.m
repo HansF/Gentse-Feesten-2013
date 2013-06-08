@@ -49,5 +49,36 @@
     self.korting = [attributes objectForKeyOrNil:@"korting"];   
 }
 
+- (void)toggleFavorite:(bool)status {
+    self.fav = [NSNumber numberWithBool:status];
+}
+
++ (int)countWithManagedObjectContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *countRequest = [[NSFetchRequest alloc] init];
+    [countRequest setEntity:[self entityInManagedObjectContext:context]];
+    int count = [context countForFetchRequest:countRequest error:nil];
+    return count;
+}
+
+
++ (NSMutableArray *)getRandomAmountServerIds:(NSInteger)amount UsingManagedObjectContext:(NSManagedObjectContext *)moc {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[GFEvent entityName]];
+    
+    NSError *error = nil;
+    NSArray *results = [moc executeFetchRequest:fetchRequest error:&error];
+    if (error || [results count] == 0) {
+        return nil;
+    }
+
+    NSMutableArray *serverIds = [[NSMutableArray alloc] init];
+
+    for (int i = 0; i < amount; i++) {
+        int randIndex = arc4random() % [results count];
+        [serverIds addObject:[[results objectAtIndex:randIndex] serverId]];
+    }
+    
+    return serverIds;
+}
+
 
 @end

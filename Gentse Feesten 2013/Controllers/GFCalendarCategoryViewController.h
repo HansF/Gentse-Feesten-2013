@@ -12,6 +12,6 @@
 
 @interface GFCalendarCategoryViewController : GFCustomViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic) BOOL calledFromNavigationController;
+@property (nonatomic, strong) NSString *timestamp;
 
 @end

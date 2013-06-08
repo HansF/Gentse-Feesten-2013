@@ -12,6 +12,7 @@
 #import "AFNetworking.h"
 #import "GFEventsDataModel.h"
 #import "GFEvent.h"
+#import "GFAPIClient.h"
 
 @interface GFSettingsViewController () {
     MBProgressHUD *_hud;
@@ -24,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self.view addSubview:[super headerLabel:@"INSTELLINGEN"]];
+        [self.view addSubview:[super headerLabel:[NSLocalizedString(@"SETTINGS", nil) uppercaseString]]];
     }
     return self;
 }
@@ -39,7 +40,7 @@
     [updateButton addTarget:self
                     action:@selector(updateProgram)
           forControlEvents:UIControlEventTouchDown];
-    [updateButton setTitle:@"UPDATE PROGRAM" forState:UIControlStateNormal];
+    [updateButton setTitle:[NSLocalizedString(@"UPDATE_PROGRAM", nil) uppercaseString] forState:UIControlStateNormal];
     updateButton.frame = CGRectMake(padding, 100, self.view.frame.size.width - (padding * 2), 55.0);
     updateButton.backgroundColor = UIColorFromRGB(0xed4e40);
 
@@ -60,36 +61,29 @@
     }
 
     [_hud setMode:MBProgressHUDModeIndeterminate];
-    [_hud setLabelText:@"Fetching..."];
+    [_hud setLabelText:NSLocalizedString(@"FETCHING", nil)];
     [self.view addSubview:_hud];
-
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    NSURL *url = [NSURL URLWithString:@"http://gfapi.timleytens.be/gf-api/events/list.json?key=XeqAsustujew6re3&secret=trezenu3uzuDrecE4upruCruq5ba4tec"];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    AFJSONRequestOperation *op;
-    op = [AFJSONRequestOperation JSONRequestOperationWithRequest:req
-                                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                             [self parseEvents:JSON];
-                                                             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                                         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,
-                                                                     NSError *error, id JSON) {
-                                                             [super showAlertNoInternetConnection];
-                                                             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                                             [_hud show:NO];
-                                                         }];
+    [[GFAPIClient sharedInstance] getPath:@"events/list.json" parameters:nil
+                                          success:^(AFHTTPRequestOperation *operation, id response) {
+                                              [self parseEvents:response];
+                                              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
+                                          }
+                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                              [super showAlertNoInternetConnection];
+                                              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                                              [_hud show:NO];
+                                          }];
 
     [_hud show:YES];
     _hud.dimBackground = YES;
-
-    [op start];
-
 }
 
 - (void)parseEvents:(id)events {
     [_hud setMode:MBProgressHUDModeDeterminate];
     [_hud setProgress:0];
-    [_hud setLabelText:@"Importing..."];
+    [_hud setLabelText:NSLocalizedString(@"IMPORTING", nil)];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         NSInteger totalRecords = [events count];
         NSInteger currentRecord = 0;
@@ -119,7 +113,7 @@
         if ([context save:&error]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [_hud setLabelText:@"Done!"];
+                [_hud setLabelText:NSLocalizedString(@"DONE", nil)];
                 _hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
                 _hud.mode = MBProgressHUDModeCustomView;
                 [_hud hide:YES afterDelay:2.0];

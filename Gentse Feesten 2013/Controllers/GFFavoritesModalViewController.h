@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-#import "GAITrackedViewController.h"
+#import <CoreData/CoreData.h>
 
-@interface GFFavoritesModalViewController : GAITrackedViewController
+#import "GFCustomViewController.h"
+
+
+@interface GFFavoritesModalViewController : GFCustomViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

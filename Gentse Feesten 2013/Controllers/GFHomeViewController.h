@@ -6,10 +6,14 @@
 //  Copyright (c) 2013 Tim Leytens. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
+
 #import <UIKit/UIKit.h>
 
 #import "GFCustomViewController.h"
 
-@interface GFHomeViewController : GFCustomViewController <UITableViewDelegate, UITableViewDataSource>
+@interface GFHomeViewController : GFCustomViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

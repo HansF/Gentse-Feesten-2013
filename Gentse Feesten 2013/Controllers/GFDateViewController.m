@@ -10,6 +10,8 @@
 #import "GFCustomCell.h"
 #import "GFDates.h"
 #import "GFCalendarCategoryViewController.h"
+#import "GFCalendarFestivalViewController.h"
+#import "GFCalendarFreeViewController.h"
 
 
 @interface GFDateViewController ()
@@ -40,17 +42,28 @@
     if (_calledFromNavigationController == YES) {
         [super calledFromNavigationController];
     }
-
+    NSString *screenTitle = [[NSString alloc] init];
+    if ([_programType isEqualToString:@"thema"]) {
+        self.trackedViewName = @"Program category: Dates";
+        screenTitle = [NSLocalizedString(@"CATEGORIES", nil) uppercaseString];
+    }
+    else if ([_programType isEqualToString:@"free"]) {
+        self.trackedViewName = @"Program free: Dates";
+        screenTitle = [NSLocalizedString(@"FREE", nil) uppercaseString];
+    }
+    else {
+        self.trackedViewName = @"Program festival: Dates";
+        screenTitle = [NSLocalizedString(@"FESTIVALS", nil) uppercaseString];
+    }
+    
     _dates = [GFDates sharedInstance];
 
     _tableView = [super addTableView];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:@"THEMAKALENDER"];
+    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:screenTitle];
     [_tableView registerClass:[GFCustomCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];
-
-    self.trackedViewName = @"Program by category: Dates";
 
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[NSDate date]];
@@ -67,7 +80,7 @@
         return 56;
     }
     else {
-        return 10;
+        return 25;
     }
 }
 
@@ -119,9 +132,22 @@
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
 
-    GFCalendarCategoryViewController *detail = [[GFCalendarCategoryViewController alloc] initWithNibName:nil bundle:nil];
-    //detail.calledFromNavigationController = YES;
-    [self.navigationController pushViewController:detail animated:YES];
+    if ([_programType isEqualToString:@"thema"]) {
+        GFCalendarCategoryViewController *detail = [[GFCalendarCategoryViewController alloc] initWithNibName:nil bundle:nil];
+        detail.timestamp = [[_dates objectAtIndex:indexPath.row] objectForKey:@"id"];
+        [self.navigationController pushViewController:detail animated:YES];
+    }
+    else if ([_programType isEqualToString:@"free"]) {
+        GFCalendarFreeViewController *detail = [[GFCalendarFreeViewController alloc] initWithNibName:nil bundle:nil];
+        detail.timestamp = [[_dates objectAtIndex:indexPath.row] objectForKey:@"id"];
+        [self.navigationController pushViewController:detail animated:YES];
+    }
+    else {
+        GFCalendarFestivalViewController *detail = [[GFCalendarFestivalViewController alloc] initWithNibName:nil bundle:nil];
+        detail.timestamp = [[_dates objectAtIndex:indexPath.row] objectForKey:@"id"];
+        [self.navigationController pushViewController:detail animated:YES];
+    }
+
 }
 
 

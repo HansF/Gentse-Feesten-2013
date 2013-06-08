@@ -20,8 +20,6 @@
 #import "GFSettingsViewController.h"
 #import "GFFavoritesViewController.h"
 #import "GFProgramViewController.h"
-#import "GFCalendarFreeViewController.h"
-#import "GFCalendarFestivalViewController.h"
 #import "GFParkingListViewController.h"
 #import "GFPracticalViewController.h"
 #import "GFFontSmall.h"
@@ -312,19 +310,21 @@
                                                           nil]];
         }
         else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"free"]) {
-            GFCalendarFreeViewController *detailViewController = [[GFCalendarFreeViewController alloc] initWithNibName:nil bundle:nil];
+            GFDateViewController *detailViewController = [[GFDateViewController alloc] initWithNibName:nil bundle:nil];
+            detailViewController.programType = @"free";
             [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                           detailViewController,
-                                                          nil]];
-        }
+                                                          nil]];        }
         else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"thema"]) {
             GFDateViewController *detailViewController = [[GFDateViewController alloc] initWithNibName:nil bundle:nil];
+            detailViewController.programType = @"thema";
             [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                           detailViewController,
                                                           nil]];
         }
         else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"festival"]) {
-            GFCalendarFestivalViewController *detailViewController = [[GFCalendarFestivalViewController alloc] initWithNibName:nil bundle:nil];
+            GFDateViewController *detailViewController = [[GFDateViewController alloc] initWithNibName:nil bundle:nil];
+            detailViewController.programType = @"festival";
             [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                           detailViewController,
                                                           nil]];
@@ -354,7 +354,6 @@
 
     else {
         [self.searchBar resignFirstResponder];
-        [self.searchDisplayController setActive:NO];
         GFNavigationViewController *navigationViewController = [[GFNavigationViewController alloc] initWithNibName:nil bundle:NULL];
         [self.slideMenuController closeMenuBehindContentViewController:navigationViewController animated:YES completion:nil];
         

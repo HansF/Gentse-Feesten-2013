@@ -26,11 +26,8 @@
 {
     [super viewDidLoad];
 
-    [self.view addSubview:[super headerLabel:@"GRATIS"]];
-
-    if (_calledFromNavigationController == YES) {
-        [super calledFromNavigationController];
-    }
+    [self.view addSubview:[super headerLabel:[NSLocalizedString(@"FREE", nil) uppercaseString]]];
+    [super calledFromNavigationController];
 
     self.trackedViewName = @"Program free";
     

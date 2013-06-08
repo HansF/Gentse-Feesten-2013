@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self.view addSubview:[super headerLabel:@"OVER DEZE APP"]];
+        [self.view addSubview:[super headerLabel:[NSLocalizedString(@"ABOUT", nil) uppercaseString]]];
     }
     return self;
 }

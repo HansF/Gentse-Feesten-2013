@@ -9,6 +9,7 @@
 #import "GFCustomViewController.h"
 #import "NVSlideMenuController.h"
 #import "GFFavoritesModalViewController.h"
+#import "GFFontSmall.h"
 
 @interface GFCustomViewController ()
 
@@ -160,6 +161,13 @@
     headerLabel.textAlignment = NSTextAlignmentCenter;
     headerLabel.backgroundColor = UIColorFromRGB(0x005470);
     return headerLabel;
+}
+
+-(CGFloat)getHeightForString:(NSString *)string {
+    NSString *text = string;
+    CGSize constraint = CGSizeMake(188, 20000.0f);
+    CGSize size = [text sizeWithFont:[GFFontSmall sharedInstance] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    return size.height;
 }
 
 

@@ -27,11 +27,9 @@
 {
     [super viewDidLoad];
 
-    [self.view addSubview:[super headerLabel:@"FESTIVALS"]];
+    [self.view addSubview:[super headerLabel:[NSLocalizedString(@"FESTVALS", nil) uppercaseString]]];
 
-    if (_calledFromNavigationController == YES) {
-        [super calledFromNavigationController];
-    }
+    [super calledFromNavigationController];
     
     self.trackedViewName = @"Program festival";
 

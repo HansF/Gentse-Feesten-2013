@@ -12,6 +12,6 @@
 
 @interface GFCalendarFreeViewController : GFCustomViewController
 
-@property (nonatomic) BOOL calledFromNavigationController;
+@property (nonatomic, strong) NSString *timestamp;
 
 @end

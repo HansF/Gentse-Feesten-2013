@@ -8,8 +8,6 @@
 
 #import "GFProgramViewController.h"
 #import "GFDateViewController.h"
-#import "GFCalendarFestivalViewController.h"
-#import "GFCalendarFreeViewController.h"
 #import "GFCustomCell.h"
 
 @interface GFProgramViewController ()
@@ -33,12 +31,12 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    _menu = [[NSArray alloc] initWithObjects:@"Themakalender", @"Gratis", @"Festivals", nil];
+    _menu = [[NSArray alloc] initWithObjects:NSLocalizedString(@"CATEGORIES", nil), NSLocalizedString(@"FREE", nil), NSLocalizedString(@"FESTIVALS", nil), nil];
 
     _tableView = [super addTableView];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:@"PROGRAMMA"];
+    _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:[NSLocalizedString(@"PROGRAM", nil) uppercaseString]];
     [_tableView registerClass:[GFCustomCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];
     
@@ -83,21 +81,22 @@
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
     
+    GFDateViewController *detail = [[GFDateViewController alloc] initWithNibName:nil bundle:nil];
+    
     if (indexPath.row == 0) {
-        GFDateViewController *detail = [[GFDateViewController alloc] initWithNibName:nil bundle:nil];
-        detail.calledFromNavigationController = YES;
-        [self.navigationController pushViewController:detail animated:YES];
+        detail.programType = @"thema";
     }
     else if (indexPath.row == 1) {
-        GFCalendarFreeViewController *detail = [[GFCalendarFreeViewController alloc] initWithNibName:nil bundle:nil];
-        detail.calledFromNavigationController = YES;
-        [self.navigationController pushViewController:detail animated:YES];
+        detail.programType = @"free";
     }
     else {
-        GFCalendarFestivalViewController *detail = [[GFCalendarFestivalViewController alloc] initWithNibName:nil bundle:nil];
-        detail.calledFromNavigationController = YES;
-        [self.navigationController pushViewController:detail animated:YES];
-    }    
+        detail.programType = @"festival";
+    }
+    
+    detail.calledFromNavigationController = YES;
+    
+    [self.navigationController pushViewController:detail animated:YES];
+
 }
 
 

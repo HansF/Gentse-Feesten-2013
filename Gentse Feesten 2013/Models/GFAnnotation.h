@@ -16,4 +16,9 @@
 @property (nonatomic) float lat;
 @property (nonatomic) float lon;
 
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *subtitle;
+
+@property (nonatomic) BOOL userLocation;
+
 @end

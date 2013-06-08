@@ -6,4 +6,10 @@
 
 - (void)updateAttributes:(NSDictionary *)attributes;
 
+- (void)toggleFavorite:(bool)status;
+
++ (int)countWithManagedObjectContext:(NSManagedObjectContext *)context;
+
++ (NSMutableArray *)getRandomAmountServerIds:(NSInteger)amount UsingManagedObjectContext:(NSManagedObjectContext *)moc;
+
 @end

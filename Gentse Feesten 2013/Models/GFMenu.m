@@ -14,79 +14,81 @@
     static NSArray *__sharedInstance;
 
     if (__sharedInstance == nil) {
-    
+
         __sharedInstance = [[NSArray alloc] initWithObjects:
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Home", @"title",
+                             NSLocalizedString(@"HOME", nil), @"title",
                              [NSNumber numberWithBool:YES], @"bold",
                              @"menu_home.png", @"icon",
                              @"home", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Mijn favorieten", @"title",
+                             NSLocalizedString(@"MY_FAVORITES", nil), @"title",
                              [NSNumber numberWithBool:YES], @"bold",
                              @"menu_favorites.png", @"icon",
                              @"favorites", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Programma", @"title",
+                             NSLocalizedString(@"PROGRAM", nil), @"title",
                              [NSNumber numberWithBool:YES], @"bold",
                              @"menu_program", @"icon",
                              @"program", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Themakalender", @"title",
+                             NSLocalizedString(@"CATEGORIES", nil), @"title",
                              [NSNumber numberWithBool:NO], @"bold",
                              @"", @"icon",
                              @"thema", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Gratis", @"title",
+                             NSLocalizedString(@"FREE", nil), @"title",
                              [NSNumber numberWithBool:NO], @"bold",
                              @"", @"icon",
                              @"free", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Festivals", @"title",
+                             NSLocalizedString(@"FESTIVALS", nil), @"title",
                              [NSNumber numberWithBool:NO], @"bold",
                              @"", @"icon",
                              @"festival", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Praktisch", @"title",
+                             NSLocalizedString(@"PRACTICAL", nil), @"title",
                              [NSNumber numberWithBool:YES], @"bold",
                              @"home.png", @"icon",
                              @"practical", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Publiek sanitair", @"title",
+                             NSLocalizedString(@"PUBLIC_TOILETS", nil), @"title",
+                             [NSNumber numberWithBool:NO], @"bold",
+                             @"", @"icon",
+                             nil],
+                            /*
+                            [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                             NSLocalizedString(@"POLICE", nil), @"title",
                              [NSNumber numberWithBool:NO], @"bold",
                              @"", @"icon",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Politie", @"title",
+                             NSLocalizedString(@"FIRST_AID", nil), @"title",
                              [NSNumber numberWithBool:NO], @"bold",
                              @"", @"icon",
                              nil],
+                             */ 
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"EHBO", @"title",
-                             [NSNumber numberWithBool:NO], @"bold",
-                             @"", @"icon",
-                             nil],
-                            [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Parkings", @"title",
+                             NSLocalizedString(@"PARKINGS", nil), @"title",
                              [NSNumber numberWithBool:NO], @"bold",
                              @"", @"icon",
                              @"parkings", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Instellingen", @"title",
+                             NSLocalizedString(@"SETTINGS", nil), @"title",
                              [NSNumber numberWithBool:YES], @"bold",
                              @"home.png", @"icon",
                              @"settings", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             @"Over deze app", @"title",
+                             NSLocalizedString(@"ABOUT", nil), @"title",
                              [NSNumber numberWithBool:YES], @"bold",
                              @"menu_about.png", @"icon",
                              @"about", @"view",

@@ -10,7 +10,10 @@
 
 #import "AFNetworking.h"
 
-#define GFApiClientBaseUrl @"http://datatank.gent.be/"
+#define GFApiClientBaseUrl @"http://gfapi.timleytens.be/gf-api/"
+
+#define GFApiClientKey @"XeqAsustujew6re3"
+#define GFApiClientSecret @"trezenu3uzuDrecE4upruCruq5ba4tec"
 
 @implementation GFAPIClient
 
@@ -40,7 +43,16 @@
         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [super getPath:path parameters:parameters success:success failure:failure];
+    
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                       GFApiClientKey, @"key",
+                                       GFApiClientSecret, @"secret",
+                                       nil];
+
+    [dictionary addEntriesFromDictionary:parameters];
+
+    [super getPath:path parameters:dictionary success:success failure:failure];
+
 }
 
 

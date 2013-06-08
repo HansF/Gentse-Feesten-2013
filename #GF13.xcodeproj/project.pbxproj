@@ -10,6 +10,12 @@
 		220BA6D4175A00D600B8F71D /* _GFEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 220BA6D1175A00D600B8F71D /* _GFEvent.m */; };
 		220BA6D5175A00D600B8F71D /* GFEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 220BA6D3175A00D600B8F71D /* GFEvent.m */; };
 		220BA6D8175A01BB00B8F71D /* GFEventsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 220BA6D7175A01BB00B8F71D /* GFEventsDataModel.m */; };
+		221061C217604BF600557AA9 /* fav_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 221061BE17604BF600557AA9 /* fav_off.png */; };
+		221061C317604BF600557AA9 /* fav_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 221061BF17604BF600557AA9 /* fav_off@2x.png */; };
+		221061C417604BF600557AA9 /* fav_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 221061C017604BF600557AA9 /* fav_on.png */; };
+		221061C517604BF600557AA9 /* fav_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 221061C117604BF600557AA9 /* fav_on@2x.png */; };
+		2215691217619604000799FA /* stunt-dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 2215691017619604000799FA /* stunt-dude.png */; };
+		2215691317619604000799FA /* stunt-dude@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2215691117619604000799FA /* stunt-dude@2x.png */; };
 		221E5BA41730D778000B9A9C /* PTN57F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 221E5BA31730D778000B9A9C /* PTN57F.ttf */; };
 		22213F02173D415600672634 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22213F01173D415600672634 /* SystemConfiguration.framework */; };
 		22213F08173D509100672634 /* menu_favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F05173D509100672634 /* menu_favorites.png */; };
@@ -28,11 +34,14 @@
 		2246774D17587C8900E746A4 /* GFDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2246774C17587C8900E746A4 /* GFDateViewController.m */; };
 		2246775317588BE400E746A4 /* GFFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 2246775217588BE400E746A4 /* GFFont.m */; };
 		2246775617588DC800E746A4 /* GFFontSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = 2246775517588DC800E746A4 /* GFFontSmall.m */; };
+		2248EC17175B6EEF002D2DB9 /* GFDatatankAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248EC16175B6EEF002D2DB9 /* GFDatatankAPIClient.m */; };
+		2248EC1A175B734E002D2DB9 /* GFEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248EC19175B734E002D2DB9 /* GFEventsViewController.m */; };
 		224E9CAE173CC61200F53410 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CAD173CC61200F53410 /* icon.png */; };
 		224E9CB0173CC61700F53410 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CAF173CC61700F53410 /* icon@2x.png */; };
 		224E9CB6173CC6E500F53410 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CB5173CC6E500F53410 /* Default-568h@2x.png */; };
 		224E9CB8173CC6EB00F53410 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CB7173CC6EB00F53410 /* Default@2x.png */; };
 		224E9CBA173CC6F000F53410 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CB9173CC6F000F53410 /* Default.png */; };
+		227D313E175D20BD0014CE6B /* GFCustomEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 227D313D175D20BD0014CE6B /* GFCustomEventCell.m */; };
 		22AD52EB1730324400EC5009 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD52EA1730324400EC5009 /* UIKit.framework */; };
 		22AD52ED1730324400EC5009 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD52EC1730324400EC5009 /* Foundation.framework */; };
 		22AD52EF1730324400EC5009 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD52EE1730324400EC5009 /* CoreGraphics.framework */; };
@@ -76,6 +85,8 @@
 		22C924E61736403600C4BF81 /* GFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924E51736403500C4BF81 /* GFSettingsViewController.m */; };
 		22CFEC50173B936400C48AAE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CFEC4F173B936400C48AAE /* CoreData.framework */; };
 		22CFEC54173B940D00C48AAE /* Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22CFEC52173B940D00C48AAE /* Events.xcdatamodeld */; };
+		22DCC88A17631708002CAE91 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DCC88817631708002CAE91 /* close.png */; };
+		22DCC88B17631708002CAE91 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DCC88917631708002CAE91 /* close@2x.png */; };
 		22FA40C9173F7C46009B3B01 /* GFMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40C8173F7C46009B3B01 /* GFMenu.m */; };
 		22FA40CC173F8C46009B3B01 /* GFCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40CB173F8C46009B3B01 /* GFCustomCell.m */; };
 		22FA40CF173FA475009B3B01 /* GFParkingsCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FA40CE173FA475009B3B01 /* GFParkingsCustomCell.m */; };
@@ -92,6 +103,12 @@
 		220BA6D3175A00D600B8F71D /* GFEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFEvent.m; sourceTree = "<group>"; };
 		220BA6D6175A01BB00B8F71D /* GFEventsDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFEventsDataModel.h; sourceTree = "<group>"; };
 		220BA6D7175A01BB00B8F71D /* GFEventsDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFEventsDataModel.m; sourceTree = "<group>"; };
+		221061BE17604BF600557AA9 /* fav_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fav_off.png; sourceTree = "<group>"; };
+		221061BF17604BF600557AA9 /* fav_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav_off@2x.png"; sourceTree = "<group>"; };
+		221061C017604BF600557AA9 /* fav_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fav_on.png; sourceTree = "<group>"; };
+		221061C117604BF600557AA9 /* fav_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav_on@2x.png"; sourceTree = "<group>"; };
+		2215691017619604000799FA /* stunt-dude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stunt-dude.png"; sourceTree = "<group>"; };
+		2215691117619604000799FA /* stunt-dude@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stunt-dude@2x.png"; sourceTree = "<group>"; };
 		221E5BA31730D778000B9A9C /* PTN57F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN57F.ttf; sourceTree = "<group>"; };
 		22213F01173D415600672634 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22213F05173D509100672634 /* menu_favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_favorites.png; sourceTree = "<group>"; };
@@ -117,19 +134,25 @@
 		2246775217588BE400E746A4 /* GFFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFont.m; sourceTree = "<group>"; };
 		2246775417588DC800E746A4 /* GFFontSmall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFontSmall.h; sourceTree = "<group>"; };
 		2246775517588DC800E746A4 /* GFFontSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFontSmall.m; sourceTree = "<group>"; };
+		2248EC15175B6EEF002D2DB9 /* GFDatatankAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFDatatankAPIClient.h; sourceTree = "<group>"; };
+		2248EC16175B6EEF002D2DB9 /* GFDatatankAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFDatatankAPIClient.m; sourceTree = "<group>"; };
+		2248EC18175B734E002D2DB9 /* GFEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFEventsViewController.h; sourceTree = "<group>"; };
+		2248EC19175B734E002D2DB9 /* GFEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFEventsViewController.m; sourceTree = "<group>"; };
 		224E9CAD173CC61200F53410 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../icon.png; sourceTree = "<group>"; };
 		224E9CAF173CC61700F53410 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../../icon@2x.png"; sourceTree = "<group>"; };
 		224E9CB5173CC6E500F53410 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		224E9CB7173CC6EB00F53410 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
 		224E9CB9173CC6F000F53410 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
-		22AD52E71730324400EC5009 /* Gentse Feesten 2013.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gentse Feesten 2013.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		227D313C175D20BD0014CE6B /* GFCustomEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomEventCell.h; sourceTree = "<group>"; };
+		227D313D175D20BD0014CE6B /* GFCustomEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomEventCell.m; sourceTree = "<group>"; };
+		22AD52E71730324400EC5009 /* #GF13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "#GF13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AD52EA1730324400EC5009 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22AD52EC1730324400EC5009 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22AD52EE1730324400EC5009 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		22AD52F21730324400EC5009 /* Gentse Feesten 2013-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gentse Feesten 2013-Info.plist"; sourceTree = "<group>"; };
+		22AD52F21730324400EC5009 /* #GF13-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "#GF13-Info.plist"; sourceTree = "<group>"; };
 		22AD52F41730324400EC5009 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22AD52F61730324400EC5009 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		22AD52F81730324400EC5009 /* Gentse Feesten 2013-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gentse Feesten 2013-Prefix.pch"; sourceTree = "<group>"; };
+		22AD52F81730324400EC5009 /* #GF13-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "#GF13-Prefix.pch"; sourceTree = "<group>"; };
 		22AD52F91730324400EC5009 /* GFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFAppDelegate.h; sourceTree = "<group>"; };
 		22AD52FA1730324400EC5009 /* GFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFAppDelegate.m; sourceTree = "<group>"; };
 		22AD52FC1730324400EC5009 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -190,6 +213,8 @@
 		22C924E51736403500C4BF81 /* GFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSettingsViewController.m; sourceTree = "<group>"; };
 		22CFEC4F173B936400C48AAE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		22CFEC53173B940D00C48AAE /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
+		22DCC88817631708002CAE91 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		22DCC88917631708002CAE91 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		22FA40C7173F7C46009B3B01 /* GFMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFMenu.h; sourceTree = "<group>"; };
 		22FA40C8173F7C46009B3B01 /* GFMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFMenu.m; sourceTree = "<group>"; };
 		22FA40CA173F8C46009B3B01 /* GFCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomCell.h; sourceTree = "<group>"; };
@@ -241,7 +266,7 @@
 		22AD52E81730324400EC5009 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22AD52E71730324400EC5009 /* Gentse Feesten 2013.app */,
+				22AD52E71730324400EC5009 /* #GF13.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,16 +303,18 @@
 		22AD52F11730324400EC5009 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22DCC88817631708002CAE91 /* close.png */,
+				22DCC88917631708002CAE91 /* close@2x.png */,
 				22213F19173E559B00672634 /* back.png */,
 				22213F1A173E559B00672634 /* back@2x.png */,
 				22213F15173E511C00672634 /* tableBottom.png */,
 				22213F16173E511C00672634 /* tableTop.png */,
 				22C924D017350F6B00C4BF81 /* PTN77F.ttf */,
 				221E5BA31730D778000B9A9C /* PTN57F.ttf */,
-				22AD52F21730324400EC5009 /* Gentse Feesten 2013-Info.plist */,
+				22AD52F21730324400EC5009 /* #GF13-Info.plist */,
 				22AD52F31730324400EC5009 /* InfoPlist.strings */,
 				22AD52F61730324400EC5009 /* main.m */,
-				22AD52F81730324400EC5009 /* Gentse Feesten 2013-Prefix.pch */,
+				22AD52F81730324400EC5009 /* #GF13-Prefix.pch */,
 				22AD52FC1730324400EC5009 /* Default.png */,
 				22AD52FE1730324400EC5009 /* Default@2x.png */,
 				22AD53001730324400EC5009 /* Default-568h@2x.png */,
@@ -311,6 +338,8 @@
 			children = (
 				22213F10173E255D00672634 /* GFAPIClient.h */,
 				22213F11173E255D00672634 /* GFAPIClient.m */,
+				2248EC15175B6EEF002D2DB9 /* GFDatatankAPIClient.h */,
+				2248EC16175B6EEF002D2DB9 /* GFDatatankAPIClient.m */,
 				22FA40C7173F7C46009B3B01 /* GFMenu.h */,
 				22FA40C8173F7C46009B3B01 /* GFMenu.m */,
 				22FA40D6173FB4EF009B3B01 /* GFAnnotation.h */,
@@ -342,6 +371,8 @@
 				2246775217588BE400E746A4 /* GFFont.m */,
 				2246775417588DC800E746A4 /* GFFontSmall.h */,
 				2246775517588DC800E746A4 /* GFFontSmall.m */,
+				227D313C175D20BD0014CE6B /* GFCustomEventCell.h */,
+				227D313D175D20BD0014CE6B /* GFCustomEventCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,6 +414,8 @@
 				22213F1E173E5B8600672634 /* GFParkingDetailViewController.m */,
 				22FA40D3173FAAD5009B3B01 /* GFPracticalViewController.h */,
 				22FA40D4173FAAD5009B3B01 /* GFPracticalViewController.m */,
+				2248EC18175B734E002D2DB9 /* GFEventsViewController.h */,
+				2248EC19175B734E002D2DB9 /* GFEventsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -398,6 +431,12 @@
 		22AD530C1730339400EC5009 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2215691017619604000799FA /* stunt-dude.png */,
+				2215691117619604000799FA /* stunt-dude@2x.png */,
+				221061BE17604BF600557AA9 /* fav_off.png */,
+				221061BF17604BF600557AA9 /* fav_off@2x.png */,
+				221061C017604BF600557AA9 /* fav_on.png */,
+				221061C117604BF600557AA9 /* fav_on@2x.png */,
 				22213F13173E4F2600672634 /* selectedBack.png */,
 				22BDD468175B3BAA00DF0CF6 /* 37x-Checkmark.png */,
 				22BDD469175B3BAA00DF0CF6 /* 37x-Checkmark@2x.png */,
@@ -438,9 +477,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22AD52E61730324400EC5009 /* Gentse Feesten 2013 */ = {
+		22AD52E61730324400EC5009 /* #GF13 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22AD53041730324400EC5009 /* Build configuration list for PBXNativeTarget "Gentse Feesten 2013" */;
+			buildConfigurationList = 22AD53041730324400EC5009 /* Build configuration list for PBXNativeTarget "#GF13" */;
 			buildPhases = (
 				22AD52E31730324400EC5009 /* Sources */,
 				22AD52E41730324400EC5009 /* Frameworks */,
@@ -451,9 +490,9 @@
 			);
 			dependencies = (
 			);
-			name = "Gentse Feesten 2013";
+			name = "#GF13";
 			productName = "Gentse Feesten 2013";
-			productReference = 22AD52E71730324400EC5009 /* Gentse Feesten 2013.app */;
+			productReference = 22AD52E71730324400EC5009 /* #GF13.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -466,7 +505,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Tim Leytens";
 			};
-			buildConfigurationList = 22AD52E21730324300EC5009 /* Build configuration list for PBXProject "Gentse Feesten 2013" */;
+			buildConfigurationList = 22AD52E21730324300EC5009 /* Build configuration list for PBXProject "#GF13" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -479,7 +518,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22AD52E61730324400EC5009 /* Gentse Feesten 2013 */,
+				22AD52E61730324400EC5009 /* #GF13 */,
 			);
 		};
 /* End PBXProject section */
@@ -519,6 +558,14 @@
 				22C667261755CB6100E2E292 /* Localizable.strings in Resources */,
 				22BDD46A175B3BAA00DF0CF6 /* 37x-Checkmark.png in Resources */,
 				22BDD46B175B3BAA00DF0CF6 /* 37x-Checkmark@2x.png in Resources */,
+				221061C217604BF600557AA9 /* fav_off.png in Resources */,
+				221061C317604BF600557AA9 /* fav_off@2x.png in Resources */,
+				221061C417604BF600557AA9 /* fav_on.png in Resources */,
+				221061C517604BF600557AA9 /* fav_on@2x.png in Resources */,
+				2215691217619604000799FA /* stunt-dude.png in Resources */,
+				2215691317619604000799FA /* stunt-dude@2x.png in Resources */,
+				22DCC88A17631708002CAE91 /* close.png in Resources */,
+				22DCC88B17631708002CAE91 /* close@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +630,9 @@
 				220BA6D5175A00D600B8F71D /* GFEvent.m in Sources */,
 				220BA6D8175A01BB00B8F71D /* GFEventsDataModel.m in Sources */,
 				22BDD467175A109C00DF0CF6 /* NSDictionary+ObjectForKeyOrNil.m in Sources */,
+				2248EC17175B6EEF002D2DB9 /* GFDatatankAPIClient.m in Sources */,
+				2248EC1A175B734E002D2DB9 /* GFEventsViewController.m in Sources */,
+				227D313E175D20BD0014CE6B /* GFCustomEventCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,10 +720,10 @@
 			baseConfigurationReference = 59D57EEDD53C439285FA0C8D /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Gentse Feesten 2013/Gentse Feesten 2013-Prefix.pch";
-				INFOPLIST_FILE = "Gentse Feesten 2013/Gentse Feesten 2013-Info.plist";
+				GCC_PREFIX_HEADER = "Gentse Feesten 2013/#GF13-Prefix.pch";
+				INFOPLIST_FILE = "Gentse Feesten 2013/#GF13-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "#GF13";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -683,10 +733,10 @@
 			baseConfigurationReference = 59D57EEDD53C439285FA0C8D /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Gentse Feesten 2013/Gentse Feesten 2013-Prefix.pch";
-				INFOPLIST_FILE = "Gentse Feesten 2013/Gentse Feesten 2013-Info.plist";
+				GCC_PREFIX_HEADER = "Gentse Feesten 2013/#GF13-Prefix.pch";
+				INFOPLIST_FILE = "Gentse Feesten 2013/#GF13-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "#GF13";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -724,10 +774,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tim Leytens";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tim Leytens";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Gentse Feesten 2013/Gentse Feesten 2013-Prefix.pch";
-				INFOPLIST_FILE = "Gentse Feesten 2013/Gentse Feesten 2013-Info.plist";
+				GCC_PREFIX_HEADER = "Gentse Feesten 2013/#GF13-Prefix.pch";
+				INFOPLIST_FILE = "Gentse Feesten 2013/#GF13-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "#GF13";
 				PROVISIONING_PROFILE = "2FDC08DD-F675-439A-971A-5A98B51DBA0B";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2FDC08DD-F675-439A-971A-5A98B51DBA0B";
 				WRAPPER_EXTENSION = app;
@@ -737,7 +787,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22AD52E21730324300EC5009 /* Build configuration list for PBXProject "Gentse Feesten 2013" */ = {
+		22AD52E21730324300EC5009 /* Build configuration list for PBXProject "#GF13" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22AD53021730324400EC5009 /* Debug */,
@@ -747,7 +797,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22AD53041730324400EC5009 /* Build configuration list for PBXNativeTarget "Gentse Feesten 2013" */ = {
+		22AD53041730324400EC5009 /* Build configuration list for PBXNativeTarget "#GF13" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22AD53051730324400EC5009 /* Debug */,

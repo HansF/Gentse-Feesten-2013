@@ -14,7 +14,7 @@
     static UIFont *__sharedInstance;
 
     if (__sharedInstance == nil) {
-        __sharedInstance = [UIFont fontWithName:@"PT Sans Narrow" size:20.0];;
+        __sharedInstance = [UIFont fontWithName:@"PT Sans Narrow" size:19.0];;
     }
 
     return __sharedInstance;
