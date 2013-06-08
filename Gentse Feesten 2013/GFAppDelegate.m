@@ -7,14 +7,10 @@
 //
 
 #import "GFAppDelegate.h"
-
 #import "SDURLCache.h"
-
 #import "NVSlideMenuController.h"
-
 #import "GFHomeViewController.h"
 
-#import "GFEventsDataModel.h"
 
 @interface GFAppDelegate()
 
@@ -43,22 +39,12 @@
                                                                           andContentViewController:navigationViewController];
 
 	self.window.rootViewController = slideMenuVC;
-
-    NSManagedObjectContext *context = [[GFEventsDataModel sharedDataModel] mainContext];
-    if (context) {
-        NSLog(@"Context is ready!");
-
-
-//        [context save:nil];
-    } else {
-        NSLog(@"Context was nil :(");
-    }
-
+    
     [GAI sharedInstance].trackUncaughtExceptions = NO;
     [GAI sharedInstance].dispatchInterval = 10;
     [GAI sharedInstance].debug = NO;
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-40824609-1"];
-    
+
     return YES;
 }
 
