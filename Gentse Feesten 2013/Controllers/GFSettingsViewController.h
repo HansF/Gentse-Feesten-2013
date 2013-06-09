@@ -10,6 +10,6 @@
 
 #import "GFCustomViewController.h"
 
-@interface GFSettingsViewController : GFCustomViewController
+@interface GFSettingsViewController : GFCustomViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
