@@ -10,8 +10,7 @@
 #import "GFCustomCell.h"
 #import "GFDates.h"
 #import "GFCalendarCategoryViewController.h"
-#import "GFCalendarFestivalViewController.h"
-#import "GFCalendarFreeViewController.h"
+#import "GFEventsViewController.h"
 
 
 @interface GFDateViewController ()
@@ -138,12 +137,13 @@
         [self.navigationController pushViewController:detail animated:YES];
     }
     else if ([_programType isEqualToString:@"free"]) {
-        GFCalendarFreeViewController *detail = [[GFCalendarFreeViewController alloc] initWithNibName:nil bundle:nil];
+        GFEventsViewController *detail = [[GFEventsViewController alloc] initWithNibName:nil bundle:nil];
         detail.timestamp = [[_dates objectAtIndex:indexPath.row] objectForKey:@"id"];
+        detail.programType = @"free";
         [self.navigationController pushViewController:detail animated:YES];
     }
     else {
-        GFCalendarFestivalViewController *detail = [[GFCalendarFestivalViewController alloc] initWithNibName:nil bundle:nil];
+        GFEventsViewController *detail = [[GFEventsViewController alloc] initWithNibName:nil bundle:nil];
         detail.timestamp = [[_dates objectAtIndex:indexPath.row] objectForKey:@"id"];
         [self.navigationController pushViewController:detail animated:YES];
     }
