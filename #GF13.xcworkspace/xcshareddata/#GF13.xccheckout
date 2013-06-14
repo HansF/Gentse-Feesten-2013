@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F27DDFD7-9573-4F7C-8D85-5236E5230F23</string>
+	<key>IDESourceControlProjectName</key>
+	<string>#GF13</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D5EC763E-E614-4757-8C69-8E98B099709F</key>
+		<string>ssh://github.com/TimLeytens/Gentse-Feesten-2013.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>#GF13.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D5EC763E-E614-4757-8C69-8E98B099709F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/TimLeytens/Gentse-Feesten-2013.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D5EC763E-E614-4757-8C69-8E98B099709F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D5EC763E-E614-4757-8C69-8E98B099709F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Gentse Feesten 2013 kopie</string>
+		</dict>
+	</array>
+</dict>
+</plist>

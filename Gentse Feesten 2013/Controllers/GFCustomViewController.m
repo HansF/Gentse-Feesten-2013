@@ -36,8 +36,11 @@
 
 
 -(UITableView *)addTableView {
+
     UITableView *tableView = [[UITableView alloc] initWithFrame:
-                  CGRectMake(padding, 0, self.view.frame.size.width - padding * 2, self.view.frame.size.height - navBarHeight)];
+                              CGRectMake(padding, 0, self.view.frame.size.width - padding * 2, IS_IOS_7 ? self.view.frame.size.height : self.view.frame.size.height - navBarHeight)];
+
+
     tableView.backgroundColor = [UIColor clearColor];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     return tableView;
@@ -156,7 +159,7 @@
 
 
 -(GFCustomYellowLabel *)headerLabel:(NSString *)title {
-    GFCustomYellowLabel *headerLabel = [[GFCustomYellowLabel alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width - padding * 2, 28)];
+    GFCustomYellowLabel *headerLabel = [[GFCustomYellowLabel alloc] initWithFrame:CGRectMake(padding, IS_IOS_7 ? 20 + navBarHeight : 20, self.view.frame.size.width - padding * 2, 28)];
     headerLabel.text = title;
     headerLabel.textAlignment = NSTextAlignmentCenter;
     headerLabel.backgroundColor = UIColorFromRGB(0x005470);

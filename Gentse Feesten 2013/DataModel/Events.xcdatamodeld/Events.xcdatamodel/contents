@@ -5,6 +5,7 @@
         <attribute name="cat_id" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="datum" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="fav" optional="YES" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="festival" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="gratis" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="korting" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -22,6 +23,6 @@
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GFEvent" positionX="-450" positionY="-369" width="515" height="328"/>
+        <element name="GFEvent" positionX="-450" positionY="-369" width="515" height="345"/>
     </elements>
 </model>

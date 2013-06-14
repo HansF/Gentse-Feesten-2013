@@ -8,6 +8,7 @@ const struct GFEventAttributes GFEventAttributes = {
 	.cat_id = @"cat_id",
 	.datum = @"datum",
 	.fav = @"fav",
+	.festival = @"festival",
 	.gratis = @"gratis",
 	.korting = @"korting",
 	.lat = @"lat",
@@ -64,6 +65,11 @@ const struct GFEventFetchedProperties GFEventFetchedProperties = {
 	}
 	if ([key isEqualToString:@"favValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"fav"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"festivalValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"festival"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -164,6 +170,32 @@ const struct GFEventFetchedProperties GFEventFetchedProperties = {
 
 - (void)setPrimitiveFavValue:(BOOL)value_ {
 	[self setPrimitiveFav:[NSNumber numberWithBool:value_]];
+}
+
+
+
+
+
+@dynamic festival;
+
+
+
+- (BOOL)festivalValue {
+	NSNumber *result = [self festival];
+	return [result boolValue];
+}
+
+- (void)setFestivalValue:(BOOL)value_ {
+	[self setFestival:[NSNumber numberWithBool:value_]];
+}
+
+- (BOOL)primitiveFestivalValue {
+	NSNumber *result = [self primitiveFestival];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveFestivalValue:(BOOL)value_ {
+	[self setPrimitiveFestival:[NSNumber numberWithBool:value_]];
 }
 
 

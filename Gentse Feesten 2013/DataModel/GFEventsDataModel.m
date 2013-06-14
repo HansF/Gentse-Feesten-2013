@@ -76,7 +76,20 @@
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (_persistentStoreCoordinator == nil) {
         NSLog(@"SQLITE STORE PATH: %@", [self pathToLocalStore]);
+
+        
         NSURL *storeURL = [NSURL fileURLWithPath:[self pathToLocalStore]];
+
+       // NSURL *storeURL = [NSURL URLWithString:[self pathToLocalStore]];
+
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        if (![fileManager fileExistsAtPath:[storeURL path]]) {
+            NSURL *defaultStoreURL = [[NSBundle mainBundle] URLForResource:@"Events" withExtension:@"sqlite"];
+            if (defaultStoreURL) {
+                [fileManager copyItemAtURL:defaultStoreURL toURL:storeURL error:NULL];
+            }
+        }
+        
         NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc]
                                              initWithManagedObjectModel:[self managedObjectModel]];
         NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:

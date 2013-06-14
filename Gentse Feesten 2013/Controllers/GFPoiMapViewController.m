@@ -14,6 +14,8 @@
 #import "AFNetworking.h"
 #import "GFDatatankAPIClient.h"
 
+#import "GFPoiDetailViewController.h"
+
 @interface GFPoiMapViewController(){
     NSString *_path;
 }
@@ -44,6 +46,10 @@ static BOOL haveAlreadyReceivedCoordinates;
 {
     [super viewDidLoad];
 
+    if (_calledFromNavigationController == YES) {
+        [super calledFromNavigationController];
+    }
+
     UIView *headerLabel = [super headerLabel:[NSLocalizedString(@"PUBLIC_TOILETS", nil) uppercaseString]];
     [self.view addSubview:headerLabel];
 
@@ -52,11 +58,11 @@ static BOOL haveAlreadyReceivedCoordinates;
     bodyTopView.frame = CGRectMake(padding, headerLabel.frame.size.height + headerLabel.frame.origin.y + padding, bodyTop.size.width, bodyTop.size.height);
     [self.view addSubview:bodyTopView];
 
-    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, 62, self.view.frame.size.width - (padding * 2), self.view.frame.size.height - navBarHeight - (padding * 2) - 62)];
+    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, IS_IOS_7 ? 62 + navBarHeight : 62, self.view.frame.size.width - (padding * 2), self.view.frame.size.height - navBarHeight - (padding * 2) - 62)];
     myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
     [self.view addSubview:myBackView];
 
-    _mapView = [[MKMapView alloc] initWithFrame:CGRectMake(padding * 2, 67, self.view.frame.size.width - (padding * 4) - 2, self.view.frame.size.height - navBarHeight - (padding * 3) - 62)];
+    _mapView = [[MKMapView alloc] initWithFrame:CGRectMake(padding * 2, IS_IOS_7 ? 67 + navBarHeight : 67, self.view.frame.size.width - (padding * 4) - 2, self.view.frame.size.height - navBarHeight - (padding * 3) - 62)];
 
     [_mapView setMapType:MKMapTypeStandard];
     [_mapView setZoomEnabled:YES];
@@ -212,10 +218,6 @@ static BOOL haveAlreadyReceivedCoordinates;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         button.frame = CGRectMake(0, 0, 23, 23);
         
-        [button addTarget:self
-                   action:@selector(openToiletDetails:)
-         forControlEvents:UIControlEventTouchDown];
-        
         annotationView.rightCalloutAccessoryView = button;
         
     }
@@ -225,8 +227,21 @@ static BOOL haveAlreadyReceivedCoordinates;
     return annotationView;
 }
 
-- (void)openToiletDetails:(id)sender {
+
+- (void)mapView:(MKMapView *)mapView
+ annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+
+    GFPoiDetailViewController *detail = [[GFPoiDetailViewController alloc] initWithNibName:nil bundle:NULL];
+
+    GFAnnotation *annotation = (GFAnnotation*) view.annotation;
+    detail.latitude = annotation.lat;
+    detail.longitude = annotation.lon;
+    detail.label = [annotation.title uppercaseString];
+    [self.navigationController pushViewController:detail animated:YES];
+    
 }
+
+
 
 - (UIBarButtonItem *)showMenuButton {
 
@@ -250,6 +265,5 @@ static BOOL haveAlreadyReceivedCoordinates;
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:containerView];
     return item;
 }
-
 
 @end

@@ -10,6 +10,6 @@
 
 + (int)countWithManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (NSMutableArray *)getRandomAmountServerIds:(NSInteger)amount UsingManagedObjectContext:(NSManagedObjectContext *)moc;
++ (NSMutableArray *)getRandomAmountServerIds:(NSInteger)amount withDate:(int)timestamp withCategories:(NSMutableArray *)interests UsingManagedObjectContext:(NSManagedObjectContext *)moc;
 
 @end

@@ -1,29 +1,29 @@
 //
-//  GFParkingDetailViewController.m
-//  Gentse Feesten 2013
+//  GFPoiDetailViewController.m
+//  #GF13
 //
-//  Created by Tim Leytens on 11/05/13.
+//  Created by Tim Leytens on 14/06/13.
 //  Copyright (c) 2013 Tim Leytens. All rights reserved.
 //
 
 #import <QuartzCore/QuartzCore.h>
 #import <MapKit/MapKit.h>
 
-#import "GFParkingDetailViewController.h"
+#import "GFPoiDetailViewController.h"
 #import "MDCParallaxView.h"
 #import "GFAnnotation.h"
 
-
-@interface GFParkingDetailViewController () <UIScrollViewDelegate, MKMapViewDelegate>
+@interface GFPoiDetailViewController () <UIScrollViewDelegate, MKMapViewDelegate>
 
 @end
 
-@implementation GFParkingDetailViewController
+@implementation GFPoiDetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -44,7 +44,7 @@
     region.span.longitudeDelta = 0.01f;
     region.span.latitudeDelta = 0.01f;
     [mapView setRegion:region animated:YES];
-    
+
     GFAnnotation *annotation = [[GFAnnotation alloc] init];
     annotation.lat = _latitude;
     annotation.lon = _longitude;
@@ -55,14 +55,29 @@
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600)];
     containerView.backgroundColor = UIColorFromRGB(0x005470);
 
-    [containerView addSubview:[super headerLabel:self.label]];
+    UIView *headerLabel = [super headerLabel:[self.label uppercaseString]];
+    
+    [containerView addSubview:headerLabel];
+
+    UIImage *bodyTop = [UIImage imageNamed:@"tableTop.png"];
+    UIImageView *bodyTopView = [[UIImageView alloc] initWithImage:bodyTop];
+    bodyTopView.frame = CGRectMake(padding, headerLabel.frame.size.height + headerLabel.frame.origin.y + padding, bodyTop.size.width, bodyTop.size.height);
+    [containerView addSubview:bodyTopView];
+
+    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, IS_IOS_7 ? 62 + navBarHeight : 62, self.view.frame.size.width - (padding * 2), 100)];
+    myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
+    [containerView addSubview:myBackView];
+
+    UIView *footer = [super addTableViewFooter];
+    footer.frame = CGRectMake(padding, myBackView.frame.origin.y + myBackView.frame.size.height, footer.frame.size.width, footer.frame.size.height);
+    [containerView addSubview:footer];
 
     UIButton *routeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [routeButton addTarget:self
                     action:@selector(showRoute)
           forControlEvents:UIControlEventTouchDown];
     [routeButton setTitle:@"TOON ROUTE" forState:UIControlStateNormal];
-    routeButton.frame = CGRectMake(padding, 100, self.view.frame.size.width - (padding * 2), 55.0);
+    routeButton.frame = CGRectMake(padding, footer.frame.origin.y + footer.frame.size.height + padding, self.view.frame.size.width - (padding * 2), 55.0);
     routeButton.backgroundColor = UIColorFromRGB(0xed4e40);
 
     routeButton.layer.masksToBounds = NO;
@@ -98,6 +113,11 @@
     parallaxView.backgroundHeight = 140.0f;
 }
 
+- (void)mapViewWillStartRenderingMap:(MKMapView *)mapView {
+    MDCParallaxView *parallaxView = (MDCParallaxView *) [self.view viewWithTag:1];
+    parallaxView.backgroundHeight = 140.0f;
+}
+
 - (void)showRoute
 {
     Class mapItemClass = [MKMapItem class];
@@ -108,19 +128,12 @@
                                                        addressDictionary:nil];
         MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
         [mapItem setName:_label];
-        
+
         NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
         MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
         [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
                        launchOptions:launchOptions];
     }
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

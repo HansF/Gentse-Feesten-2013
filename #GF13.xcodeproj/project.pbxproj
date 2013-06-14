@@ -14,6 +14,9 @@
 		221061C317604BF600557AA9 /* fav_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 221061BF17604BF600557AA9 /* fav_off@2x.png */; };
 		221061C417604BF600557AA9 /* fav_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 221061C017604BF600557AA9 /* fav_on.png */; };
 		221061C517604BF600557AA9 /* fav_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 221061C117604BF600557AA9 /* fav_on@2x.png */; };
+		2212A640176AD4B60004C49A /* menu_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2212A63F176AD4B60004C49A /* menu_settings.png */; };
+		2212A642176AD6A40004C49A /* menu_practical.png in Resources */ = {isa = PBXBuildFile; fileRef = 2212A641176AD6A40004C49A /* menu_practical.png */; };
+		2212A649176AE9F60004C49A /* GFPoiDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2212A648176AE9F60004C49A /* GFPoiDetailViewController.m */; };
 		2215691217619604000799FA /* stunt-dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 2215691017619604000799FA /* stunt-dude.png */; };
 		2215691317619604000799FA /* stunt-dude@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2215691117619604000799FA /* stunt-dude@2x.png */; };
 		221E5BA41730D778000B9A9C /* PTN57F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 221E5BA31730D778000B9A9C /* PTN57F.ttf */; };
@@ -30,10 +33,12 @@
 		22213F1B173E559C00672634 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F19173E559B00672634 /* back.png */; };
 		22213F1C173E559C00672634 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22213F1A173E559B00672634 /* back@2x.png */; };
 		22213F1F173E5B8700672634 /* GFParkingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22213F1E173E5B8600672634 /* GFParkingDetailViewController.m */; };
+		222609FA1766DFD900B08860 /* Events.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 222609F91766DFD900B08860 /* Events.sqlite */; };
 		2246774A17587A0400E746A4 /* GFDates.m in Sources */ = {isa = PBXBuildFile; fileRef = 2246774917587A0400E746A4 /* GFDates.m */; };
 		2246774D17587C8900E746A4 /* GFDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2246774C17587C8900E746A4 /* GFDateViewController.m */; };
 		2246775317588BE400E746A4 /* GFFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 2246775217588BE400E746A4 /* GFFont.m */; };
 		2246775617588DC800E746A4 /* GFFontSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = 2246775517588DC800E746A4 /* GFFontSmall.m */; };
+		22475DAE17634A0F00C93252 /* GFCustomInterestsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22475DAD17634A0F00C93252 /* GFCustomInterestsCell.m */; };
 		2248EC17175B6EEF002D2DB9 /* GFDatatankAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248EC16175B6EEF002D2DB9 /* GFDatatankAPIClient.m */; };
 		2248EC1A175B734E002D2DB9 /* GFEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248EC19175B734E002D2DB9 /* GFEventsViewController.m */; };
 		224E9CAE173CC61200F53410 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 224E9CAD173CC61200F53410 /* icon.png */; };
@@ -107,6 +112,10 @@
 		221061BF17604BF600557AA9 /* fav_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav_off@2x.png"; sourceTree = "<group>"; };
 		221061C017604BF600557AA9 /* fav_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fav_on.png; sourceTree = "<group>"; };
 		221061C117604BF600557AA9 /* fav_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav_on@2x.png"; sourceTree = "<group>"; };
+		2212A63F176AD4B60004C49A /* menu_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_settings.png; sourceTree = "<group>"; };
+		2212A641176AD6A40004C49A /* menu_practical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_practical.png; sourceTree = "<group>"; };
+		2212A647176AE9F60004C49A /* GFPoiDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFPoiDetailViewController.h; sourceTree = "<group>"; };
+		2212A648176AE9F60004C49A /* GFPoiDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFPoiDetailViewController.m; sourceTree = "<group>"; };
 		2215691017619604000799FA /* stunt-dude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stunt-dude.png"; sourceTree = "<group>"; };
 		2215691117619604000799FA /* stunt-dude@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stunt-dude@2x.png"; sourceTree = "<group>"; };
 		221E5BA31730D778000B9A9C /* PTN57F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN57F.ttf; sourceTree = "<group>"; };
@@ -126,6 +135,7 @@
 		22213F1A173E559B00672634 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		22213F1D173E5B8600672634 /* GFParkingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFParkingDetailViewController.h; sourceTree = "<group>"; };
 		22213F1E173E5B8600672634 /* GFParkingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFParkingDetailViewController.m; sourceTree = "<group>"; };
+		222609F91766DFD900B08860 /* Events.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Events.sqlite; sourceTree = "<group>"; };
 		2246774817587A0400E746A4 /* GFDates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFDates.h; sourceTree = "<group>"; };
 		2246774917587A0400E746A4 /* GFDates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFDates.m; sourceTree = "<group>"; };
 		2246774B17587C8900E746A4 /* GFDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFDateViewController.h; sourceTree = "<group>"; };
@@ -134,6 +144,8 @@
 		2246775217588BE400E746A4 /* GFFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFont.m; sourceTree = "<group>"; };
 		2246775417588DC800E746A4 /* GFFontSmall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFontSmall.h; sourceTree = "<group>"; };
 		2246775517588DC800E746A4 /* GFFontSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFontSmall.m; sourceTree = "<group>"; };
+		22475DAC17634A0F00C93252 /* GFCustomInterestsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomInterestsCell.h; sourceTree = "<group>"; };
+		22475DAD17634A0F00C93252 /* GFCustomInterestsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomInterestsCell.m; sourceTree = "<group>"; };
 		2248EC15175B6EEF002D2DB9 /* GFDatatankAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFDatatankAPIClient.h; sourceTree = "<group>"; };
 		2248EC16175B6EEF002D2DB9 /* GFDatatankAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFDatatankAPIClient.m; sourceTree = "<group>"; };
 		2248EC18175B734E002D2DB9 /* GFEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFEventsViewController.h; sourceTree = "<group>"; };
@@ -303,6 +315,7 @@
 		22AD52F11730324400EC5009 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				222609F91766DFD900B08860 /* Events.sqlite */,
 				22DCC88817631708002CAE91 /* close.png */,
 				22DCC88917631708002CAE91 /* close@2x.png */,
 				22213F19173E559B00672634 /* back.png */,
@@ -373,6 +386,8 @@
 				2246775517588DC800E746A4 /* GFFontSmall.m */,
 				227D313C175D20BD0014CE6B /* GFCustomEventCell.h */,
 				227D313D175D20BD0014CE6B /* GFCustomEventCell.m */,
+				22475DAC17634A0F00C93252 /* GFCustomInterestsCell.h */,
+				22475DAD17634A0F00C93252 /* GFCustomInterestsCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,6 +405,8 @@
 				22AD53271730406F00EC5009 /* GFHomeViewController.m */,
 				22C924DC1735392C00C4BF81 /* GFPoiMapViewController.h */,
 				22C924DD1735392C00C4BF81 /* GFPoiMapViewController.m */,
+				2212A647176AE9F60004C49A /* GFPoiDetailViewController.h */,
+				2212A648176AE9F60004C49A /* GFPoiDetailViewController.m */,
 				22C924E117363C8B00C4BF81 /* GFAboutViewController.h */,
 				22C924E217363C8B00C4BF81 /* GFAboutViewController.m */,
 				22C924E41736403500C4BF81 /* GFSettingsViewController.h */,
@@ -431,6 +448,8 @@
 		22AD530C1730339400EC5009 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2212A641176AD6A40004C49A /* menu_practical.png */,
+				2212A63F176AD4B60004C49A /* menu_settings.png */,
 				2215691017619604000799FA /* stunt-dude.png */,
 				2215691117619604000799FA /* stunt-dude@2x.png */,
 				221061BE17604BF600557AA9 /* fav_off.png */,
@@ -566,6 +585,9 @@
 				2215691317619604000799FA /* stunt-dude@2x.png in Resources */,
 				22DCC88A17631708002CAE91 /* close.png in Resources */,
 				22DCC88B17631708002CAE91 /* close@2x.png in Resources */,
+				222609FA1766DFD900B08860 /* Events.sqlite in Resources */,
+				2212A640176AD4B60004C49A /* menu_settings.png in Resources */,
+				2212A642176AD6A40004C49A /* menu_practical.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +655,8 @@
 				2248EC17175B6EEF002D2DB9 /* GFDatatankAPIClient.m in Sources */,
 				2248EC1A175B734E002D2DB9 /* GFEventsViewController.m in Sources */,
 				227D313E175D20BD0014CE6B /* GFCustomEventCell.m in Sources */,
+				22475DAE17634A0F00C93252 /* GFCustomInterestsCell.m in Sources */,
+				2212A649176AE9F60004C49A /* GFPoiDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

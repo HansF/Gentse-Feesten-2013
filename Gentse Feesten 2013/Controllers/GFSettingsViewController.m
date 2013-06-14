@@ -89,9 +89,6 @@
     [_tableView registerClass:[GFCustomInterestsCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];
 
-
-    
-
 }
 
 
@@ -159,7 +156,6 @@
                 [_hud hide:YES afterDelay:2.0];
             });
         } else {
-            NSLog(@"ERROR: %@ %@", [error localizedDescription], [error userInfo]);
             exit(1);
         }
     });
@@ -204,7 +200,7 @@
 
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-        id key = [NSString stringWithFormat:@"interests-%ld", (long)indexPath.row];
+        id key = [NSString stringWithFormat:@"interests-%@", [[_categories objectAtIndex:indexPath.row] objectForKey:@"id"]];
         bool value = [defaults boolForKey:key];
 
         onoff.on = value;
@@ -245,7 +241,7 @@
     if (indexPath != nil)
     {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        id key = [NSString stringWithFormat:@"interests-%ld", (long)indexPath.row];
+        id key = [NSString stringWithFormat:@"interests-%@", [[_categories objectAtIndex:indexPath.row] objectForKey:@"id"]];
 
         bool newValue = sender.on ? YES : NO;
 

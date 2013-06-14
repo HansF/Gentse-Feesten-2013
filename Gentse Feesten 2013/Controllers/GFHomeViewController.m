@@ -12,18 +12,21 @@
 #import "GFCustomEventCell.h"
 #import "GFEventsDataModel.h"
 #import "GFEvent.h"
-#import "MBProgressHUD.h"
 #import "AFNetworking.h"
 #import "GFAPIClient.h"
 #import "GFFontSmall.h"
+#import "GFDates.h"
+#import "GFCategories.h"
 
-@interface GFHomeViewController () {
-    MBProgressHUD *_hud;
-}
-
+@interface GFHomeViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property time_t today;
+
+@property int timestamp;
+
+@property (nonatomic, strong) NSArray *categories;
 
 @end
 
@@ -43,18 +46,12 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
 
-    if ([self numberOfEvents] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"PROGRAM", nil) message:NSLocalizedString(@"NO_EVENTS_YET", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"CANCEL", nil) otherButtonTitles:nil];
-        [alert addButtonWithTitle:NSLocalizedString(@"DOWNLOAD", nil)];
-        [alert show];
-    }
-
     _tableView = [super addTableView];
     _tableView.delegate = self;
     _tableView.dataSource = self;
 
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - padding * 2, 60)];
-    
+
     UIImage *stuntDude = [UIImage imageNamed:@"stunt-dude.png"];
     UIImageView *stuntDudeView = [[UIImageView alloc] initWithImage:stuntDude];
     [containerView addSubview:stuntDudeView];
@@ -64,7 +61,7 @@
     tableTopView.frame = CGRectMake(0, stuntDudeView.frame.size.height + stuntDudeView.frame.origin.y, tableTop.size.width, tableTop.size.height);
     [containerView addSubview:tableTopView];
 
-    containerView.frame = CGRectMake(containerView.frame.origin.x, containerView.frame.origin.y, containerView.frame.size.width, tableTopView.frame.size.height + tableTopView.frame.origin.y);
+    containerView.frame = CGRectMake(containerView.frame.origin.x, containerView.frame.origin.y, containerView.frame.size.width, stuntDudeView.frame.size.height + stuntDudeView.frame.origin.y);
 
     _tableView.tableHeaderView = containerView;
 
@@ -103,8 +100,10 @@
 
         cell.label.text = event.name;
 
-        cell.timeLabel.text = NSLocalizedString(@"ALL_DAY", nill);
-        if (event.startuur) {
+        if ([event.sort isEqualToNumber:[NSNumber numberWithInt:0]]) {
+            cell.timeLabel.text = NSLocalizedString(@"ALL_DAY", nil);
+        }
+        else {
             cell.timeLabel.text = event.startuur;
         }
 
@@ -171,10 +170,27 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
+
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
 
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    _categories = [GFCategories sharedInstance];
+
+    NSMutableArray *interests = [[NSMutableArray alloc] init];
+    for(id category in _categories) {
+        id key = [NSString stringWithFormat:@"interests-%@", [category objectForKey:@"id"]];
+        if ([defaults boolForKey:key]) {
+            [interests addObject:[category objectForKey:@"id"]];
+        }
+    }
+
+    NSMutableArray *allInterests = [[NSMutableArray alloc] init];
+    for(id category in _categories) {
+        [allInterests addObject:[category objectForKey:@"id"]];
+    }
 
     NSManagedObjectContext *context = [[GFEventsDataModel sharedDataModel] mainContext];
 
@@ -188,17 +204,42 @@
 
     [fetchRequest setFetchLimit:10];
        
-    NSSortDescriptor *datumSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"datum" ascending:YES];
     NSSortDescriptor *sortSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sort" ascending:YES];
 
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:datumSortDescriptor, sortSortDescriptor, nil];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortSortDescriptor, nil];
 
     [fetchRequest setSortDescriptors:sortDescriptors];
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"serverId IN %@", [GFEvent getRandomAmountServerIds:10 UsingManagedObjectContext:context]];
 
-    fetchRequest.predicate = predicate;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[NSDate date]];
+    [components setHour:0];
+    [components setMinute:0];
+    [components setSecond:0];
 
+    _today = (time_t) [[calendar dateFromComponents:components] timeIntervalSince1970];
+
+    if ((int) _today <= 1374271200) {
+        _timestamp = 1374271200;
+    }
+    else if ((int) _today >= 1375048800) {
+        _timestamp = 1375048800;
+    }
+    else {
+        _timestamp = (int) _today;
+    }
+
+    NSArray *randomServerIds = [GFEvent getRandomAmountServerIds:10 withDate:_timestamp withCategories:interests UsingManagedObjectContext:context];
+
+    if ([randomServerIds count] > 0) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"serverId IN %@", [GFEvent getRandomAmountServerIds:10 withDate:_timestamp withCategories:interests UsingManagedObjectContext:context]];
+        fetchRequest.predicate = predicate;
+    }
+    else {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"serverId IN %@", [GFEvent getRandomAmountServerIds:10 withDate:_timestamp withCategories:allInterests UsingManagedObjectContext:context]];
+        fetchRequest.predicate = predicate;
+    }
+     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
@@ -226,9 +267,12 @@
     label.textColor = UIColorFromRGB(0x002d46);
     label.backgroundColor = [UIColor whiteColor];
 
+    for (id date in [GFDates sharedInstance]) {
+        if ([[date objectForKey:@"id"] isEqualToString:[NSString stringWithFormat:@"%i", _timestamp]]) {
+            label.text = [[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"SPOTLIGHT", nil), [date objectForKey:@"name"]] uppercaseString];
+        }
+    }
     
-    label.text = [[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"SPOTLIGHT", nil), NSLocalizedString(@"ZATERDAG_20_JULI", nil)] uppercaseString];
-
     label.textAlignment = UITextAlignmentCenter;
     [headerView addSubview:label];
 
@@ -280,91 +324,5 @@
         
     }
 }
-
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)index
-{
-    if (index == 1) {
-        [self updateProgram];
-    }
-}
-
--(void)updateProgram {
-    if (!_hud) {
-        _hud = [[MBProgressHUD alloc] initWithView:self.view];
-    }
-
-    [_hud setMode:MBProgressHUDModeIndeterminate];
-    [_hud setLabelText:@"Fetching..."];
-    [self.view addSubview:_hud];
-
-    [[GFAPIClient sharedInstance] getPath:@"events/list.json" parameters:nil
-                                  success:^(AFHTTPRequestOperation *operation, id response) {
-                                      [self parseEvents:response];
-                                      [_tableView reloadData];
-                                      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-
-                                  }
-                                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                      [super showAlertNoInternetConnection];
-                                      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                      [_hud show:NO];
-                                  }];
-
-    [_hud show:YES];
-    _hud.dimBackground = YES;
-}
-
-- (void)parseEvents:(id)events {
-    [_hud setMode:MBProgressHUDModeDeterminate];
-    [_hud setProgress:0];
-    [_hud setLabelText:NSLocalizedString(@"IMPORTING", nil)];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        NSInteger totalRecords = [events count];
-        NSInteger currentRecord = 0;
-
-        NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
-        [context setPersistentStoreCoordinator:[[GFEventsDataModel sharedDataModel] persistentStoreCoordinator]];
-
-        for (NSDictionary *dictionary in events) {
-            NSInteger serverId = [[dictionary objectForKey:@"id"] intValue];
-            GFEvent *event = [GFEvent eventWithServerId:serverId usingManagedObjectContext:context];
-            if (event == nil) {
-                event = [GFEvent insertInManagedObjectContext:context];
-                [event setServerId:[NSNumber numberWithInteger:serverId]];
-            }
-
-            [event updateAttributes:dictionary];
-
-            currentRecord++;
-
-            dispatch_async(dispatch_get_main_queue(), ^{
-                float percent = ((float)currentRecord) / totalRecords;
-                [_hud setProgress:percent];
-            });
-        }
-
-        NSError *error = nil;
-        if ([context save:&error]) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-
-                [_hud setLabelText:NSLocalizedString(@"DONE", nil)];
-                _hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
-                _hud.mode = MBProgressHUDModeCustomView;
-                [_hud hide:YES afterDelay:2.0];
-            });
-        } else {
-            NSLog(@"ERROR: %@ %@", [error localizedDescription], [error userInfo]);
-            exit(1);
-        }
-    });
-}
-
-
-- (int)numberOfEvents {
-    NSManagedObjectContext *context = [[GFEventsDataModel sharedDataModel] mainContext];
-    return [GFEvent countWithManagedObjectContext:context];
-}
-
 
 @end

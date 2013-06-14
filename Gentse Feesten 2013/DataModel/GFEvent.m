@@ -32,6 +32,7 @@
 - (void)updateAttributes:(NSDictionary *)attributes {
     self.name = [attributes objectForKeyOrNil:@"title"];
     self.gratis = [NSNumber numberWithInt:[[attributes objectForKeyOrNil:@"gratis"] intValue]];
+    self.festival = [NSNumber numberWithInt:[[attributes objectForKeyOrNil:@"festival"] intValue]];
     self.prijs = [attributes objectForKeyOrNil:@"prijs"];
     self.prijs_vvk = [attributes objectForKeyOrNil:@"prijs_vvk"];
     self.omschrijving = [attributes objectForKeyOrNil:@"omsch"];
@@ -61,11 +62,13 @@
 }
 
 
-+ (NSMutableArray *)getRandomAmountServerIds:(NSInteger)amount UsingManagedObjectContext:(NSManagedObjectContext *)moc {
++ (NSMutableArray *)getRandomAmountServerIds:(NSInteger)amount withDate:(int)timestamp withCategories:(NSMutableArray *)interests UsingManagedObjectContext:(NSManagedObjectContext *)moc {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[GFEvent entityName]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"datum = %i AND cat_id IN %@", timestamp, interests]];
     
     NSError *error = nil;
     NSArray *results = [moc executeFetchRequest:fetchRequest error:&error];
+    
     if (error || [results count] == 0) {
         return nil;
     }

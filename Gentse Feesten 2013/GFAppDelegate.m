@@ -11,7 +11,6 @@
 #import "NVSlideMenuController.h"
 #import "GFHomeViewController.h"
 
-
 @interface GFAppDelegate()
 
 @end
@@ -20,8 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    if (IS_IOS_7) {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    }
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 

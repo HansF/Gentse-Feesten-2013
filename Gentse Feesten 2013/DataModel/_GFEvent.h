@@ -9,6 +9,7 @@ extern const struct GFEventAttributes {
 	__unsafe_unretained NSString *cat_id;
 	__unsafe_unretained NSString *datum;
 	__unsafe_unretained NSString *fav;
+	__unsafe_unretained NSString *festival;
 	__unsafe_unretained NSString *gratis;
 	__unsafe_unretained NSString *korting;
 	__unsafe_unretained NSString *lat;
@@ -31,6 +32,7 @@ extern const struct GFEventRelationships {
 
 extern const struct GFEventFetchedProperties {
 } GFEventFetchedProperties;
+
 
 
 
@@ -109,6 +111,20 @@ extern const struct GFEventFetchedProperties {
 - (void)setFavValue:(BOOL)value_;
 
 //- (BOOL)validateFav:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* festival;
+
+
+
+@property BOOL festivalValue;
+- (BOOL)festivalValue;
+- (void)setFestivalValue:(BOOL)value_;
+
+//- (BOOL)validateFestival:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -324,6 +340,15 @@ extern const struct GFEventFetchedProperties {
 
 - (BOOL)primitiveFavValue;
 - (void)setPrimitiveFavValue:(BOOL)value_;
+
+
+
+
+- (NSNumber*)primitiveFestival;
+- (void)setPrimitiveFestival:(NSNumber*)value;
+
+- (BOOL)primitiveFestivalValue;
+- (void)setPrimitiveFestivalValue:(BOOL)value_;
 
 
 

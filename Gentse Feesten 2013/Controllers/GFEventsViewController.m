@@ -93,8 +93,10 @@
         
         cell.label.text = event.name;
 
-        cell.timeLabel.text = NSLocalizedString(@"ALL_DAY", nill);
-        if (event.startuur) {
+        if ([event.sort isEqualToNumber:[NSNumber numberWithInt:0]]) {
+            cell.timeLabel.text = NSLocalizedString(@"ALL_DAY", nil);
+        }
+        else {
             cell.timeLabel.text = event.startuur;
         }
 
@@ -202,10 +204,21 @@
 
     [fetchRequest setSortDescriptors:sortDescriptors];
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"cat_id == %i and datum == %@", _categoryID, _timestamp];
-    fetchRequest.predicate = predicate;
+    if ([_programType isEqualToString:@"thema"]) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"cat_id == %i and datum == %@", _categoryID, _timestamp];
+        fetchRequest.predicate = predicate;
+    }
+    else if ([_programType isEqualToString:@"free"]) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"gratis == 1 and datum == %@", _timestamp];
+        fetchRequest.predicate = predicate;
+    }
+    else {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"festival == 1 and datum == %@", _timestamp];
+        fetchRequest.predicate = predicate;
+    }
 
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
 

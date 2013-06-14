@@ -14,4 +14,6 @@
 
 @interface GFPoiMapViewController : GFCustomViewController <MKMapViewDelegate, MKAnnotation, CLLocationManagerDelegate>
 
+@property (nonatomic) BOOL calledFromNavigationController;
+
 @end

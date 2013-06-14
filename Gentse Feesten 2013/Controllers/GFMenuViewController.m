@@ -81,6 +81,10 @@
     [[_searchBar.subviews objectAtIndex:0] removeFromSuperview];
     [_searchBar setBackgroundColor:[UIColor clearColor]];
 
+    if (IS_IOS_7) {
+        _searchBar.tintColor = [UIColor whiteColor];
+    }
+
     _searchController = [[UISearchDisplayController alloc] initWithSearchBar:_searchBar contentsController:self];
     _searchController.searchResultsDataSource = self;
     _searchController.searchResultsDelegate = self;
@@ -105,6 +109,10 @@
     _menuTableView.delegate = self;
     _menuTableView.dataSource = self;
     _menuTableView.separatorColor = UIColorFromRGB(0x174e61);
+    
+    if (IS_IOS_7) {
+        _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
     _menuTableView.backgroundColor = UIColorFromRGB(0x12414f);
     [self.view addSubview:_menuTableView];
 }
@@ -200,6 +208,9 @@
         title.tag = 1;
         if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"bold"] integerValue] == 1) {
             title.font = [GFFontSmall sharedInstance];
+            UIView *myBackView = [[UIView alloc] initWithFrame:cell.frame];
+            myBackView.backgroundColor = UIColorFromRGB(0x12414f);
+            cell.backgroundView = myBackView;
         }
         else {
             title.font = [GFFontSmall sharedInstance];

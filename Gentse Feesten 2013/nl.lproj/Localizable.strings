@@ -49,7 +49,6 @@
 "UPDATE_PROGRAM" = "Programma bijwerken";
 "IMPORTING" = "Importeren...";
 "DONE" = "Klaar!";
-"NO_EVENTS_YET" = "U heeft nog geen evenementen,\nwilt u het programma downloaden?\n\nU kan via instellingen het volledige programma steeds bijwerken.";
 "OK" = "Ok";
 "CANCEL" = "Annuleer";
 "DOWNLOAD" = "Download";
@@ -59,5 +58,6 @@
 "NOT_LOCATED_IN_GHENT" = "U bevind zich momenteel niet in het centrum van Gent.";
 "SPOTLIGHT" = "In de kijker";
 "INTERESTS" = "Interesses";
-
+"NO_FAVORITES_YET" = "U heeft nog geen favorieten.";
+"LOADING_PARKINGS" = "Parkings aan het laden.";
 

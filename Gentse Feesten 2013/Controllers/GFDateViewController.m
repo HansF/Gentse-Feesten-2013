@@ -54,7 +54,7 @@
         self.trackedViewName = @"Program festival: Dates";
         screenTitle = [NSLocalizedString(@"FESTIVALS", nil) uppercaseString];
     }
-    
+
     _dates = [GFDates sharedInstance];
 
     _tableView = [super addTableView];
@@ -140,11 +140,14 @@
         GFEventsViewController *detail = [[GFEventsViewController alloc] initWithNibName:nil bundle:nil];
         detail.timestamp = [[_dates objectAtIndex:indexPath.row] objectForKey:@"id"];
         detail.programType = @"free";
+        detail.screenTitle = NSLocalizedString(@"FREE", nil);
         [self.navigationController pushViewController:detail animated:YES];
     }
     else {
         GFEventsViewController *detail = [[GFEventsViewController alloc] initWithNibName:nil bundle:nil];
         detail.timestamp = [[_dates objectAtIndex:indexPath.row] objectForKey:@"id"];
+        detail.programType = @"festival";
+        detail.screenTitle = NSLocalizedString(@"FESTIVALS", nil);
         [self.navigationController pushViewController:detail animated:YES];
     }
 

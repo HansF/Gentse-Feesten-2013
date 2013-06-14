@@ -55,7 +55,7 @@
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                              NSLocalizedString(@"PRACTICAL", nil), @"title",
                              [NSNumber numberWithBool:YES], @"bold",
-                             @"home.png", @"icon",
+                             @"menu_practical.png", @"icon",
                              @"practical", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
@@ -84,7 +84,7 @@
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                              NSLocalizedString(@"SETTINGS", nil), @"title",
                              [NSNumber numberWithBool:YES], @"bold",
-                             @"home.png", @"icon",
+                             @"menu_settings.png", @"icon",
                              @"settings", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:

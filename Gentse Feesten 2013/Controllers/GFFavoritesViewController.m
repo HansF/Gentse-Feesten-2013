@@ -51,9 +51,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+    if ([[self.fetchedResultsController sections] count] == 0) {
+        return [super getHeightForString:NSLocalizedString(@"NO_FAVORITES_YET", nil)] + 30 + 1;
+    }
+
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][indexPath.section];
     if (indexPath.row < [sectionInfo numberOfObjects]) {
-
         GFEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
         return [super getHeightForString:event.name] + 30 + 1;
     }
@@ -64,6 +67,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ([[self.fetchedResultsController sections] count] == 0) {
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(padding * 2, 0, self.view.frame.size.width - padding * 4, 55)];
+        label.font = [GFFontSmall sharedInstance];
+        label.textColor = [UIColor darkGrayColor];
+        label.highlightedTextColor = [UIColor whiteColor];
+        label.backgroundColor = [UIColor clearColor];
+        label.text = NSLocalizedString(@"NO_FAVORITES_YET", nil);
+        [cell.contentView addSubview:label];
+
+        UIView *footer = [super addTableViewFooter];
+        footer.frame = CGRectMake(0, label.frame.origin.y + label.frame.size.height, footer.frame.size.width, 15);
+        [cell.contentView addSubview:footer];
+
+        UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 10, footer.frame.size.width, 15)];
+        myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
+        cell.backgroundView = myBackView;
+        
+        return cell;
+    }
 
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][indexPath.section];
 
@@ -75,10 +101,13 @@
 
         cell.label.text = event.name;
 
-        cell.timeLabel.text = NSLocalizedString(@"ALL_DAY", nill);
-        if (event.startuur) {
+        if ([event.sort isEqualToNumber:[NSNumber numberWithInt:0]]) {
+            cell.timeLabel.text = NSLocalizedString(@"ALL_DAY", nil);
+        }
+        else {
             cell.timeLabel.text = event.startuur;
         }
+
 
         CGFloat height = [super getHeightForString:event.name];
 
@@ -132,13 +161,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects] + 1;
+    if ([[self.fetchedResultsController sections] count] == 0) {
+        return 1;
+    }
+    else {  
+        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+        return [sectionInfo numberOfObjects] + 1;
+    }
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    if ([[self.fetchedResultsController sections] count] == 0) {
+        return 1;
+    }
+    else {
+        return [[self.fetchedResultsController sections] count];
+    }
+    
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -190,6 +231,10 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
+    if ([[self.fetchedResultsController sections] count] == 0) {
+        return nil;
+    }
+
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
 
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(padding, 0, [[UIScreen mainScreen] bounds].size.width - (padding * 4) - 2, 55)];
@@ -220,13 +265,14 @@
 }
 
 -(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 56.0;
+    if ([[self.fetchedResultsController sections] count] == 0) {
+        return 0;
+    }
+    else {
+        return 56.0;
+    }
 }
 
-- (void)dismissModal:(id)button
-{
-    [self dismissModalViewControllerAnimated:YES];
-}
 
 - (void)addEventToFavorites:(UIButton*)sender
 {

@@ -9,6 +9,7 @@
 #import "GFPracticalViewController.h"
 #import "GFParkingListViewController.h"
 #import "GFCustomCell.h"
+#import "GFPoiMapViewController.h"
 
 @interface GFPracticalViewController ()
 
@@ -31,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _menu = [[NSArray alloc] initWithObjects:@"Publiek sanitair", @"Politie", @"EHBO", @"Parkings", nil];
+    _menu = [[NSArray alloc] initWithObjects:@"Publiek sanitair", @"Parkings", nil];
 
     _tableView = [super addTableView];
     _tableView.delegate = self;
@@ -82,7 +83,12 @@
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
 
-    if (indexPath.row == 3) {
+    if (indexPath.row == 0) {
+        GFPoiMapViewController *detail = [[GFPoiMapViewController alloc] initWithNibName:nil bundle:nil];
+        detail.calledFromNavigationController = YES;
+        [self.navigationController pushViewController:detail animated:YES];
+    }
+    else if (indexPath.row == 1) {
         GFParkingListViewController *detail = [[GFParkingListViewController alloc] initWithNibName:nil bundle:nil];
         detail.calledFromNavigationController = YES;
         [self.navigationController pushViewController:detail animated:YES];
