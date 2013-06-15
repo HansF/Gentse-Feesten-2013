@@ -13,6 +13,9 @@
 @interface GFPoiDetailViewController : GFCustomViewController
 
 @property (nonatomic, strong) NSString *label;
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *price;
+@property (nonatomic, strong) NSString *open;
 @property (nonatomic) float latitude;
 @property (nonatomic) float longitude;
 

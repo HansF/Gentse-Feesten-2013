@@ -61,7 +61,6 @@
 
 
 - (void)setupTimeLabel {
-
     _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(padding / 2, 6, 50, self.frame.size.height)];
     [_timeLabel setLineBreakMode:UILineBreakModeWordWrap];
     _timeLabel.font = [GFFontSmall sharedInstance];

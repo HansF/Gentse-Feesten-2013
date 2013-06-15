@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Gentse Feesten 2013/Controllers/GFPoiMapViewController.m"
-         timestampString = "392884953.852315"
+         timestampString = "392974974.999765"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "231"
-         endingLineNumber = "231"
+         startingLineNumber = "237"
+         endingLineNumber = "237"
          landmarkName = "-mapView:annotationView:calloutAccessoryControlTapped:"
          landmarkType = "5">
       </FileBreakpoint>

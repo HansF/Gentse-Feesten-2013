@@ -122,7 +122,7 @@
             cell.count.textColor = UIColorFromRGB(0xe64a45);
         }
         else {
-            cell.count.textColor = [UIColor greenColor];
+            cell.count.textColor = UIColorFromRGB(0x00bb42);
         }
         return cell;
     }

@@ -60,4 +60,7 @@
 "INTERESTS" = "Interesses";
 "NO_FAVORITES_YET" = "U heeft nog geen favorieten.";
 "LOADING_PARKINGS" = "Parkings aan het laden.";
+"TYPE" = "Type:";
+"PRICE" = "Prijs:";
 
+"ABOUT_BODY_TEXT" = "Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie. \n \nCredits: @TimLeytens freelance iOS & Drupal developer, @Swentel Android & Drupal developer bij Wunderkraut en @LeenVS webdesigner bij Wunderkraut. \n \nBroncode: \niOS: http://github.com/TimLeytens/GF13 \nAndroid: http://github.com/swentel/GF13";

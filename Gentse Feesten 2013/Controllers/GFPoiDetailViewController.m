@@ -12,6 +12,7 @@
 #import "GFPoiDetailViewController.h"
 #import "MDCParallaxView.h"
 #import "GFAnnotation.h"
+#import "GFFontSmall.h"
 
 @interface GFPoiDetailViewController () <UIScrollViewDelegate, MKMapViewDelegate>
 
@@ -64,9 +65,62 @@
     bodyTopView.frame = CGRectMake(padding, headerLabel.frame.size.height + headerLabel.frame.origin.y + padding, bodyTop.size.width, bodyTop.size.height);
     [containerView addSubview:bodyTopView];
 
-    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, IS_IOS_7 ? 62 + navBarHeight : 62, self.view.frame.size.width - (padding * 2), 100)];
+    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, IS_IOS_7 ? 62 + navBarHeight : 62, self.view.frame.size.width - (padding * 2), 200)];
     myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
     [containerView addSubview:myBackView];
+    
+    UILabel *typeLabel = [[UILabel alloc] initWithFrame:CGRectMake(myBackView.frame.origin.x + (padding * 2), myBackView.frame.origin.y, 50, 57)];
+    [typeLabel setLineBreakMode:UILineBreakModeWordWrap];
+    typeLabel.font = [GFFontSmall sharedInstance];
+    typeLabel.textColor = UIColorFromRGB(0xed4e40);
+    typeLabel.backgroundColor = [UIColor clearColor];
+    typeLabel.text = NSLocalizedString(@"TYPE", nil);
+    [containerView addSubview:typeLabel];
+
+    UILabel *typeText = [[UILabel alloc] initWithFrame:CGRectMake(typeLabel.frame.origin.x + padding + typeLabel.frame.size.width, myBackView.frame.origin.y, myBackView.frame.size.width - (padding * 3) - typeLabel.frame.size.width, [super getHeightForString:_type withWidth:myBackView.frame.size.width - (padding * 3) - typeLabel.frame.size.width] + 30)];
+    [typeText setLineBreakMode:UILineBreakModeWordWrap];
+    typeText.font = [GFFontSmall sharedInstance];
+    typeText.textColor = [UIColor darkGrayColor];
+    typeText.backgroundColor = [UIColor clearColor];
+    typeText.text = _type;
+    typeText.numberOfLines = 0;
+    [containerView addSubview:typeText];
+
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.frame = CGRectMake(padding * 2, typeText.frame.size.height + typeText.frame.origin.y, myBackView.frame.size.width - 2 - (padding * 2), 1);
+    bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+                                                      alpha:1.0f].CGColor;
+
+    [containerView.layer addSublayer:bottomBorder];
+
+    UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(myBackView.frame.origin.x + (padding * 2), bottomBorder.frame.origin.y + 1, 50, 57)];
+    [priceLabel setLineBreakMode:UILineBreakModeWordWrap];
+    priceLabel.font = [GFFontSmall sharedInstance];
+    priceLabel.textColor = UIColorFromRGB(0xed4e40);
+    priceLabel.backgroundColor = [UIColor clearColor];
+    priceLabel.text = NSLocalizedString(@"PRICE", nil);
+    [containerView addSubview:priceLabel];
+
+    UILabel *priceText = [[UILabel alloc] initWithFrame:CGRectMake(typeLabel.frame.origin.x + padding + typeLabel.frame.size.width, bottomBorder.frame.origin.y + 1, myBackView.frame.size.width - (padding * 3) - typeLabel.frame.size.width, [super getHeightForString:_price withWidth:myBackView.frame.size.width - (padding * 3) - priceLabel.frame.size.width] + 30)];
+    [priceText setLineBreakMode:UILineBreakModeWordWrap];
+    priceText.font = [GFFontSmall sharedInstance];
+    priceText.textColor = [UIColor darkGrayColor];
+    priceText.backgroundColor = [UIColor clearColor];
+    priceText.text = _price;
+    priceText.numberOfLines = 0;
+
+    [containerView addSubview:priceText];
+
+    UIView *priceBackView = [[UIView alloc] initWithFrame:CGRectMake(myBackView.frame.origin.x + padding, priceLabel.frame.origin.y, myBackView.frame.size.width - 2 - (padding * 2), priceText.frame.size.height)];
+    priceBackView.backgroundColor = UIColorFromRGB(0xf5f5f5);
+    [containerView insertSubview:priceBackView belowSubview:priceLabel];
+    
+    CALayer *bottomBorder2 = [CALayer layer];
+    bottomBorder2.frame = CGRectMake(padding * 2, priceText.frame.size.height + priceText.frame.origin.y, myBackView.frame.size.width - 2 - (padding * 2), 1);
+    bottomBorder2.backgroundColor = [UIColor colorWithWhite:0.8f
+                                                     alpha:1.0f].CGColor;
+
+    [containerView.layer addSublayer:bottomBorder2];
 
     UIView *footer = [super addTableViewFooter];
     footer.frame = CGRectMake(padding, myBackView.frame.origin.y + myBackView.frame.size.height, footer.frame.size.width, footer.frame.size.height);

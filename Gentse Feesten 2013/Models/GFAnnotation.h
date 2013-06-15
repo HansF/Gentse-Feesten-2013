@@ -19,6 +19,10 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *subtitle;
 
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *price;
+@property (nonatomic, strong) NSString *open;
+
 @property (nonatomic) BOOL userLocation;
 
 @end

@@ -173,5 +173,12 @@
     return size.height;
 }
 
+-(CGFloat)getHeightForString:(NSString *)string withWidth:(float)width {
+    NSString *text = string;
+    CGSize constraint = CGSizeMake(width, 20000.0f);
+    CGSize size = [text sizeWithFont:[GFFontSmall sharedInstance] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    return size.height;
+}
+
 
 @end

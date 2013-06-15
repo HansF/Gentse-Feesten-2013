@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Tim Leytens. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "GFPoiMapViewController.h"
 
 #import "GFCustomToolBar.h"
@@ -125,6 +127,10 @@ static BOOL haveAlreadyReceivedCoordinates;
         GFAnnotation *annotation = [[GFAnnotation alloc] init];
         annotation.lat = [[toilet objectForKey:@"lat"] floatValue];
         annotation.lon = [[toilet objectForKey:@"long"] floatValue];
+        annotation.price = [toilet objectForKey:@"prijs_toeg"];
+        annotation.type = [toilet objectForKey:@"type_sanit"];
+        annotation.open = [toilet objectForKey:@"openuren"];
+
         if ([[toilet objectForKey:@"situering"] length] > 0) {
             annotation.title = [toilet objectForKey:@"situering"];
         }
@@ -237,6 +243,9 @@ static BOOL haveAlreadyReceivedCoordinates;
     detail.latitude = annotation.lat;
     detail.longitude = annotation.lon;
     detail.label = [annotation.title uppercaseString];
+    detail.open = annotation.open;
+    detail.type = annotation.type;
+    detail.price = annotation.price;
     [self.navigationController pushViewController:detail animated:YES];
     
 }

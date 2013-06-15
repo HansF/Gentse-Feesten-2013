@@ -31,4 +31,6 @@
 
 -(CGFloat)getHeightForString:(NSString *)string;
 
+-(CGFloat)getHeightForString:(NSString *)string withWidth:(float)width;
+
 @end
