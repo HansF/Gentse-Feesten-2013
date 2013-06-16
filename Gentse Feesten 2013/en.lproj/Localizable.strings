@@ -1,12 +1,12 @@
-/* 
-  Localizable.strings
-  Gentse Feesten 2013
+/*
+ Localizable.strings
+ Gentse Feesten 2013
 
-  Created by Tim Leytens on 29/05/13.
-  Copyright (c) 2013 Tim Leytens. All rights reserved.
-*/
+ Created by Tim Leytens on 29/05/13.
+ Copyright (c) 2013 Tim Leytens. All rights reserved.
+ */
 
-"BALS_DANS" = "Balls / Dances";
+"BALS_DANS" = "Bals / Dans";
 "CIRCUS" = "Circus";
 "COMEDY" = "Comedy";
 "CONCERTEN_DIVERS" = "Concerten > divers";
@@ -22,3 +22,50 @@
 "VERTELLINGEN" = "Vertellingen/lezingen/poëzie";
 "VUURWERK" = "Vuurwerk";
 "WANDELINGEN" = "Wandelingen";
+"ZATERDAG_20_JULI" = "Zaterdag 20 juli";
+"ZONDAG_21_JULI" = "Zondag 21 juli";
+"MAANDAG_22_JULI" = "Maandag 22 juli";
+"DINSDAG_23_JULI" = "Dinsdag 23 juli";
+"WOENSDAG_24_JULI" = "Woensdag 24 juli";
+"DONDERDAG_25_JULI" = "Donderdag 25 juli";
+"VRIJDAG_26_JULI" = "Vrijdag 26 juli";
+"ZATERDAG_27_JULI" = "Zaterdag 27 juli";
+"ZONDAG_28_JULI" = "Zondag 28 juli";
+"MAANDAG_29_JULI" = "Maandag 29 juli";
+"HOME" = "Home";
+"MY_FAVORITES" = "Mijn favorieten";
+"PROGRAM" = "Programma";
+"CATEGORIES" = "Categorieën";
+"FREE" = "Gratis";
+"FESTIVALS" = "Festivals";
+"PRACTICAL" = "Praktisch";
+"PUBLIC_TOILETS" = "Publiek sanitair";
+"POLICE" = "Politie";
+"FIRST_AID" = "EHBO";
+"PARKINGS" = "Parkings";
+"SETTINGS" = "Instellingen";
+"ABOUT" = "Over deze app";
+"ALL_DAY" = "Dag";
+"UPDATE_PROGRAM" = "Programma bijwerken";
+"IMPORTING" = "Importeren...";
+"DONE" = "Klaar!";
+"OK" = "Ok";
+"CANCEL" = "Annuleer";
+"DOWNLOAD" = "Download";
+"FETCHING" = "Downloaden...";
+"YOUR_LOCATION" = "Uw locatie";
+"WARNING" = "Opgelet!";
+"NOT_LOCATED_IN_GHENT" = "U bevind zich momenteel niet in het centrum van Gent.";
+"SPOTLIGHT" = "In de kijker";
+"INTERESTS" = "Interesses";
+"NO_FAVORITES_YET" = "U heeft nog geen favorieten.";
+"LOADING_PARKINGS" = "Parkings aan het laden.";
+"TYPE" = "Type:";
+"PRICE" = "Prijs:";
+"OPEN" = "Open:";
+"DATE" = "Datum:";
+"PRICE" = "Prijs:";
+"EVENT_LOCATION" = "Locatie:";
+"MORE_INFO_ONLINE" = "Meer info online";
+
+"ABOUT_BODY_TEXT" = "Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie. \n \nCredits: @TimLeytens freelance iOS & Drupal developer, @Swentel Android & Drupal developer bij Wunderkraut en @LeenVS webdesigner bij Wunderkraut. \n \nBroncode: \niOS: http://github.com/TimLeytens/Gentse-Feesten-2013 \nAndroid: http://github.com/swentel/gentsefeesten";

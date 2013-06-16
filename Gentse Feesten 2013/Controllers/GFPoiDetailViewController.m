@@ -33,6 +33,8 @@
 {
     [super viewDidLoad];
 
+    self.trackedViewName = @"Toilets detail";
+
     MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 480)];
 
     [mapView setMapType:MKMapTypeStandard];
@@ -55,8 +57,12 @@
 
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600)];
     containerView.backgroundColor = UIColorFromRGB(0x005470);
-
+    
     UIView *headerLabel = [super headerLabel:[self.label uppercaseString]];
+
+    if (IS_IOS_7) {
+        headerLabel.frame = CGRectMake(headerLabel.frame.origin.x, headerLabel.frame.origin.y - 44, headerLabel.frame.size.width, headerLabel.frame.size.height);
+    }
     
     [containerView addSubview:headerLabel];
 
@@ -65,7 +71,7 @@
     bodyTopView.frame = CGRectMake(padding, headerLabel.frame.size.height + headerLabel.frame.origin.y + padding, bodyTop.size.width, bodyTop.size.height);
     [containerView addSubview:bodyTopView];
 
-    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, IS_IOS_7 ? 62 + navBarHeight : 62, self.view.frame.size.width - (padding * 2), 200)];
+    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, bodyTopView.frame.size.height + bodyTopView.frame.origin.y, self.view.frame.size.width - (padding * 2), 200)];
     myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
     [containerView addSubview:myBackView];
     
@@ -122,6 +128,26 @@
 
     [containerView.layer addSublayer:bottomBorder2];
 
+    UILabel *openLabel = [[UILabel alloc] initWithFrame:CGRectMake(myBackView.frame.origin.x + (padding * 2), bottomBorder2.frame.origin.y + 1, 50, 57)];
+    [openLabel setLineBreakMode:UILineBreakModeWordWrap];
+    openLabel.font = [GFFontSmall sharedInstance];
+    openLabel.textColor = UIColorFromRGB(0xed4e40);
+    openLabel.backgroundColor = [UIColor clearColor];
+    openLabel.text = NSLocalizedString(@"OPEN", nil);
+    [containerView addSubview:openLabel];
+
+    UILabel *openText = [[UILabel alloc] initWithFrame:CGRectMake(priceLabel.frame.origin.x + padding + priceLabel.frame.size.width, bottomBorder2.frame.origin.y + 1, myBackView.frame.size.width - (padding * 3) - priceLabel.frame.size.width, [super getHeightForString:_open withWidth:myBackView.frame.size.width - (padding * 3) - openLabel.frame.size.width] + 30)];
+    [openText setLineBreakMode:UILineBreakModeWordWrap];
+    openText.font = [GFFontSmall sharedInstance];
+    openText.textColor = [UIColor darkGrayColor];
+    openText.backgroundColor = [UIColor clearColor];
+    openText.text = _open;
+    openText.numberOfLines = 0;
+
+    [containerView addSubview:openText];
+
+    myBackView.frame = CGRectMake(myBackView.frame.origin.x, myBackView.frame.origin.y, myBackView.frame.size.width, openText.frame.origin.y + openText.frame.size.height - myBackView.frame.origin.y);
+
     UIView *footer = [super addTableViewFooter];
     footer.frame = CGRectMake(padding, myBackView.frame.origin.y + myBackView.frame.size.height, footer.frame.size.width, footer.frame.size.height);
     [containerView addSubview:footer];
@@ -131,7 +157,7 @@
                     action:@selector(showRoute)
           forControlEvents:UIControlEventTouchDown];
     [routeButton setTitle:@"TOON ROUTE" forState:UIControlStateNormal];
-    routeButton.frame = CGRectMake(padding, footer.frame.origin.y + footer.frame.size.height + padding, self.view.frame.size.width - (padding * 2), 55.0);
+    routeButton.frame = CGRectMake(padding, footer.frame.origin.y + (padding * 2), self.view.frame.size.width - (padding * 2), 55.0);
     routeButton.backgroundColor = UIColorFromRGB(0xed4e40);
 
     routeButton.layer.masksToBounds = NO;
@@ -141,6 +167,8 @@
     routeButton.layer.shadowOffset = CGSizeMake(2.0f, 3.0f);
 
     [containerView addSubview:routeButton];
+
+    containerView.frame = CGRectMake(containerView.frame.origin.x, containerView.frame.origin.y, containerView.frame.size.width, routeButton.frame.origin.y + routeButton.frame.size.height + (padding * 2) + 50);
 
     MDCParallaxView *parallaxView = [[MDCParallaxView alloc] initWithBackgroundView:mapView
                                                                      foregroundView:containerView];

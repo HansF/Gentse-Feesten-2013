@@ -45,8 +45,8 @@
     self.url = [attributes objectForKeyOrNil:@"url"];
     self.loc = [attributes objectForKeyOrNil:@"loc"];
     self.loc_id = [NSNumber numberWithInt:[[attributes objectForKeyOrNil:@"loc_id"] intValue]];
-    self.lat = [NSNumber numberWithInt:[[attributes objectForKeyOrNil:@"lat"] floatValue]];
-    self.lon = [NSNumber numberWithInt:[[attributes objectForKeyOrNil:@"lon"] floatValue]];
+    self.lat = [NSNumber numberWithFloat:[[attributes objectForKeyOrNil:@"lat"] floatValue]];
+    self.lon = [NSNumber numberWithFloat:[[attributes objectForKeyOrNil:@"lon"] floatValue]];
     self.korting = [attributes objectForKeyOrNil:@"korting"];   
 }
 

@@ -25,6 +25,7 @@
 #import "GFFontSmall.h"
 #import "GFEvent.h"
 #import "GFEventsDataModel.h"
+#import "GFEventDetailViewController.h"
 
 #import "GFDateViewController.h"
 
@@ -180,6 +181,14 @@
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
     [self filterProductsForTerm:searchString];
     return YES;
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+
+    [self.searchBar resignFirstResponder];
 }
 
 
@@ -366,8 +375,12 @@
     else {
         [self.searchBar resignFirstResponder];
         GFNavigationViewController *navigationViewController = [[GFNavigationViewController alloc] initWithNibName:nil bundle:NULL];
+        GFEventDetailViewController *detail = [[GFEventDetailViewController alloc] initWithNibName:nil bundle:NULL];
+        detail.event = [self.searchResults objectAtIndex:indexPath.row];
+        [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                      detail,
+                                                      nil]];
         [self.slideMenuController closeMenuBehindContentViewController:navigationViewController animated:YES completion:nil];
-        
     }
     
 }

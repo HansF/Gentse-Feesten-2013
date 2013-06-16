@@ -33,4 +33,6 @@
 
 -(CGFloat)getHeightForString:(NSString *)string withWidth:(float)width;
 
+-(CGFloat)getHeightForHeader:(NSString *)string withWidth:(float)width;
+
 @end

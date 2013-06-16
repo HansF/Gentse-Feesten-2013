@@ -14,6 +14,7 @@
 #import "GFEvent.h"
 #import "GFCustomToolBar.h"
 #import "GFDates.h"
+#import "GFEventDetailViewController.h"
 
 @interface GFFavoritesModalViewController ()
 
@@ -40,32 +41,34 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.frame = CGRectMake(_tableView.frame.origin.x,
-                                  _tableView.frame.origin.y + 44,
+                                  IS_IOS_7 ? _tableView.frame.origin.y + 44 : _tableView.frame.origin.y,
                                   _tableView.frame.size.width,
                                   _tableView.frame.size.height);
     _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:[NSLocalizedString(@"MY_FAVORITES", nil) uppercaseString]];
     [_tableView registerClass:[GFCustomEventCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];
-
-    GFCustomToolBar *toolbar = [[GFCustomToolBar alloc] init];
-    toolbar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
  
-    UIImage *closeButtonImage = [UIImage imageNamed:@"close.png"];
-    UIImage *closeButtonImageActive = [UIImage imageNamed:@"close.png"];
-    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *menuButtonImage = [UIImage imageNamed:@"close.png"];
+    UIImage *menuButtonImageActive = [UIImage imageNamed:@"close.png"];
+    UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
 
-    [closeButton setBackgroundImage:closeButtonImage forState:UIControlStateNormal];
-    [closeButton setBackgroundImage:closeButtonImageActive forState:UIControlStateHighlighted];
+    [menuButton setBackgroundImage:menuButtonImage forState:UIControlStateNormal];
+    [menuButton setBackgroundImage:menuButtonImageActive forState:UIControlStateHighlighted];
 
-    [closeButton setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - (padding / 2) - closeButtonImage.size.width, padding / 2, closeButtonImage.size.width, closeButtonImage.size.height)];
+    [menuButton setFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
 
-    [closeButton addTarget:self
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, menuButtonImage.size.width, menuButtonImage.size.height)];
+
+    [menuButton addTarget:self
                    action:@selector(dismissModal:)
          forControlEvents:UIControlEventTouchDown];
 
-    [toolbar addSubview:closeButton];
+    [containerView addSubview:menuButton];
+
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:containerView];
     
-    [self.view addSubview:toolbar];
+    self.navigationItem.rightBarButtonItem = item;
+    self.navigationItem.leftBarButtonItem = nil;
 
     self.trackedViewName = @"Favorites";
 
@@ -145,13 +148,8 @@
         UIImage *favButtonImageActive = [UIImage imageNamed:@"fav_on.png"];
         UIButton *favButton = [UIButton buttonWithType:UIButtonTypeCustom];
 
-        if ([event.fav isEqualToNumber:[NSNumber numberWithInt:1]]) {
-            favButton.selected = YES;
-        }
-        else {
-            favButton.selected = NO;
-        }
-
+        favButton.selected = YES;
+        
         [favButton setBackgroundImage:favButtonImage forState:UIControlStateNormal];
         [favButton setBackgroundImage:favButtonImageActive forState:UIControlStateSelected];
 
@@ -249,6 +247,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
+    GFEventDetailViewController *detail = [[GFEventDetailViewController alloc] initWithNibName:nil bundle:NULL];
+    GFEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    detail.event = event;
+    detail.calledFromNavigationController = YES;
+    detail.calledFromFavoritesModalController = YES;
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

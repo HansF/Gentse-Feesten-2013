@@ -45,7 +45,7 @@
     [_tableView registerClass:[GFCustomCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];
 
-    self.trackedViewName = @"Program by category: Categories";
+    self.trackedViewName = @"Program categories";
 
 }
 

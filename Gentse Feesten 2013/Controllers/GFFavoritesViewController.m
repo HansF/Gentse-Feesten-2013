@@ -16,6 +16,7 @@
 #import "GFEvent.h"
 #import "GFCustomToolBar.h"
 #import "GFDates.h"
+#import "GFEventDetailViewController.h"
 
 @interface GFFavoritesViewController ()
 
@@ -227,6 +228,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
+    GFEventDetailViewController *detail = [[GFEventDetailViewController alloc] initWithNibName:nil bundle:NULL];
+    GFEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    detail.event = event;
+    detail.calledFromNavigationController = YES;
+    [self.navigationController pushViewController:detail animated:YES];
+
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

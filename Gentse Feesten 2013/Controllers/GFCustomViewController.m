@@ -10,6 +10,8 @@
 #import "NVSlideMenuController.h"
 #import "GFFavoritesModalViewController.h"
 #import "GFFontSmall.h"
+#import "GFFont.h"
+#import "GFNavigationViewController.h"
 
 @interface GFCustomViewController ()
 
@@ -98,8 +100,11 @@
 
 
 - (void)openFavoritesView:(id)sender {
+
     GFFavoritesModalViewController *favoritesViewController = [[GFFavoritesModalViewController alloc] init];
-    [self presentModalViewController:favoritesViewController animated:YES];
+    GFNavigationViewController *navController = [[GFNavigationViewController alloc] initWithRootViewController:favoritesViewController];
+
+    [self presentModalViewController:navController animated:YES];
 }
 
 
@@ -177,6 +182,13 @@
     NSString *text = string;
     CGSize constraint = CGSizeMake(width, 20000.0f);
     CGSize size = [text sizeWithFont:[GFFontSmall sharedInstance] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    return size.height;
+}
+
+-(CGFloat)getHeightForHeader:(NSString *)string withWidth:(float)width {
+    NSString *text = string;
+    CGSize constraint = CGSizeMake(width, 20000.0f);
+    CGSize size = [text sizeWithFont:[GFFont sharedInstance] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
     return size.height;
 }
 

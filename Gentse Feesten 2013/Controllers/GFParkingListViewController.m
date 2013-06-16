@@ -142,6 +142,11 @@
         detail.latitude = [[[_responseData objectAtIndex:indexPath.row] objectForKey:@"latitude"] floatValue];
         detail.longitude = [[[_responseData objectAtIndex:indexPath.row] objectForKey:@"longitude"] floatValue];
         detail.label = [[[_responseData objectAtIndex:indexPath.row] objectForKey:@"description"] uppercaseString];
+
+        detail.description = [NSString stringWithFormat:@"%@: %@", [[_responseData objectAtIndex:indexPath.row] objectForKey:@"name"], [[_responseData objectAtIndex:indexPath.row] objectForKey:@"description"]];
+        detail.description = [detail.description stringByAppendingFormat:@"\n%@", [[[_responseData objectAtIndex:indexPath.row] objectForKey:@"address"] stringByReplacingOccurrencesOfString:@"<br>" withString:@"\n"]];
+        detail.description = [detail.description stringByAppendingFormat:@"\n%@", [[_responseData objectAtIndex:indexPath.row] objectForKey:@"contactInfo"]];
+        detail.description = [detail.description stringByAppendingFormat:@"\n%@", [[_responseData objectAtIndex:indexPath.row] objectForKey:@"openingHours"]];
         [self.navigationController pushViewController:detail animated:YES];
     }
 }

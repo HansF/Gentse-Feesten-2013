@@ -12,6 +12,7 @@
 #import "GFParkingDetailViewController.h"
 #import "MDCParallaxView.h"
 #import "GFAnnotation.h"
+#import "GFFontSmall.h"
 
 
 @interface GFParkingDetailViewController () <UIScrollViewDelegate, MKMapViewDelegate>
@@ -31,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.trackedViewName = @"Parking detail";
 
     MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 480)];
 
@@ -55,14 +58,45 @@
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 600)];
     containerView.backgroundColor = UIColorFromRGB(0x005470);
 
-    [containerView addSubview:[super headerLabel:self.label]];
+    UIView *headerLabel = [super headerLabel:[self.label uppercaseString]];
+
+    if (IS_IOS_7) {
+        headerLabel.frame = CGRectMake(headerLabel.frame.origin.x, headerLabel.frame.origin.y - 44, headerLabel.frame.size.width, headerLabel.frame.size.height);
+    }
+
+    [containerView addSubview:headerLabel];
+
+    UIImage *bodyTop = [UIImage imageNamed:@"tableTop.png"];
+    UIImageView *bodyTopView = [[UIImageView alloc] initWithImage:bodyTop];
+    bodyTopView.frame = CGRectMake(padding, headerLabel.frame.size.height + headerLabel.frame.origin.y + padding, bodyTop.size.width, bodyTop.size.height);
+    [containerView addSubview:bodyTopView];
+
+    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, bodyTopView.frame.size.height + bodyTopView.frame.origin.y, self.view.frame.size.width - (padding * 2), 200)];
+    myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
+    [containerView addSubview:myBackView];
+
+    UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(myBackView.frame.origin.x + padding, myBackView.frame.origin.y + padding, myBackView.frame.size.width - (padding * 2), [super getHeightForString:_description withWidth:myBackView.frame.size.width - (padding * 3)])];
+    [description setLineBreakMode:UILineBreakModeWordWrap];
+    description.font = [GFFontSmall sharedInstance];
+    description.textColor = [UIColor darkGrayColor];
+    description.backgroundColor = [UIColor clearColor];
+    description.text = _description;
+    description.numberOfLines = 0;
+    [containerView addSubview:description];
+
+    myBackView.frame = CGRectMake(myBackView.frame.origin.x, myBackView.frame.origin.y, myBackView.frame.size.width, description.frame.origin.y + description.frame.size.height - myBackView.frame.origin.y);
+
+    UIView *footer = [super addTableViewFooter];
+    footer.frame = CGRectMake(padding, myBackView.frame.origin.y + myBackView.frame.size.height, footer.frame.size.width, footer.frame.size.height);
+    [containerView addSubview:footer];
+
 
     UIButton *routeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [routeButton addTarget:self
                     action:@selector(showRoute)
           forControlEvents:UIControlEventTouchDown];
     [routeButton setTitle:@"TOON ROUTE" forState:UIControlStateNormal];
-    routeButton.frame = CGRectMake(padding, 100, self.view.frame.size.width - (padding * 2), 55.0);
+    routeButton.frame = CGRectMake(padding, footer.frame.origin.y + (padding * 2), self.view.frame.size.width - (padding * 2), 55.0);
     routeButton.backgroundColor = UIColorFromRGB(0xed4e40);
 
     routeButton.layer.masksToBounds = NO;
@@ -72,6 +106,8 @@
     routeButton.layer.shadowOffset = CGSizeMake(2.0f, 3.0f);
 
     [containerView addSubview:routeButton];
+
+    containerView.frame = CGRectMake(containerView.frame.origin.x, containerView.frame.origin.y, containerView.frame.size.width, routeButton.frame.origin.y + routeButton.frame.size.height + (padding * 2) + 50);
 
     MDCParallaxView *parallaxView = [[MDCParallaxView alloc] initWithBackgroundView:mapView
                                                                      foregroundView:containerView];
@@ -94,6 +130,11 @@
 }
 
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
+    MDCParallaxView *parallaxView = (MDCParallaxView *) [self.view viewWithTag:1];
+    parallaxView.backgroundHeight = 140.0f;
+}
+
+- (void)mapViewWillStartRenderingMap:(MKMapView *)mapView {
     MDCParallaxView *parallaxView = (MDCParallaxView *) [self.view viewWithTag:1];
     parallaxView.backgroundHeight = 140.0f;
 }

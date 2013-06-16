@@ -10,6 +10,6 @@
 
 #import "GFCustomViewController.h"
 
-@interface GFAboutViewController : GFCustomViewController
+@interface GFAboutViewController : GFCustomViewController <UIScrollViewDelegate>
 
 @end
