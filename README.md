@@ -20,6 +20,10 @@ Features
 8. Show parking information (when online)
 9. Show public toilets nearby (when online)
 
+Screenshot
+----------
+
+![ScreenShot](http://timleytens.be/github.png)
 
 License
 -------
