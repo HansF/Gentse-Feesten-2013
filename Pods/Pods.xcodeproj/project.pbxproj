@@ -367,12 +367,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2505CA3A650349BC9B0D6705 /* Adhoc */ = {
+		22E82872177059F6006184F0 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tim Leytens (M5733KD33B)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PROVISIONING_PROFILE = "19CB16C7-0709-4886-93C5-4688223DD310";
+			};
+			name = Adhoc;
+		};
+		22E82873177059F6006184F0 /* Adhoc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4EDE85DFF7F0436A9D3A4954 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -393,6 +403,7 @@
 				PODS_HEADERS_SEARCH_PATHS = "${PODS_BUILD_HEADERS_SEARCH_PATHS}";
 				PODS_ROOT = "${SRCROOT}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -489,8 +500,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F184416EAC73445BB8FF1AEF /* Release */,
+				22E82873177059F6006184F0 /* Adhoc */,
 				9123D4B8DF904E3697655CC3 /* Debug */,
-				2505CA3A650349BC9B0D6705 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -499,6 +510,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0913A509E6A4FF2BB4C4D33 /* Release */,
+				22E82872177059F6006184F0 /* Adhoc */,
 				42A65958115F4C3F8AC6F590 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;

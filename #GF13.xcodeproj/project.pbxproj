@@ -830,15 +830,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 59D57EEDD53C439285FA0C8D /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tim Leytens";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tim Leytens";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tim Leytens (M5733KD33B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tim Leytens (M5733KD33B)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gentse Feesten 2013/#GF13-Prefix.pch";
 				INFOPLIST_FILE = "Gentse Feesten 2013/#GF13-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "#GF13";
-				PROVISIONING_PROFILE = "2FDC08DD-F675-439A-971A-5A98B51DBA0B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2FDC08DD-F675-439A-971A-5A98B51DBA0B";
+				PROVISIONING_PROFILE = "19CB16C7-0709-4886-93C5-4688223DD310";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "19CB16C7-0709-4886-93C5-4688223DD310";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Adhoc;
