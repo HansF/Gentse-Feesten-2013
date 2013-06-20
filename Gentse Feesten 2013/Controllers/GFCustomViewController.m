@@ -142,7 +142,7 @@
 }
 
 -(void)showAlertNoInternetConnection {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Kan geen verbinding maken met het internet." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:NSLocalizedString(@"NO_INTERNER", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
 

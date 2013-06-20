@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  Gentse Feesten 2013
-
-  Created by Tim Leytens on 29/05/13.
-  Copyright (c) 2013 Tim Leytens. All rights reserved.
-*/
-
 "BALS_DANS" = "Bals / Dans";
 "CIRCUS" = "Circus";
 "COMEDY" = "Comedy";
@@ -68,5 +60,6 @@
 "EVENT_LOCATION" = "Locatie:";
 "MORE_INFO_ONLINE" = "Meer info online";
 "SHOW_ROUTE" = "Toon route";
+"NO_INTERNET" = "Kan geen verbinding maken met het internet.";
 
-"ABOUT_BODY_TEXT" = "Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie. \n \nCredits: @TimLeytens freelance iOS & Drupal developer, @Swentel Android & Drupal developer bij Wunderkraut en @LeenVS webdesigner bij Wunderkraut. \n \nBroncode: \niOS: http://github.com/TimLeytens/GF13 \nAndroid: http://github.com/swentel/GF13";
+"ABOUT_BODY_TEXT" = "Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie. \n \nCredits: @TimLeytens freelance iOS & Drupal developer, @Swentel Android & Drupal developer bij Wunderkraut en @LeenVS webdesigner bij Wunderkraut. \n \nBroncode: \niOS: http://github.com/TimLeytens/Gentse-Feesten-2013 \nAndroid: http://github.com/swentel/gentsefeesten";

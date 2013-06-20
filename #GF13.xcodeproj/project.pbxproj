@@ -239,6 +239,7 @@
 		22CFEC53173B940D00C48AAE /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
 		22DCC88817631708002CAE91 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		22DCC88917631708002CAE91 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		22E1893117738BA400EADB42 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		22F9C82D176C94B600B2B60A /* GFEventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFEventDetailViewController.h; sourceTree = "<group>"; };
 		22F9C82E176C94B700B2B60A /* GFEventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFEventDetailViewController.m; sourceTree = "<group>"; };
 		22FA40C7173F7C46009B3B01 /* GFMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFMenu.h; sourceTree = "<group>"; };
@@ -553,6 +554,7 @@
 			knownRegions = (
 				en,
 				nl,
+				fr,
 			);
 			mainGroup = 22AD52DE1730324300EC5009;
 			productRefGroup = 22AD52E81730324400EC5009 /* Products */;
@@ -704,6 +706,7 @@
 			children = (
 				22C667271755CB6100E2E292 /* en */,
 				22C667291755CB9000E2E292 /* nl */,
+				22E1893117738BA400EADB42 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

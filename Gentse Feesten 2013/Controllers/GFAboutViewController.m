@@ -34,7 +34,7 @@
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 
     UIView *headerLabel = [super headerLabel:[NSLocalizedString(@"ABOUT", nil) uppercaseString]];
-    headerLabel.frame = CGRectMake(headerLabel.frame.origin.x, headerLabel.frame.origin.y - navBarHeight, headerLabel.frame.size.width, headerLabel.frame.size.height);
+    headerLabel.frame = CGRectMake(headerLabel.frame.origin.x, IS_IOS_7 ? headerLabel.frame.origin.y - navBarHeight : headerLabel.frame.origin.y, headerLabel.frame.size.width, headerLabel.frame.size.height);
 
     [scroll addSubview:headerLabel];
 
