@@ -95,7 +95,7 @@
     [routeButton addTarget:self
                     action:@selector(showRoute)
           forControlEvents:UIControlEventTouchDown];
-    [routeButton setTitle:@"TOON ROUTE" forState:UIControlStateNormal];
+    [routeButton setTitle:[NSLocalizedString(@"SHOW_ROUTE", nil) uppercaseString] forState:UIControlStateNormal];
     routeButton.frame = CGRectMake(padding, footer.frame.origin.y + (padding * 2), self.view.frame.size.width - (padding * 2), 55.0);
     routeButton.backgroundColor = UIColorFromRGB(0xed4e40);
 
