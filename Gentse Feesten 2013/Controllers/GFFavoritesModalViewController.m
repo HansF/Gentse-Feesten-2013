@@ -40,10 +40,6 @@
     _tableView = [super addTableView];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.frame = CGRectMake(_tableView.frame.origin.x,
-                                  IS_IOS_7 ? _tableView.frame.origin.y + 44 : _tableView.frame.origin.y,
-                                  _tableView.frame.size.width,
-                                  _tableView.frame.size.height);
     _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:[NSLocalizedString(@"MY_FAVORITES", nil) uppercaseString]];
     [_tableView registerClass:[GFCustomEventCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];

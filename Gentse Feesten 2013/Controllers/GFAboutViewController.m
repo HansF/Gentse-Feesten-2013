@@ -34,6 +34,8 @@
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 
     UIView *headerLabel = [super headerLabel:[NSLocalizedString(@"ABOUT", nil) uppercaseString]];
+    headerLabel.frame = CGRectMake(headerLabel.frame.origin.x, headerLabel.frame.origin.y - navBarHeight, headerLabel.frame.size.width, headerLabel.frame.size.height);
+
     [scroll addSubview:headerLabel];
 
     UIImage *bodyTop = [UIImage imageNamed:@"tableTop.png"];
@@ -41,7 +43,7 @@
     bodyTopView.frame = CGRectMake(padding, headerLabel.frame.size.height + headerLabel.frame.origin.y + padding, bodyTop.size.width, bodyTop.size.height);
     [scroll addSubview:bodyTopView];
 
-    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, IS_IOS_7 ? 62 + navBarHeight : 62, self.view.frame.size.width - (padding * 2), [super getHeightForString:NSLocalizedString(@"ABOUT_BODY_TEXT", nil) withWidth:self.view.frame.size.width - (padding * 2)] + (padding * 2))];
+    UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(padding, 62, self.view.frame.size.width - (padding * 2), [super getHeightForString:NSLocalizedString(@"ABOUT_BODY_TEXT", nil) withWidth:self.view.frame.size.width - (padding * 2)] + (padding * 2))];
     myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
     [scroll addSubview:myBackView];
 
