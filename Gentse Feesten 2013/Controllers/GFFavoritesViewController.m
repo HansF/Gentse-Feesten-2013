@@ -34,6 +34,13 @@
     return self;
 }
 
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self.fetchedResultsController performFetch:nil];
+    [_tableView reloadData];
+}
+
+
 -(void)viewDidLoad {
 
     [super viewDidLoad];
