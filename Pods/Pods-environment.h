@@ -37,6 +37,12 @@
 #define COCOAPODS_VERSION_MINOR_NVSlideMenuController 4
 #define COCOAPODS_VERSION_PATCH_NVSlideMenuController 3
 
+// PHFRefreshControl
+#define COCOAPODS_POD_AVAILABLE_PHFRefreshControl
+#define COCOAPODS_VERSION_MAJOR_PHFRefreshControl 1
+#define COCOAPODS_VERSION_MINOR_PHFRefreshControl 0
+#define COCOAPODS_VERSION_PATCH_PHFRefreshControl 0
+
 // SDURLCache
 #define COCOAPODS_POD_AVAILABLE_SDURLCache
 #define COCOAPODS_VERSION_MAJOR_SDURLCache 1

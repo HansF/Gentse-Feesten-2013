@@ -18,6 +18,7 @@
 #import "GFDates.h"
 #import "GFCategories.h"
 #import "GFEventDetailViewController.h"
+#import "PHFRefreshControl.h"
 
 @interface GFHomeViewController ()
 
@@ -68,9 +69,28 @@
 
     [_tableView registerClass:[GFCustomEventCell class] forCellReuseIdentifier:@"customCell"];
     [self.view addSubview:_tableView];
+    [self addRefreshControlToTableView];
 
     self.trackedViewName = @"Home";
 
+}
+
+- (void)addRefreshControlToTableView {
+    PHFRefreshControl *refreshControl = [PHFRefreshControl new];
+    [refreshControl setTintColor:UIColorFromRGB(0x007390)];
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [[self tableView] setRefreshControl:refreshControl];
+}
+
+- (void)refresh {
+    int64_t delayInSeconds = 1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [[[self tableView] refreshControl] endRefreshing];
+        _fetchedResultsController = nil;
+        [_fetchedResultsController performFetch:nil];
+        [_tableView reloadData];
+    });
 }
 
 
