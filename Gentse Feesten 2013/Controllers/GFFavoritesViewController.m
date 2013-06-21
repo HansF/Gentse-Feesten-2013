@@ -235,11 +235,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
-    GFEventDetailViewController *detail = [[GFEventDetailViewController alloc] initWithNibName:nil bundle:NULL];
-    GFEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    detail.event = event;
-    detail.calledFromNavigationController = YES;
-    [self.navigationController pushViewController:detail animated:YES];
+    if ([[self.fetchedResultsController sections] count] > 0) {
+        GFEventDetailViewController *detail = [[GFEventDetailViewController alloc] initWithNibName:nil bundle:NULL];
+        GFEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        detail.event = event;
+        detail.calledFromNavigationController = YES;
+        [self.navigationController pushViewController:detail animated:YES];
+    }
 
 }
 
