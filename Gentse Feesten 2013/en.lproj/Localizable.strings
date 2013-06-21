@@ -58,6 +58,6 @@
 "MORE_INFO_ONLINE" = "More info online";
 "SHOW_ROUTE" = "Show route";
 "NO_INTERNET" = "Could not connect to the internet.";
-
+"ALL_CATEGORIES" = "All categories";
 
 "ABOUT_BODY_TEXT" = "Open source mobile app for the Gentse Feesten 2013. We are not responsible for the correctness of the provided information. \n \nCredits: @TimLeytens freelance iOS & Drupal developer, @Swentel Android & Drupal developer at Wunderkraut and @LeenVS graphic designer at Wunderkraut. \n \Source code: \niOS: http://github.com/TimLeytens/Gentse-Feesten-2013 \nAndroid: http://github.com/swentel/gentsefeesten";

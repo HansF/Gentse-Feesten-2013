@@ -24,6 +24,16 @@
 "ZATERDAG_27_JULI" = "Zaterdag 27 juli";
 "ZONDAG_28_JULI" = "Zondag 28 juli";
 "MAANDAG_29_JULI" = "Maandag 29 juli";
+"ZA_20_JULI" = "Za 20/7";
+"ZO_21_JULI" = "Zo 21/7";
+"MA_22_JULI" = "Ma 22/7";
+"DI_23_JULI" = "Di 23/7";
+"WOE_24_JULI" = "Woe 24/7";
+"DO_25_JULI" = "Do 25/7";
+"VR_26_JULI" = "Vr 26/7";
+"ZA_27_JULI" = "Za 27/7";
+"ZO_28_JULI" = "Zo 28/7";
+"MA_29_JULI" = "Ma 29/7";
 "HOME" = "Home";
 "MY_FAVORITES" = "Mijn favorieten";
 "PROGRAM" = "Programma";
@@ -61,5 +71,7 @@
 "MORE_INFO_ONLINE" = "Meer info online";
 "SHOW_ROUTE" = "Toon route";
 "NO_INTERNET" = "Kan geen verbinding maken met het internet.";
+"ALL_CATEGORIES" = "Alle categorieën";
+
 
 "ABOUT_BODY_TEXT" = "Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie. \n \nCredits: @TimLeytens freelance iOS & Drupal developer, @Swentel Android & Drupal developer bij Wunderkraut en @LeenVS webdesigner bij Wunderkraut. \n \nBroncode: \niOS: http://github.com/TimLeytens/Gentse-Feesten-2013 \nAndroid: http://github.com/swentel/gentsefeesten";
