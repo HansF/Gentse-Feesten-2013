@@ -122,6 +122,7 @@
 		2212A641176AD6A40004C49A /* menu_practical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_practical.png; sourceTree = "<group>"; };
 		2212A647176AE9F60004C49A /* GFPoiDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFPoiDetailViewController.h; sourceTree = "<group>"; };
 		2212A648176AE9F60004C49A /* GFPoiDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFPoiDetailViewController.m; sourceTree = "<group>"; };
+		2213AD781774E43200FF224B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2215691017619604000799FA /* stunt-dude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stunt-dude.png"; sourceTree = "<group>"; };
 		2215691117619604000799FA /* stunt-dude@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stunt-dude@2x.png"; sourceTree = "<group>"; };
 		221E5BA31730D778000B9A9C /* PTN57F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTN57F.ttf; sourceTree = "<group>"; };
@@ -555,6 +556,7 @@
 				en,
 				nl,
 				fr,
+				es,
 			);
 			mainGroup = 22AD52DE1730324300EC5009;
 			productRefGroup = 22AD52E81730324400EC5009 /* Products */;
@@ -707,6 +709,7 @@
 				22C667271755CB6100E2E292 /* en */,
 				22C667291755CB9000E2E292 /* nl */,
 				22E1893117738BA400EADB42 /* fr */,
+				2213AD781774E43200FF224B /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

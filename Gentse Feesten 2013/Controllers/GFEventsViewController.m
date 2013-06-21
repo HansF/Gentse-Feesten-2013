@@ -12,6 +12,8 @@
 #import "GFEventsDataModel.h"
 #import "GFEvent.h"
 #import "GFEventDetailViewController.h"
+#import "SDSegmentedControl.h"
+#import "GFDates.h"
 
 @interface GFEventsViewController ()
 
@@ -46,7 +48,31 @@
         self.trackedViewName = @"Program festival: Events";
     }
 
+    int i = 0;
+    int index = 0;
+    NSMutableArray *itemArray = [[NSMutableArray alloc] init];
+    for (id date in [GFDates sharedInstance]) {
+        if ([[date objectForKey:@"id"] isEqual:_timestamp]) {
+            index = i;
+        }
+        i++;
+        [itemArray addObject:[date objectForKey:@"shortName"]];
+    }
+    
+    SDSegmentedControl *segmentedControl = [[SDSegmentedControl alloc] initWithItems:itemArray];
+    segmentedControl.frame = CGRectMake(0, IS_IOS_7 ? navBarHeight : 0, self.view.frame.size.width, 50);
+    segmentedControl.segmentedControlStyle = UISegmentedControlStylePlain;
+    
+    
+    segmentedControl.selectedSegmentIndex = index;
+    [segmentedControl addTarget:self
+                         action:@selector(changeDate:)
+               forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:segmentedControl];
+
     _tableView = [super addTableView];
+    _tableView.frame = CGRectMake(padding, segmentedControl.frame.origin.y + segmentedControl.frame.size.height + padding, self.view.frame.size.width - padding * 2, IS_IOS_7 ? self.view.frame.size.height : self.view.frame.size.height - navBarHeight);
+    
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.tableHeaderView = [super addTableViewHeaderWithTitle:[_screenTitle uppercaseString]];
@@ -151,6 +177,16 @@
 }
 
 
+-(void)changeDate:(SDSegmentedControl*)sender {
+
+    _timestamp = [[[GFDates sharedInstance] objectAtIndex:sender.selectedSegmentIndex] objectForKey:@"id"];
+    _fetchedResultsController = nil;
+    [_fetchedResultsController performFetch:nil];
+    [_tableView reloadData];
+
+}
+
+
 - (void)addEventToFavorites:(UIButton*)sender
 {
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
@@ -206,8 +242,14 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
 
     if ([_programType isEqualToString:@"thema"]) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"cat_id == %i and datum == %@", _categoryID, _timestamp];
-        fetchRequest.predicate = predicate;
+        if (_categoryID > 0) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"cat_id == %i and datum == %@", _categoryID, _timestamp];
+            fetchRequest.predicate = predicate;
+        }
+        else {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"datum == %@", _timestamp];
+            fetchRequest.predicate = predicate;
+        }
     }
     else if ([_programType isEqualToString:@"free"]) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"gratis == 1 and datum == %@", _timestamp];
