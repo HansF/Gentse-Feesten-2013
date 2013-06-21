@@ -51,7 +51,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row < _categories.count) {
+    if (indexPath.row <= _categories.count) {
         return 56;
     }
     else {
@@ -68,7 +68,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _categories.count + 1;
+    return _categories.count + 2;
 }
 
 
@@ -79,6 +79,13 @@
         static NSString *CellIdentifier = @"customCell";
         GFCustomCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         cell.label.text = [[_categories objectAtIndex:indexPath.row] objectForKey:@"name"];
+        cell.containerView.backgroundColor = indexPath.row % 2 == 0 ? [UIColor whiteColor] : UIColorFromRGB(0xf5f5f5);
+        return cell;
+    }
+    else if (indexPath.row == _categories.count) {
+        static NSString *CellIdentifier = @"customCell";
+        GFCustomCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        cell.label.text = NSLocalizedString(@"ALL_CATEGORIES", nil);
         cell.containerView.backgroundColor = indexPath.row % 2 == 0 ? [UIColor whiteColor] : UIColorFromRGB(0xf5f5f5);
         return cell;
     }
@@ -104,12 +111,19 @@
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
 
-
+    
     GFEventsViewController *detail = [[GFEventsViewController alloc] initWithNibName:nil bundle:nil];
     detail.timestamp = _timestamp;
     detail.programType = @"thema";
-    detail.categoryID = [[[_categories objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
-    detail.screenTitle = [[_categories objectAtIndex:indexPath.row] objectForKey:@"name"];
+    if (indexPath.row < _categories.count) {
+        detail.categoryID = [[[_categories objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
+        detail.screenTitle = [[_categories objectAtIndex:indexPath.row] objectForKey:@"name"];
+    }
+    else {
+        detail.categoryID = 0;
+        detail.screenTitle = NSLocalizedString(@"ALL_CATEGORIES", nil);
+    }
+
     [self.navigationController pushViewController:detail animated:YES];
 }
 
