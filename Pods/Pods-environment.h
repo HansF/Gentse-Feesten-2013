@@ -43,6 +43,12 @@
 #define COCOAPODS_VERSION_MINOR_PHFRefreshControl 0
 #define COCOAPODS_VERSION_PATCH_PHFRefreshControl 0
 
+// SDSegmentedControl
+#define COCOAPODS_POD_AVAILABLE_SDSegmentedControl
+#define COCOAPODS_VERSION_MAJOR_SDSegmentedControl 1
+#define COCOAPODS_VERSION_MINOR_SDSegmentedControl 0
+#define COCOAPODS_VERSION_PATCH_SDSegmentedControl 1
+
 // SDURLCache
 #define COCOAPODS_POD_AVAILABLE_SDURLCache
 #define COCOAPODS_VERSION_MAJOR_SDURLCache 1

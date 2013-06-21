@@ -5,6 +5,7 @@ PODS:
   - MDCParallaxView (0.1.4)
   - NVSlideMenuController (1.4.3)
   - PHFRefreshControl (1.0.0)
+  - SDSegmentedControl (1.0.1)
   - SDURLCache (1.2)
   - STTweetLabel (2.2.2)
 
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - MDCParallaxView (~> 0.1.2)
   - NVSlideMenuController (~> 1.4.3)
   - PHFRefreshControl (~> 1.0.0)
+  - SDSegmentedControl (~> 1.0.1)
   - SDURLCache (~> 1.2)
   - STTweetLabel (~> 2.2.2)
 
@@ -25,6 +27,7 @@ SPEC CHECKSUMS:
   MDCParallaxView: a1aea11598439a6c20864e7bec23aa595464475b
   NVSlideMenuController: 79712443b169cc5717b824e64e6c29da862abcbf
   PHFRefreshControl: b000ab0b2e7c038fd82565dfa6d0cc39f2a6edca
+  SDSegmentedControl: 270110865f17db04328b826ccea2c42ddee72a0f
   SDURLCache: cf4dcdd0d01473c334e9338e82a8733de156ef15
   STTweetLabel: 9d93c324a4ecf5b9e6d73b5ff2b4813e4a8adc91
 
