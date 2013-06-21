@@ -77,7 +77,7 @@
 
 - (void)addRefreshControlToTableView {
     PHFRefreshControl *refreshControl = [PHFRefreshControl new];
-    [refreshControl setTintColor:UIColorFromRGB(0x007390)];
+    [refreshControl setTintColor:UIColorFromRGB(0xeeeeee)];
     [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     [[self tableView] setRefreshControl:refreshControl];
 }
