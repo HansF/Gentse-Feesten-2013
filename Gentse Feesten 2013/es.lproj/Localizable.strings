@@ -24,6 +24,16 @@
 "ZATERDAG_27_JULI" = "Sábado, 27 de julio";
 "ZONDAG_28_JULI" = "Domingo, 28 de julio";
 "MAANDAG_29_JULI" = "Lunes, 29 de julio";
+"ZA_20_JULI" = "Sab 20/7";
+"ZO_21_JULI" = "Dom 21/7";
+"MA_22_JULI" = "Lun 22/7";
+"DI_23_JULI" = "Mar 23/7";
+"WOE_24_JULI" = "Mie 24/7";
+"DO_25_JULI" = "Jeu 25/7";
+"VR_26_JULI" = "Vie 26/7";
+"ZA_27_JULI" = "Sab 27/7";
+"ZO_28_JULI" = "Dom 28/7";
+"MA_29_JULI" = "Lun 29/7";
 "HOME" = "Página Principal";
 "MY_FAVORITES" = "Mis favoritos";
 "PROGRAM" = "Programa";
@@ -59,5 +69,8 @@
 "SHOW_ROUTE" = "Mostrar ruta";
 "NO_INTERNET" = "No puede conectarse a internet.";
 "ALL_CATEGORIES" = "Todas las categorías";
+"OTHER_LOCATIONS" = "Otros ubicaciones";
+"ALL_LOCATIONS" = "Todas las ubicaciones";
+"LOCATION" = "Ubicación";
 
 "ABOUT_BODY_TEXT" = "Open source mobile app for the Gentse Feesten 2013. We are not responsible for the correctness of the provided information. \n \nCredits: @TimLeytens freelance iOS & Drupal developer, @Swentel Android & Drupal developer at Wunderkraut and @LeenVS graphic designer at Wunderkraut. \n \Source code: \niOS: http://github.com/TimLeytens/Gentse-Feesten-2013 \nAndroid: http://github.com/swentel/gentsefeesten";
