@@ -14,6 +14,7 @@
 #import "GFEventDetailViewController.h"
 #import "SDSegmentedControl.h"
 #import "GFDates.h"
+#import "GFCustomCell.h"
 
 @interface GFEventsViewController ()
 
@@ -74,7 +75,7 @@
     [self.view addSubview:segmentedControl];
 
     _tableView = [super addTableView];
-    _tableView.frame = CGRectMake(padding, segmentedControl.frame.origin.y + segmentedControl.frame.size.height + padding, self.view.frame.size.width - padding * 2, IS_IOS_7 ? self.view.frame.size.height : self.view.frame.size.height - navBarHeight);
+    _tableView.frame = CGRectMake(padding, segmentedControl.frame.origin.y + segmentedControl.frame.size.height + padding, self.view.frame.size.width - padding * 2, IS_IOS_7 ? self.view.frame.size.height : self.view.frame.size.height - navBarHeight - segmentedControl.frame.size.height);
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -92,6 +93,9 @@
         GFEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
         return [super getHeightForString:event.name] + 30 + 1;
     }
+    else if ([sectionInfo numberOfObjects] == 0 && indexPath.row == 0) {
+        return [super getHeightForString: [NSLocalizedString(@"NO_RESULT", nil) uppercaseString]] + 30 + 1;
+    }
     else {
         return 25;
     }
@@ -106,14 +110,19 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects] + 1;
+    if ([sectionInfo numberOfObjects] > 0) {
+        return [sectionInfo numberOfObjects] + 1;
+    }
+    else {
+        return 1;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][indexPath.section];
 
     if (indexPath.row < [sectionInfo numberOfObjects]) {
         static NSString *CellIdentifier = @"customCell";
@@ -163,19 +172,48 @@
         return cell;
     }
     else {
-        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
 
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        if ([sectionInfo numberOfObjects] == 0 && indexPath.row == 0) {
+            UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
 
-        UIView *footer = [super addTableViewFooter];
-        footer.frame = CGRectMake(0, 10, footer.frame.size.width, 15);
-        [cell.contentView addSubview:footer];
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 
-        UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 10, footer.frame.size.width, 15)];
-        myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
-        cell.backgroundView = myBackView;
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(padding * 2, 0, self.view.frame.size.width - padding * 4, 55)];
+            label.font = [GFFontSmall sharedInstance];
+            label.textColor = [UIColor darkGrayColor];
+            label.highlightedTextColor = [UIColor whiteColor];
+            label.backgroundColor = [UIColor clearColor];
+            label.text = NSLocalizedString(@"NO_RESULT", nil);
+            [cell.contentView addSubview:label];
 
-        return cell;
+            UIView *footer = [super addTableViewFooter];
+            footer.frame = CGRectMake(0, label.frame.origin.y + label.frame.size.height, footer.frame.size.width, 15);
+            [cell.contentView addSubview:footer];
+
+            UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 10, footer.frame.size.width, 15)];
+            myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
+            cell.backgroundView = myBackView;
+            
+            return cell;
+
+        }
+        else {
+
+            UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+
+            UIView *footer = [super addTableViewFooter];
+            footer.frame = CGRectMake(0, 10, footer.frame.size.width, 15);
+            [cell.contentView addSubview:footer];
+
+            UIView *myBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 10, footer.frame.size.width, 15)];
+            myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellbackground.png"]];
+            cell.backgroundView = myBackView;
+
+            return cell;
+
+        }
     }
 }
 
@@ -301,11 +339,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:NO];
-    GFEventDetailViewController *detail = [[GFEventDetailViewController alloc] initWithNibName:nil bundle:NULL];
-    GFEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    detail.event = event;
-    detail.calledFromNavigationController = YES;
-    [self.navigationController pushViewController:detail animated:YES];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][indexPath.section];
+    if ([sectionInfo numberOfObjects] > 0) {
+        GFEventDetailViewController *detail = [[GFEventDetailViewController alloc] initWithNibName:nil bundle:NULL];
+        GFEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        detail.event = event;
+        detail.calledFromNavigationController = YES;
+        [self.navigationController pushViewController:detail animated:YES];
+    }
 
 }
 

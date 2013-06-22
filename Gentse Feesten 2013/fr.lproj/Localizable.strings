@@ -75,4 +75,6 @@
 "OTHER_LOCATIONS" = "Autres lieux";
 "ALL_LOCATIONS" = "Tous les lieux";
 "LOCATION" = "Lieu";
+"NO_RESULT" = "Aucun résultat";
+
 "ABOUT_BODY_TEXT" = "Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie.  \n \nCredits: @TimLeytens freelance iOS & Drupal developer, @Swentel Android & Drupal developer bij Wunderkraut en @LeenVS webdesigner bij Wunderkraut. \n \nBroncode: \niOS: http://github.com/TimLeytens/Gentse-Feesten-2013 \nAndroid: http://github.com/swentel/gentsefeesten";
