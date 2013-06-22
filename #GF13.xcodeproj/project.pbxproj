@@ -95,6 +95,8 @@
 		22C924E61736403600C4BF81 /* GFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C924E51736403500C4BF81 /* GFSettingsViewController.m */; };
 		22CFEC50173B936400C48AAE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CFEC4F173B936400C48AAE /* CoreData.framework */; };
 		22CFEC54173B940D00C48AAE /* Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22CFEC52173B940D00C48AAE /* Events.xcdatamodeld */; };
+		22DBAEDA17756B3C00BA50B8 /* GFLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBAED917756B3C00BA50B8 /* GFLocations.m */; };
+		22DBAEDD1775761200BA50B8 /* GFLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBAEDC1775761200BA50B8 /* GFLocationViewController.m */; };
 		22DCC88A17631708002CAE91 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DCC88817631708002CAE91 /* close.png */; };
 		22DCC88B17631708002CAE91 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DCC88917631708002CAE91 /* close@2x.png */; };
 		22F9C82F176C94B700B2B60A /* GFEventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F9C82E176C94B700B2B60A /* GFEventDetailViewController.m */; };
@@ -238,6 +240,10 @@
 		22C924E51736403500C4BF81 /* GFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSettingsViewController.m; sourceTree = "<group>"; };
 		22CFEC4F173B936400C48AAE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		22CFEC53173B940D00C48AAE /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
+		22DBAED817756B3C00BA50B8 /* GFLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFLocations.h; sourceTree = "<group>"; };
+		22DBAED917756B3C00BA50B8 /* GFLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFLocations.m; sourceTree = "<group>"; };
+		22DBAEDB1775761200BA50B8 /* GFLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFLocationViewController.h; sourceTree = "<group>"; };
+		22DBAEDC1775761200BA50B8 /* GFLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFLocationViewController.m; sourceTree = "<group>"; };
 		22DCC88817631708002CAE91 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		22DCC88917631708002CAE91 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		22E1893117738BA400EADB42 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -377,6 +383,8 @@
 				22C667221755C7DD00E2E292 /* GFCategories.m */,
 				2246774817587A0400E746A4 /* GFDates.h */,
 				2246774917587A0400E746A4 /* GFDates.m */,
+				22DBAED817756B3C00BA50B8 /* GFLocations.h */,
+				22DBAED917756B3C00BA50B8 /* GFLocations.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,6 +461,8 @@
 				22F9C82E176C94B700B2B60A /* GFEventDetailViewController.m */,
 				2268550B176DA91D00759DFE /* GFWebViewController.h */,
 				2268550C176DA91D00759DFE /* GFWebViewController.m */,
+				22DBAEDB1775761200BA50B8 /* GFLocationViewController.h */,
+				22DBAEDC1775761200BA50B8 /* GFLocationViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -689,6 +699,8 @@
 				2212A649176AE9F60004C49A /* GFPoiDetailViewController.m in Sources */,
 				22F9C82F176C94B700B2B60A /* GFEventDetailViewController.m in Sources */,
 				2268550D176DA91D00759DFE /* GFWebViewController.m in Sources */,
+				22DBAEDA17756B3C00BA50B8 /* GFLocations.m in Sources */,
+				22DBAEDD1775761200BA50B8 /* GFLocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

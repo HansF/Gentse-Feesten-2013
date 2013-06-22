@@ -334,7 +334,15 @@
             detailViewController.programType = @"free";
             [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
                                                           detailViewController,
-                                                          nil]];        }
+                                                          nil]];
+        }
+        else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"location"]) {
+            GFDateViewController *detailViewController = [[GFDateViewController alloc] initWithNibName:nil bundle:nil];
+            detailViewController.programType = @"location";
+            [navigationViewController setViewControllers:[[NSArray alloc] initWithObjects:
+                                                          detailViewController,
+                                                          nil]];
+        }
         else if ([[[_menu objectAtIndex:indexPath.row] objectForKey:@"view"] isEqual: @"thema"]) {
             GFDateViewController *detailViewController = [[GFDateViewController alloc] initWithNibName:nil bundle:nil];
             detailViewController.programType = @"thema";

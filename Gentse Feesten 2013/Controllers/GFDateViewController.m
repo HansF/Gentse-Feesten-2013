@@ -11,6 +11,7 @@
 #import "GFDates.h"
 #import "GFCalendarCategoryViewController.h"
 #import "GFEventsViewController.h"
+#import "GFLocationViewController.h"
 
 
 @interface GFDateViewController ()
@@ -49,6 +50,10 @@
     else if ([_programType isEqualToString:@"free"]) {
         self.trackedViewName = @"Program free: Dates";
         screenTitle = [NSLocalizedString(@"FREE", nil) uppercaseString];
+    }
+    else if ([_programType isEqualToString:@"location"]) {
+        self.trackedViewName = @"Program location: Dates";
+        screenTitle = [NSLocalizedString(@"LOCATION", nil) uppercaseString];
     }
     else {
         self.trackedViewName = @"Program festival: Dates";
@@ -141,6 +146,11 @@
         detail.timestamp = [[_dates objectAtIndex:indexPath.row] objectForKey:@"id"];
         detail.programType = @"free";
         detail.screenTitle = NSLocalizedString(@"FREE", nil);
+        [self.navigationController pushViewController:detail animated:YES];
+    }
+    else if ([_programType isEqualToString:@"location"]) {
+        GFLocationViewController *detail = [[GFLocationViewController alloc] initWithNibName:nil bundle:nil];
+        detail.timestamp = [[_dates objectAtIndex:indexPath.row] objectForKey:@"id"]; 
         [self.navigationController pushViewController:detail animated:YES];
     }
     else {

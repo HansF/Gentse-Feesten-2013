@@ -31,7 +31,7 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    _menu = [[NSArray alloc] initWithObjects:NSLocalizedString(@"CATEGORIES", nil), NSLocalizedString(@"FREE", nil), NSLocalizedString(@"FESTIVALS", nil), nil];
+    _menu = [[NSArray alloc] initWithObjects:NSLocalizedString(@"CATEGORIES", nil), NSLocalizedString(@"FREE", nil), NSLocalizedString(@"LOCATION", nil), NSLocalizedString(@"FESTIVALS", nil), nil];
 
     _tableView = [super addTableView];
     _tableView.delegate = self;
@@ -88,6 +88,9 @@
     }
     else if (indexPath.row == 1) {
         detail.programType = @"free";
+    }
+    else if (indexPath.row == 2) {
+        detail.programType = @"location";
     }
     else {
         detail.programType = @"festival";

@@ -44,6 +44,9 @@
     else if ([_programType isEqualToString:@"free"]) {
         self.trackedViewName = @"Program free: Events";
     }
+    else if ([_programType isEqualToString:@"location"]) {
+        self.trackedViewName = @"Program location: Events";
+    }
     else {
         self.trackedViewName = @"Program festival: Events";
     }
@@ -254,6 +257,16 @@
     else if ([_programType isEqualToString:@"free"]) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"gratis == 1 and datum == %@", _timestamp];
         fetchRequest.predicate = predicate;
+    }
+    else if ([_programType isEqualToString:@"location"]) {
+        if (_locationID) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"loc_id == %i and datum == %@", _locationID, _timestamp];
+            fetchRequest.predicate = predicate;
+        }
+        else {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"datum == %@", _timestamp];
+            fetchRequest.predicate = predicate;
+        }
     }
     else {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"festival == 1 and datum == %@", _timestamp];

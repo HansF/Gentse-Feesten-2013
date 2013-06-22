@@ -47,6 +47,12 @@
                              @"free", @"view",
                              nil],
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                             NSLocalizedString(@"LOCATION", nil), @"title",
+                             [NSNumber numberWithBool:NO], @"bold",
+                             @"", @"icon",
+                             @"location", @"view",
+                             nil],
+                            [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                              NSLocalizedString(@"FESTIVALS", nil), @"title",
                              [NSNumber numberWithBool:NO], @"bold",
                              @"", @"icon",
@@ -63,18 +69,6 @@
                              [NSNumber numberWithBool:NO], @"bold",
                              @"", @"icon",
                              nil],
-                            /*
-                            [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             NSLocalizedString(@"POLICE", nil), @"title",
-                             [NSNumber numberWithBool:NO], @"bold",
-                             @"", @"icon",
-                             nil],
-                            [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                             NSLocalizedString(@"FIRST_AID", nil), @"title",
-                             [NSNumber numberWithBool:NO], @"bold",
-                             @"", @"icon",
-                             nil],
-                             */ 
                             [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                              NSLocalizedString(@"PARKINGS", nil), @"title",
                              [NSNumber numberWithBool:NO], @"bold",

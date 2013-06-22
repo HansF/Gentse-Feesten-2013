@@ -24,4 +24,6 @@
 
 @property (nonatomic) int categoryID;
 
+@property (nonatomic) int locationID;
+
 @end
