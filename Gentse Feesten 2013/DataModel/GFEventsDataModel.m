@@ -83,6 +83,7 @@
             NSURL *defaultStoreURL = [[NSBundle mainBundle] URLForResource:@"Events" withExtension:@"sqlite"];
             if (defaultStoreURL) {
                 [fileManager copyItemAtURL:defaultStoreURL toURL:storeURL error:NULL];
+                NSLog(@"%@", storeURL);
             }
         }
         
